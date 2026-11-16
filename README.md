@@ -9,6 +9,10 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Trace CVar batch A](cvar-trace-batch-a.md) — All 11 remaining exact-case `Trace.*` registry entries, distinct from `trace.*` and `TraceMgr.*`.
+- [StuckDetector CVar batch A](cvar-stuck-detector-batch-a.md) — All 11 currently uncovered exact-case `StuckDetector.*` entries, with reporting and runtime limits.
+- [Rendering `r.*` CVar batch BE](cvar-rendering-r-batch-be.md) — 25 more sequential render controls with source meanings and scan limits.
+- [Rendering `r.*` CVar batch BD](cvar-rendering-r-batch-bd.md) — 25 sequential rendering controls with source and static-analysis evidence.
 - [Skelot CVar batch A](cvar-skelot-batch-a.md) — All 12 currently uncovered lower-case `skelot.*` entries, with scan and editability caveats.
 - [Rendering `r.*` CVar batch BC](cvar-rendering-r-batch-bc.md) — 25 more sequential render controls with source and scan evidence.
 - [OpenGL CVar batch A](cvar-opengl-batch-a.md) — All 12 currently uncovered exact-case `OpenGL.*` settings, with backend-selection limits.
