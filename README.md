@@ -9,6 +9,8 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Physics general and movement CVar batch H](cvar-physics-general-batch-h.md) — Twenty-five more `p.*` entries, with source metadata and static-reference classifications kept distinct.
+- [Physics general and movement CVar batch G](cvar-physics-general-batch-g.md) — Twenty-five additional `p.*` settings with metadata, captured values, and access-scan limits.
 - [Rendering `r.*` CVar batch C](cvar-rendering-r-batch-c.md) — Twenty-five additional registered rendering variables, with source help, values, and scan evidence distinguished.
 - [Physics general and movement CVar batch F](cvar-physics-general-batch-f.md) — Twenty-five more `p.*` controls with exact source metadata and static evidence limits.
 - [Swift CVar batch B](cvar-swift-batch-b.md) — Final fourteen registered `Swift.*` entries, completing the current 39-name family.
