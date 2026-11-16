@@ -1,0 +1,30 @@
+# Landscape CVar batch A
+
+This guide documents the 12 currently uncovered lower-case `landscape.*` `var`/`ref` entries. The supplied help spans collision-mesh visualization, landscape GPU culling, Nanite proxy/render controls, heightmap render capture, and physical-material updates. Exact-name Epic UE 5.9 matches are listed as upstream context; they do not establish the game's engine version or behavior. Snapshot values are observations, not defaults.
+
+The local scan matches the registry's address fields against Shipping build 1.1.4042190. Direct-memory candidates do not establish whether the code reads or writes a value or whether that code executes. No live game or mod-loader override test was performed.
+
+| Exact CVar | Type / kind | Snapshot | Epic 5.9 default | Supplied meaning and provenance | Build scan evidence and limits |
+| --- | --- | --- | --- | --- | --- |
+| `landscape.ApplyPhysicalMaterialChangesImmediately` | `int32` (`var`) | `1` | `1` | Community and Epic help: apply physical-material task changes immediately instead of waiting for the next cook/PIE. The description is editor/workflow-oriented; relevance to Shipping play is unknown. | `ref_rva`: no recorded matches; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `landscape.CollisionMesh.HeightOffset` | `float` (`var`) | `0` | `0` | Community and Epic help: offset the collision-mesh wireframe to help view it when lower landscape LODs might hide it. This describes visualization, not a collision-shape offset. | `ref_rva`: no recorded matches; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `landscape.CollisionMesh.Show` | `int32` (`var`) | `1` | `1` | Community and Epic help: when `ShowFlags.Collision` is used, select the heightfield visualization: `0` off, `1` simple, `2` complex, `3` editor only. | `ref_rva`: no recorded matches; `obj_rva`: 4 direct-memory candidates and 1 address-taking reference. |
+| `landscape.CollisionMesh.ShowPhysicalMaterial` | `bool` (`var`) | `false` | `false` | Community and Epic help: color collision-mesh vertices according to physical material when enabled. This is a display description, not proof that collision is changed. | `ref_rva`: no recorded matches; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `landscape.EnableGPUCulling` | `int32` (`var`) | `1` | `1` | Community and Epic help: whether to use landscape GPU culling when supported; help says it can be toggled at runtime. | `ref_rva`: no recorded matches; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `landscape.EnableGPUCullingShadows` | `int32` (`var`) | `1` | `1` | Community and Epic help: whether to use landscape GPU culling for shadow views when supported; help says shadow-view culling can be toggled at runtime. | `ref_rva`: no recorded matches; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `landscape.Nanite.MarchingSquaresVisibility` | `bool` (`var`) | `true` | — | Community help: use Marching Squares to make visibility edges more accurate. No exact Epic 5.9 match was found. | `ref_rva`: no recorded matches; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `landscape.Nanite.MaxAsyncProxyBuildsPerSecond` | `float` (`var`) | `6` | `6` | Community and Epic help: number of asynchronous Nanite proxies to dispatch per second. | `ref_rva`: no recorded matches; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `landscape.RenderCaptureNextHeightmapRenders` | `int32` (`ref`) | `0` | — | Community help: trigger a render capture during the next `N` `RenderHeightmap` draws. The exact capture payload and whether each draw generates a capture are not described. No exact Epic 5.9 match was found. | `ref_rva`: 3 direct-memory candidates and 1 address-taking reference; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `landscape.RenderNanite` | `int32` (`ref`) | `1` | `1` | Community and Epic help: render landscape using Nanite. The description does not establish when a toggle takes effect or which landscape assets are eligible. | `ref_rva`: 1 direct-memory candidate and 1 address-taking reference; `obj_rva`: 2 direct-memory candidates and 1 address-taking reference. |
+| `landscape.SupportGPUCulling` | `int32` (`var`) | `1` | `1` | Community and Epic help: whether landscape GPU culling is supported. Its interaction with `EnableGPUCulling` and `EnableGPUCullingShadows` is not specified by these descriptions. | `ref_rva`: no recorded matches; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `landscape.UpdateProxyActorRenderMethodOnTickAtRuntime` | `bool` (`ref`) | `false` | `false` | Community and Epic help: update a landscape proxy's render method on tick when Nanite is enabled; help says this is always enabled in the editor. Shipping behavior and whether the setting affects runtime switching are not established. | `ref_rva`: 1 direct-memory candidate and 1 address-taking reference; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+
+## Interpretation limits
+
+- `CollisionMesh.*` descriptions concern displaying collision geometry and material colors. They do not say that the underlying collision data changes.
+- GPU-culling “support” and runtime enable switches are separate entries; the registry does not document their precedence, hardware requirements, or effect on frame time.
+- Nanite rendering and proxy dispatch descriptions are upstream/help context, not a guarantee that a given game's landscape asset can use those paths.
+- The render-capture CVar's name and help do not specify captured data, output location, or runtime cost.
+- Static reference counts are not complete call-path analyses. Loader acceptance of these settings as startup `.ini` overrides remains unverified.
+
+Sources: [community registry](cvar-community-registry.md), [build-specific name inventory](EVIDENCE.md#build-specific-static-analysis), and [snapshot and address-reference scan provenance](EVIDENCE.md#community-sources).

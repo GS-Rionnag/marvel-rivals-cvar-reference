@@ -9,6 +9,8 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Landscape CVar batch A](cvar-landscape-batch-a.md) — All 12 currently uncovered lower-case `landscape.*` entries, with culling and runtime caveats.
+- [Rendering `r.*` CVar batch BA](cvar-rendering-r-batch-ba.md) — 25 more sequential rendering settings with source and build-scan evidence.
 - [Lowercase `s.*` CVar batch C](cvar-streaming-system-batch-c.md) — Final 13 entries in the 75-name `s.*` family, with snapshots and scan uncertainties.
 - [Rendering `r.*` CVar batch AZ](cvar-rendering-r-batch-az.md) — 25 more sequential rendering settings with supplied meanings and build-scan limits.
 - [Uppercase Rollback CVar batch A](cvar-rollback-uppercase-batch-a.md) — All 12 currently uncovered exact-case `Rollback.*` entries, distinct from `rollback.*`.
