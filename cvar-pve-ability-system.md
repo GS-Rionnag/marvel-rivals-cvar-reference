@@ -1,0 +1,31 @@
+# PVE ability-system CVars
+
+This guide documents all 13 currently uncovered `PVE.*` `var`/`ref` names in the supplied community registry. Their help concerns PVE ability handling, collision/occlusion checks, replicated effects, and damage initialization. The registry and the matching strings in game build 1.1.4042190 do not establish that the Shipping game registers them as editable console variables, accepts startup `.ini` overrides, or applies a change in a live match.
+
+Every entry below is a `var` or `ref` registry row. Snapshot values come from the supplied `CVarDump.txt`; they are observations, not defaults or recommendations. The names have no exact-name entry in the Epic UE 5.9 CVar reference catalog, so no upstream default or engine meaning is claimed. Chinese help is shown as supplied, with an unreviewed English rendering alongside it where available. English help is kept as supplied.
+
+| Exact CVar | Type / kind | Snapshot | Supplied help | English rendering / interpretation | `ref_rva` scan | `obj_rva` scan |
+| --- | --- | --- | --- | --- | --- | --- |
+| `PVE.AbilitySystemOpt.AsHardMode` | `bool` (`ref`) | `false` | 强制作为噩梦模式处理 | Force treatment as Nightmare mode. *(assistant translation; unreviewed)* | 1 direct-memory candidate; 1 address-taking reference. | 3 direct-memory candidates; 1 address-taking reference. |
+| `PVE.AbilitySystemOpt.IgnoreClientImpulseField` | `bool` (`ref`) | `true` | 是否关闭客户端冲击力场 | Whether to disable the client-side impulse field. *(assistant translation; unreviewed)* | 1 direct-memory candidate; 1 address-taking reference. | 3 direct-memory candidates; 1 address-taking reference. |
+| `PVE.AbilitySystemOpt.IgnoreOcclusion` | `bool` (`ref`) | `false` | 困难模式关闭遮挡检测 | Disable occlusion checks in Hard mode. *(assistant translation; unreviewed)* | 1 direct-memory candidate; 1 address-taking reference. | 3 direct-memory candidates; 1 address-taking reference. |
+| `PVE.AbilitySystemOpt.IgnoreProjectileOcclusion` | `bool` (`ref`) | `true` | 是否关闭投射物命中的遮挡检测 | Whether to disable occlusion checks for projectile hits. *(assistant translation; unreviewed)* | 1 direct-memory candidate; 1 address-taking reference. | 3 direct-memory candidates; 1 address-taking reference. |
+| `PVE.AbilitySystemOpt.IgnoreRepBounce` | `bool` (`ref`) | `true` | 是否关闭弹跳同步 | Whether to disable bounce replication/synchronization. *(assistant translation; unreviewed)* | 1 direct-memory candidate; 1 address-taking reference. | 3 direct-memory candidates; 1 address-taking reference. |
+| `PVE.AbilitySystemOpt.IgnoreRepPenetrate` | `bool` (`ref`) | `true` | 是否关闭穿透同步 | Whether to disable penetration replication/synchronization. *(assistant translation; unreviewed)* | 1 direct-memory candidate; 1 address-taking reference. | 3 direct-memory candidates; 1 address-taking reference. |
+| `PVE.AbilitySystemOpt.OpenOcclusionOpt` | `bool` (`ref`) | `false` | 遮挡检测优化开关 | Enable the projectile occlusion-check optimization. *(assistant translation; unreviewed)* | 2 direct-memory candidates; 1 address-taking reference. | 3 direct-memory candidates; 1 address-taking reference. |
+| `PVE.AbilitySystemOpt.OverrideMaxHitCount` | `int32` (`ref`) | — | 未配置ScopeID时统一设置法术场和选目标命中上限，默认0 | When no ScopeID is configured, set a shared hit-count limit for gameplay fields and target selection; help says the default is 0. *(assistant translation; unreviewed)* | 2 direct-memory candidates; 1 address-taking reference. | 3 direct-memory candidates; 1 address-taking reference. |
+| `PVE.AbilitySystemOpt.SkipOcclusionHitCount` | `int32` (`ref`) | `0` | When `InHits` count exceeds this value, skip occlusion detection for small-range traces. `0` means disabled. | Supplied English help. | 1 direct-memory candidate; 1 address-taking reference. | 3 direct-memory candidates; 1 address-taking reference. |
+| `PVE.AbilitySystemOpt.SkipOcclusionMaxDistance` | `float` (`ref`) | `500` | Only skip occlusion for targets within this distance from `OcclusionOrigin`. `0` means no distance restriction. | Supplied English help. | 1 direct-memory candidate; 1 address-taking reference. | 3 direct-memory candidates; 1 address-taking reference. |
+| `PVE.AbilitySystemOpt.SkipOcclusionMaxRadius` | `float` (`ref`) | `500` | Only skip occlusion when trace `Radius` is less than or equal to this value. `0` means no radius restriction. | Supplied English help. | 1 direct-memory candidate; 1 address-taking reference. | 3 direct-memory candidates; 1 address-taking reference. |
+| `PVE.AbilitySystemOpt.TraceHitCountProfiling` | `int32` (`var`) | — | 开启法术场和选目标检测的BattleRule限额比较结果追踪 | Enable tracing of comparisons against BattleRule limits for gameplay-field and target-selection checks. *(assistant translation; unreviewed)* | No recorded `ref_rva` matches. | 3 direct-memory candidates; 1 address-taking reference. |
+| `PVE.UseRedirectionBaseDamageGain` | `bool` (`var`) | `true` | Use `AbilityRedirection` path for PVE BaseDamage attribute gains in `SetInitAttributes`. | Supplied English help. | No recorded `ref_rva` matches. | 3 direct-memory candidates; 1 address-taking reference. |
+
+## How to read the scan columns
+
+The scanner matched the community registry's `ref_rva` and `obj_rva` address fields against instructions in the local x64 Shipping executable. A direct-memory candidate is an instruction-level lead; an address-taking match may just form or pass an address. These counts do not identify the complete function, prove a runtime read or write, or show which branch executes. The two address fields are separate evidence and their counts must not be added as if they represented distinct uses.
+
+The game-build inventory finds the PVE strings in the executable, but string presence is weaker than registration or execution evidence. No test here changes a CVar and observes gameplay. In particular, the names `Ignore*`, `SkipOcclusion*`, and `OpenOcclusionOpt` suggest purposes from supplied help; their effects, scope, valid values, and interaction remain unverified in the installed build.
+
+## Sources
+
+[Community CVar registry](cvar-community-registry.md), [Chinese help translations](cvar-chinese-help-translations.md), [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis), and the local build's [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis).
