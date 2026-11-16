@@ -11,7 +11,7 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 ## CVar documentation
 - [Miscellaneous engine/runtime CVar batch A](cvar-misc-engine-runtime-batch-a.md) — Eight uncovered low-frequency names spanning allocator, memory, media, UI, and I/O settings.
 - [Crosshair CVar: MakeRandomStream](cvar-crosshair-batch-a.md) — The sole uncovered Crosshair.* ref, with its name-based interpretation clearly marked as inference.
-- [Rendering .* CVar batch BW](cvar-rendering-r-batch-bw.md) — 25 unique .VolumetricCloud.* controls with help and scan evidence.
+- [Rendering `r.*` CVar batch BW](cvar-rendering-r-batch-bw.md) — 25 unique `r.VolumetricCloud.*` controls with help and scan evidence.
 - [AudioThread CVar batch A](cvar-audiothread-batch-a.md) — Seven CVar refs with a nearby non-CVar command distinguished clearly.
 - [MessageBus UDP CVar batch A](cvar-messagebus-batch-a.md) — Seven endpoint and segmentation settings with help and static-scan caveats.
 - [OSSNull CVar batch A](cvar-ossnull-batch-a.md) — Eight exact-case online-subsystem refs with help text and runtime/editability caveats.
