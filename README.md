@@ -9,6 +9,9 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Character CVar batch A](cvar-char-batch-a.md) — All 22 exact-case `char.*` entries, with source meanings and static evidence limits.
+- [TaskGraph CVar batch B](cvar-taskgraph-batch-b.md) — Final five `TaskGraph.*` controls with expanded snapshot, upstream, and static scan evidence.
+- [Projectile CVar batch A](cvar-projectile-batch-a.md) — All 25 registered `Projectile.*` entries with supplied help and static evidence limits.
 - [Rendering `r.*` CVar batch I](cvar-rendering-r-batch-i.md) — Twenty-five more rendering variables with snapshots, upstream matches, and static scan classes separated.
 - [TaskGraph CVar batch A](cvar-taskgraph-batch-a.md) — First 25 of 30 registered `TaskGraph.*` entries with source metadata and scan limits.
 - [FX CVar batch A: uppercase namespace](cvar-fx-uppercase-batch-a.md) — First 25 exact-case `FX.*` entries, distinct from lowercase `fx.*`.

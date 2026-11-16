@@ -1,0 +1,21 @@
+# Task Graph CVar batch B
+
+This guide documents the five registered `TaskGraph.*` controls already summarized in [CVar overrides](cvar-overrides.md), adding their registry metadata, captured snapshots, and build-specific reference-scan counts. Together with batch A, it records all 30 unique `TaskGraph.*` names in the supplied community registry. The original descriptions in the overrides guide are retained there; this batch preserves source-specific evidence and limitations.
+
+Community snapshots are observations, not defaults. UE 5.9 defaults/descriptions are upstream context. Static address matches do not establish current runtime use or startup `.ini` acceptance.
+
+| Exact CVar | Type(s) | Snapshot | Epic 5.9 default | Supplied help and provenance | Build scan evidence and limits |
+| --- | --- | --- | --- | --- | --- |
+| `TaskGraph.ForkedProcessMaxWorkerThreads` | int32 (`ref`) | 8 | `2` | Community help: Configures the number of worker threads a forked process should spawn if it allows multithreading. Epic 5.9 description: Configures the number of worker threads a forked process should spawn if it allows multithreading. | `ref_rva`: 2 direct-memory candidate(s), 1 address-taking reference(s); `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); runtime path not traced. |
+| `TaskGraph.NumForegroundWorkers` | int32 (`ref`) | 2 | `2` | Community help: Configures the number of foreground worker threads. Requires the scheduler to be restarted to have an affect Epic 5.9 description: Configures the number of foreground worker threads. Requires the scheduler to be restarted to have an affect | `ref_rva`: 8 direct-memory candidate(s), 2 address-taking reference(s); `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); runtime path not traced. |
+| `TaskGraph.UseBackgroundThreads` | int32 (`ref`) | 1 | `1` | Community help: If > 0, then use background threads, otherwise run background tasks on normal priority task threads. Used for performance tuning. Epic 5.9 description: If > 0, then use background threads, otherwise run background tasks on normal priority task threads. Used for performance tuning. | `ref_rva`: 46 direct-memory candidate(s), 1 address-taking reference(s); `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); runtime path not traced. |
+| `TaskGraph.UseDynamicPrioritization` | bool (`ref`) | true | `true` | Community help: Adjust thread priority per-task so that higher priority tasks running on background threads can't be preempted as easily. Helps a lot under high load. Epic 5.9 description: Adjust thread priority per-task so that higher priority tasks running on background threads can't be preempted as easily. Helps a lot under high load. | `ref_rva`: 11 direct-memory candidate(s), 1 address-taking reference(s); `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); runtime path not traced. |
+| `TaskGraph.UseHiPriThreads` | int32 (`ref`) | 1 | `1` | Community help: If > 0, then use hi priority task threads, otherwise run background tasks on normal priority task threads. Used for performance tuning. Epic 5.9 description: If > 0, then use hi priority task threads, otherwise run background tasks on normal priority task threads. Used for performance tuning. | `ref_rva`: 46 direct-memory candidate(s), 1 address-taking reference(s); `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); runtime path not traced. |
+
+## Interpretation limits
+
+- The five descriptions are also summarized in the CVar overrides guide; that guide explains the scheduler and thread-priority meanings, while this table records registry/snapshot/scan provenance.
+- Address-taking-only hits are not value reads. Direct-memory candidates may represent reads, writes, comparisons, or initialization; no function path was traced for this batch.
+- Epic UE 5.9 defaults are not confirmed defaults for the Marvel Rivals Shipping build.
+
+Sources: [community CVar registry](cvar-community-registry.md), [CVar overrides](cvar-overrides.md), [build 1.1.4042190 address-reference scan](EVIDENCE.md#build-specific-static-analysis), and [build-specific candidate inventory](EVIDENCE.md#build-specific-static-analysis).
