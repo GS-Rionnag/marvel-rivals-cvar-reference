@@ -109,3 +109,5 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [cvar-network-batch-g](cvar-network-batch-g.md) — Oodle, PacketCollect, packet ordering, ping, PackageMap, and Push Model controls, with direct-read evidence and server/client limits distinguished.
 - [cvar-chaos-game-controls-batch-d](cvar-chaos-game-controls-batch-d.md) — Twenty-five owner, particle, navigation, update, and collection controls, with snapshot gaps and direct-read evidence distinguished.
 - [cvar-rendering-general-batch-b](cvar-rendering-general-batch-b.md) — Twenty-five HDR, occlusion, ray, resource, and async controls, with platform-specific behavior and sparse direct-read evidence qualified.
+- [cvar-chaos-game-controls-batch-e](cvar-chaos-game-controls-batch-e.md) — Twenty-five overlap, particle lifetime, replay, solver, and lifecycle controls, with direct-read evidence and five registry-only cases separated.
+- [cvar-network-batch-h](cvar-network-batch-h.md) — Twenty-five spawn-quantization, queued bunch, RPC diagnostic, and socket-recovery controls, with address-only alarms and server effects unverified.
