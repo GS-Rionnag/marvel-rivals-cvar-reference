@@ -9,6 +9,8 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Wall Run CVar batch A](cvar-wallrun-batch-a.md) — All 16 currently uncovered `WallRun.*` entries with metadata, snapshots, and scan limits.
+- [Asset Pool CVar batch A](cvar-assetpool-batch-a.md) — All 16 registered exact-case `AssetPool.*` entries with source and scan evidence.
 - [Cache CVar batch A](cvar-cache-batch-a.md) — All 17 exact-case `Cache.*` names with source help, snapshots, and static evidence limits.
 - [Rendering `r.*` CVar batch O](cvar-rendering-r-batch-o.md) — Twenty-five additional `r.*` entries with source metadata and scan classifications.
 - [M2207 CVar batch A](cvar-m2207-batch-a.md) — All 19 currently uncovered exact-case `M2207.*` entries with metadata and scan limits.
