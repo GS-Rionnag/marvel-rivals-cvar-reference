@@ -1,0 +1,31 @@
+# Chaos solver collision CVars
+
+This guide documents the collision-settings group under `p.Chaos.Solver` in the community registry and traces its setup path in Marvel Rivals Shipping build `1.1.4042190`. The snapshot column records captured values only; it does not establish defaults or recommended overrides.
+
+## Variables
+
+| CVar | Type | Snapshot | Meaning and local-build evidence |
+| --- | --- | ---: | --- |
+| `p.Chaos.Solver.Collision.Enabled` | bool | `true` | The registry says it enables or disables collisions in the main scene. Setup copies this byte into the scene collision-settings structure at `0x142AE4383` / `0x142AE4395`, corroborating that it is a scene-level gate. |
+| `p.Chaos.Solver.Collision.AllowManifoldUpdate` | int32 | `1` | The registry says it enables manifold reuse between ticks for small movement. Setup converts zero/nonzero to a local boolean at `0x142AE43A2`–`0x142AE43CF` and copies the settings structure for later use. |
+| `p.Chaos.Solver.Collision.UseManifolds` | int32 | `1` | The registry says it enables manifold use in collision. Setup converts zero/nonzero to a local boolean at `0x142AE43E0`–`0x142AE43EE`. This is distinct from allowing manifold updates/reuse. |
+| `p.Chaos.Solver.Collision.DeferNarrowPhase` | int32 | `0` | The registry describes making contacts for all broad-phase pairs and running narrow phase later. Setup converts this setting to a boolean at `0x142AE43D4`–`0x142AE43DB` and passes it with the collision settings to a helper. The later scheduling behavior is not traced here. |
+| `p.Chaos.Solver.Collision.SolverType` | int32 | `-1` | Registry values are `-1` for the configured default, `0` Gauss-Seidel, `1` Gauss-Seidel SOA, and `2` Partial Jacobi. At `0x142987B2F`, negative values take a configuration path; nonnegative values are normalized to `0`, `1`, or `2` before updating solver state. Values above `2` resolve to `0` in the observed branch. |
+| `p.Chaos.Solver.Collision.Priority` | int32 | `0` | Registry help says larger constraint-priority values are evaluated later. A priority value is passed to the collision-constraint helper at `0x14297BA14` and another related helper at `0x142987B79`. The precise ordering policy is not recovered beyond the registry description. |
+| `p.Chaos.Solver.Collision.PositionFrictionIterations` | int32 | `-1` | Negative skips the override; nonnegative values are copied to a scene-settings field at `0x142AE457C`–`0x142AE458D`. Registry help identifies this as the number of position iterations that apply friction. |
+| `p.Chaos.Solver.Collision.VelocityFrictionIterations` | int32 | `-1` | Negative skips the override; nonnegative values are copied to a scene-settings field at `0x142AE4593`–`0x142AE45A4`. Registry help identifies this as the velocity-iteration count that applies friction. |
+| `p.Chaos.Solver.Collision.PositionShockPropagationIterations` | int32 | `-1` | Read at `0x142AE45B1` and passed to the scene collision-settings helper. Registry help identifies it as the position-iteration count using shock propagation; downstream handling is inside the helper and is not traced here. |
+| `p.Chaos.Solver.Collision.VelocityShockPropagationIterations` | int32 | `-1` | Read at `0x142AE45AA` and passed with the position shock-propagation value to the scene collision-settings helper. Registry help identifies it as the velocity-iteration count using shock propagation. |
+| `p.Chaos.Solver.Collision.CullDistance` | float | `-1` | The registry says a nonnegative value overrides cull distance. At `0x142AE4650`, a negative value skips the store; a nonnegative value is converted and copied into scene settings. |
+| `p.Chaos.Solver.Collision.VelocityBoundsMultiplier` | float | `1` | The registry describes an override for the velocity-bounds multiplier when nonnegative. Setup reads it at `0x142AE4672`; the observed path writes it only when both this multiplier and `MaxVelocityBoundsExpansion` are strictly positive. Zero skips the paired update in this path. |
+| `p.Chaos.Solver.Collision.MaxVelocityBoundsExpansion` | float | `3` | The registry describes an override for maximum velocity-bounds expansion when nonnegative. Setup reads it at `0x142AE467F`; the observed path writes it only when both it and `VelocityBoundsMultiplier` are strictly positive. The two settings form a paired update in this path. |
+| `p.Chaos.Solver.Collision.MaxPushOutVelocity` | float | `-1` | The registry says this overrides maximum push-out velocity when nonnegative. At `0x142AE46A9`, a negative value skips the store; a nonnegative value is converted and copied into scene settings. |
+| `p.Chaos.Solver.CollisionModifiersBeforeCCD` | bool | `false` | Registry help says `true` runs collision modifiers before CCD rewind and `false` runs them afterward. The preserved scan has registration/object references but no direct RIP-relative read candidate for this setting, so the ordering is registry-described and not independently confirmed in the local path. |
+
+## Setup path
+
+The group is gathered in one scene-settings routine around `0x142AE4370`–`0x142AE46C8`. It copies the scene booleans, passes deferral and iteration settings through helper calls, and applies the documented negative-sentinel overrides. The observed handling of velocity-bounds values adds a condition not explicit in the help: both the multiplier and expansion must be greater than zero for that paired update. `CollisionModifiersBeforeCCD` remains a registry-only description in the present scan.
+
+The address candidates are retained in [`build-4042190-cvar-address-hits.tsv`](EVIDENCE.md#evidence-artifacts-not-included). The registration/help/value sources are [`console_vars.tsv`](https://discord.com/channels/1512820805615091712/1512825591529869383/1570970983353950322) and [`CVarDump.txt`](https://discord.com/channels/1512820805615091712/1512825591529869383/1562934699502866452). The binary scan is limited to direct static references and does not expose helper semantics, runtime changes, or whether a particular scene uses every setting.
+
+Related guides: [Chaos collision solver CVars](cvar-chaos-collision-tolerances.md), [Chaos collision manifold and contact CVars](cvar-chaos-collision-manifold-contacts.md), and [CVar overrides and loader syntax](cvar-overrides.md).

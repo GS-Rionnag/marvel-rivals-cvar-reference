@@ -1,0 +1,17 @@
+# Evidence, sources, and scope
+
+This repository contains Markdown documentation only. It does not distribute game executables, mods, local configuration files, raw binary scans, source-dump files, scripts, or personal computer paths.
+
+## Community sources
+
+- [Community CVar registry message](https://discord.com/channels/1512820805615091712/1512825591529869383/1570970983353950322) provides the registry attachments discussed in the guides.
+- [Community CVar snapshot message](https://discord.com/channels/1512820805615091712/1512825591529869383/1562934699502866452) provides the captured value snapshot. Snapshot values are not assumed to be defaults.
+- Epic Unreal Engine documentation links are included next to upstream CVar descriptions where relevant.
+
+## Build-specific static analysis
+
+Some guides report analysis of Marvel Rivals Shipping build 1.1.4042190. The raw executable, hashes, file inventories, and disassembly/address-scan exports are intentionally omitted. Those findings are static evidence only: a name string or address reference is not by itself proof of runtime registration, startup-config acceptance, or an in-game effect. Direct value reads are distinguished from object-address setup references where the available evidence permits.
+
+## Method and reproducibility
+
+The guides preserve the source of each claim and distinguish community help, upstream Unreal behavior, snapshots, and build-specific analysis. Raw scan exports and local analysis scripts are not included; readers should treat exact addresses as build-specific and revalidate them against the build they use.

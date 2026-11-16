@@ -1,0 +1,50 @@
+# Rendering HairStrands CVar batch A
+
+This page documents 25 exact `r.HairStrands.*` names from the preserved community registry. Community help and snapshot values are reported separately from code references in the installed Shipping binary. The registry attachment does not identify its game build or capture process, so these sources do not alone prove the current game accepts a config override.
+
+## Registry entries and evidence
+
+| Exact name | Kind / type | Captured snapshot | Community help / stated default | Local build evidence and limits |
+| --- | --- | ---: | --- | --- |
+| `r.HairStrands.AsyncLoad` | `ref` / int32 | `0` | Allows groom assets to load asynchronously in the editor. | The saved scan found only an address-taking reference to `ref_rva`; no direct value-read candidate. Help is editor-scoped and does not establish an in-match effect. |
+| `r.HairStrands.AutoLOD.Bias` | `ref` / float | `0` | Screen-size bias at which hair curves are decimated by Auto LOD. | A float load appears at VA `0x147C46ADC`. The local read supports use of this scalar, but does not reveal the screen-space formula or effect on rendered hair. |
+| `r.HairStrands.AutoLOD.Force` | `ref` / int32 | `0` | Forces all groom assets to use experimental Auto LOD. | Integer comparisons appear at `0x147C3B127` and `0x147C46ABF`; these support boolean-style gates, not that every groom uses the path. |
+| `r.HairStrands.AutoLOD.Scale` | `ref` / float | `1` | Rate at which hair curves are decimated based on screen coverage. | A float load appears at VA `0x147C46AE4`. The surrounding scale/rate formula was not fully traced. |
+| `r.HairStrands.Binding` | `var` / int32 | `1` | Enables or disables hair binding (hair attached to skeletal meshes). | The scan found `obj_rva` address/setup references but no direct `ref_rva` value-read candidate. The snapshot value is not proof that the current build honors this switch. |
+| `r.HairStrands.BindingValidation` | `ref` / int32 | `0` | Enables groom-binding validation and detailed cause warnings/errors. | An integer comparison appears at VA `0x147C17960`. This supports a local conditional read; which validation messages appear was not followed. |
+| `r.HairStrands.BoundMode` | `ref` / int32 | `0` | Controls hair bounds when attached to a skeletal mesh: `0` extends mesh bounds with groom bounds; `1` uses skeletal-mesh bounds; `2` uses an extended/conservative bound. | An integer load appears at VA `0x147C1C2A9`. The direct read is consistent with a mode input; the downstream bound calculations were not mapped. |
+| `r.HairStrands.Cards` | `var` / int32 | `1` | Enables/disables hair-card rendering. Help says it must be enabled when the engine starts. | `obj_rva` setup references were found, but no direct `ref_rva` value-read candidate. The startup constraint comes from community help; no runtime override test was performed. |
+| `r.HairStrands.Cards.BulkData.AsyncLoading` | `ref` / int32 | `-1` | Minimum LOD for asynchronous loading of hair-card/mesh data to avoid blocking the rendering thread; help says disabled by default at `-1`. | An integer comparison appears at VA `0x147C367B0`. This confirms a value-dependent local branch, not a verified loading-time or hitch reduction in the game. |
+| `r.HairStrands.Cards.DebugAtlas` | `ref` / int32 | `0` | Draws a debug hair-card atlas. | Direct integer comparisons/selection appear near VAs `0x147C38EA4` and `0x147C38EB0`. The saved excerpts do not identify the displayed atlas or prove that it is visible in this client. |
+| `r.HairStrands.Cards.InterpolationType` | `ref` / int32 | `1` | Hair-card interpolation mode: `0` none, `1` physics simulation, `2` RBF deformation. | An integer load appears at VA `0x147C60B3A`. The code confirms a local value read; accepted modes beyond the help's list are unknown. |
+| `r.HairStrands.ClusterBuilder.MaxVoxelResolution` | `ref` / int32 | `256` | Maximum voxel resolution for cluster building to avoid long build time; help states default `128`. | Only an address-taking `ref_rva` reference was found, not a direct value read. The captured `256` differs from the help's stated default `128`; neither value is verified as the current live setting. |
+| `r.HairStrands.Components.GlobalScattering` | `ref` / float | `1` | Enables/disables the hair BSDF global-scattering component. | Float loads appear at VAs `0x141C203FC` and `0x141C20901`; the local code reads the value. The exact contribution to final lighting was not isolated. |
+| `r.HairStrands.Components.LocalScattering` | `ref` / float | `1` | Enables/disables the hair BSDF local-scattering component. | Float loads appear at VAs `0x141C2040D` and `0x141C20925`; the local code reads the value. The exact image or cost change is not established. |
+| `r.HairStrands.Components.R` | `ref` / float | `1` | Enables/disables hair BSDF component `R`. | Float loads appear at VAs `0x141C2045B` and `0x141C2096D`. The abbreviation `R` is not expanded by the community help, so its physical interpretation remains unknown here. |
+| `r.HairStrands.Components.TRT` | `ref` / float | `1` | Enables/disables hair BSDF component `TRT`. | Float loads appear at VAs `0x141C20427` and `0x141C2093F`. The code reads the scalar locally; the acronym's model-specific meaning and visible effect are not derived from these sites. |
+| `r.HairStrands.Components.TT` | `ref` / float | `1` | Enables/disables hair BSDF component `TT`. | Float loads appear at VAs `0x141C20441` and `0x141C20959`. The acronym's exact rendering interpretation was not independently recovered. |
+| `r.HairStrands.Components.TTModel` | `ref` / int32 | `0` | Selects the hair `TT` model. | Integer comparisons appear at VAs `0x141C203F5` and `0x141C208F7`. They support local mode selection, but do not identify the model choices or their output. |
+| `r.HairStrands.ComposeAfterTranslucency` | `ref` / int32 | `1` | Ordering modes: `0` before translucent objects; `1` after translucent but before separate translucency; `2` after all/separate translucency; `3` after translucency but before the post-DOF translucency pass, allowing depth testing against hair depth. | An integer load appears at VA `0x141C2D1C0`. This supports a composition-order input; no controlled image comparison was made. |
+| `r.HairStrands.ContinuousDecimationReordering` | `var` / int32 | `0` | Enables strand reordering for continuous LOD; help labels it experimental. | `obj_rva` setup references were found, but no direct `ref_rva` value-read candidate. Runtime use of the experimental path is unverified. |
+| `r.HairStrands.DDCLog` | `ref` / int32 | `0` | Enables Derived Data Cache logging for groom and groom-binding assets. | Only an address-taking `ref_rva` reference was found. The scan did not show the setting being read or any logging side effect. |
+| `r.HairStrands.DebugData.MaxSegmentPerVoxel` | `ref` / int32 | `2048` | Maximum number of segments per voxel when creating debug data. | Only an address-taking reference was found; no direct value read in the scanned executable. It is not evidence that this debug-data path is enabled in normal gameplay. |
+| `r.HairStrands.DebugData.VoxelSize` | `ref` / float | `0.3` | Voxel size used to create debug data. | Only an address-taking reference was found; no direct value read in the scanned executable. Units and any visualization behavior remain unspecified. |
+| `r.HairStrands.DeepShadow.AABBScale` | `ref` / float | `1` | Scales the deep-shadow bounding volume; help spells the effect as “loosing/tighting.” | Float loads appear at VAs `0x141C258FD` and `0x141C406A0`. This supports a local scalar input to a deep-shadow path; its exact geometry effect was not derived. |
+| `r.HairStrands.DeepShadow.DebugDOMIndex` | `ref` / int32 | `0` | Index of the DOM texture to draw. | An integer load appears at VA `0x141C3CB00`. The local read is consistent with selecting an index, but does not prove the debug display is available in the Shipping client. |
+
+## Epic 5.9 comparison
+
+None of these 25 exact names has an exact-name entry in the repository's UE 5.9 CVar reference cross-check. The community help above is therefore the only supplied prose for these names; it is not an independently verified description from the current game's source.
+
+## What this says about editing
+
+The example `[Overrides]` template can express these names as `name=value` lines. That is only syntax-level editability. The registry attachment's build is unknown, the local scan is static, and no override was tested in a live game. `obj_rva`/`lea` setup references are not direct value reads; even direct reads do not prove config acceptance, execution in a match, or a visible result. Follow the editability evidence levels in [CVar overrides](cvar-overrides.md#does-a-cvar-actually-change-in-marvel-rivals) before describing any of these as modifiable in the current client.
+
+## Evidence and limits
+
+- Registry kind, type, help, and addresses: [`console_vars.tsv`](https://discord.com/channels/1512820805615091712/1512825591529869383/1570970983353950322); captured values: [`CVarDump.txt`](https://discord.com/channels/1512820805615091712/1512825591529869383/1562934699502866452). The dump header identifies that file as a community dump, but its capture build and whether values are defaults or runtime values are unknown.
+- Local instruction candidates: [`build-4042190-cvar-address-hits.tsv`](EVIDENCE.md#evidence-artifacts-not-included). The scanned executable is build `1.1.4042190`, SHA-256 `omitted from this documentation-only project`; image base is `0x140000000`.
+- Direct reads above are local Shipping-code evidence only. The full saved scan covers RIP-relative references in `.text`; indirect/non-RIP-relative use and other modules may be missed. A read does not prove the setting is accepted from the loader or that its code path executes in a normal match.
+- No in-game override, visual change, performance change, or stability comparison was tested.
+
+Related guide: [CVar override evidence and loader syntax](cvar-overrides.md).

@@ -1,0 +1,19 @@
+# Chaos deformable and XPBD visualization CVars
+
+This guide covers all five `p.Chaos.Deformable.*` variables in the supplied community registry. The descriptions and captured values are shown separately from what the installed Marvel Rivals Shipping build `1.1.4042190` confirms. Snapshot values are not verified defaults or recommendations.
+
+| CVar | Type | Snapshot | Registry help and interpretation | Local-build evidence |
+| --- | --- | ---: | --- | --- |
+| `p.Chaos.Deformable.XPBDBatchSize` | int32 | `5` | “Batch size for physics parallel for.” Registry help includes `[def: 5]`; the snapshot also contains `5`, but neither confirms the live default in this build. | No direct read from the registered value address was found. The scan has an address-taking reference at `0x1409DBC56`; nearby object-address writes are not value reads. How this size affects task batching in the game remains unverified. |
+| `p.Chaos.Deformable.XPBDBatchThreshold` | int32 | `5` | “Batch threshold for physics parallel for.” Registry help includes `[def: 5]`; the snapshot also contains `5`. | No direct read from the registered value address was found. The scan has an address-taking reference at `0x1409DBCC6`; nearby object-address writes are not value reads. The threshold's comparison direction and runtime effect remain unknown. |
+| `p.Chaos.Deformable.XPBDWeakConstraintEnableDraw` | bool | `false` | Debug-draw switch for the “double bindings” in XPBD weak constraints, per help. Registry help includes `[def: false]`. | No direct read from the registered value address was found. The scan has an address-taking reference at `0x1409DBD36`; nearby object-address writes are not value reads. The weak-constraint draw path is not independently confirmed in this build. |
+| `p.Chaos.Deformable.XPBDWeakConstraintLineWidth` | float | `5` | Line width for visualizing the “double bindings” in XPBD weak constraints, per help. Registry help includes `[def: 5]`. | No direct read from the registered value address was found. The scan has an address-taking reference at `0x1409DBDA6`; nearby object-address writes are not value reads. Rendering behavior and units are unknown. |
+| `p.Chaos.Deformable.XPBDWeakConstraintParticleWidth` | float | `20` | The help also calls this “Line width” for visualizing the “double bindings,” despite the `ParticleWidth` name. Registry help includes `[def: 20]`; the apparent mismatch is left unresolved. | No direct read from the registered value address was found. The scan has an address-taking reference at `0x1409DBE16`; nearby object-address writes are not value reads. Its exact rendering role is unknown. |
+
+## Evidence and limits
+
+- Names, types, help, and `ref_rva` values come from [`console_vars.tsv`](https://discord.com/channels/1512820805615091712/1512825591529869383/1570970983353950322); alternate object help comes from [`console_objects.tsv`](https://discord.com/channels/1512820805615091712/1512825591529869383/1570970983353950322); captured values come from [`CVarDump.txt`](https://discord.com/channels/1512820805615091712/1512825591529869383/1562934699502866452). The source manifest records exact matches between those preserved files and the Discord attachments.
+- The reference-address scan is preserved in [`build-4042190-cvar-address-hits.tsv`](EVIDENCE.md#evidence-artifacts-not-included). For these entries it reports address-taking instructions for the `ref_rva`, not instructions that read the CVar value. `obj_rva`-targeting stores nearby are not evidence of runtime behavior. The scan can miss indirect or non-RIP-relative reads.
+- The listed defaults are claims embedded in community help text. No controlled in-game overrides or visual tests are recorded.
+
+Related guides: [Chaos collision and solver settings](cvar-chaos-collision-tolerances.md), [Chaos solver runtime and lifecycle controls](cvar-chaos-solver-runtime-controls.md), and [CVar overrides and loader syntax](cvar-overrides.md).

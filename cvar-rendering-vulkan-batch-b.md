@@ -1,0 +1,49 @@
+# Rendering Vulkan CVar batch B
+
+This page documents 25 exact `r.Vulkan.*` entries from the preserved community registry. The registry attachment does not identify its game build or collection procedure. `CVarDump.txt` values below are captured values, not assumed defaults; where the help explicitly says “default,” that statement is kept separate from the snapshot.
+
+## Registry entries and local evidence
+
+| Exact CVar | Type | Captured snapshot | Community help and local-build evidence |
+| --- | --- | ---: | --- |
+| `r.Vulkan.CpuWaitForFence` | int32 (`ref`) | `1` | Help says this controls whether the CPU waits for the fence in `AcquireImageIndex`. The saved scan found no direct `ref_rva` value access in the local Shipping executable. |
+| `r.Vulkan.DefragAgeDelay` | int32 (`ref`) | `100` | Help: number of frames that must pass before trying to defragment a page again. At VA `0x1424D1D6E`, the code compares a local integer against the CVar, consistent with a frame-age threshold. |
+| `r.Vulkan.DefragAutoPause` | int32 (`ref`) | `0` | Help says to automatically pause defragmentation after one page has been moved, for debugging. At `0x1424D1F9C`, the code compares the setting with zero in the defragmentation path. |
+| `r.Vulkan.DefragOnceDebug` | int32 (`ref`) | `0` | Help says `1` tests defragmentation. Code compares it with `1` at `0x1424D1C27` and with `0` at `0x1424E5D4B` / `0x1424E5D79`; a nearby instruction at `0x1424E5D8C` writes zero back. This supports a debug-trigger/reset path, but the complete operation was not traced. |
+| `r.Vulkan.DefragPaused` | int32 (`ref`) | `0` | Help says to pause any defragmentation. The code compares the value with a local state at `0x1424D1C02` and stores `1` to the CVar address at `0x1424D1FA5`; the store shows the local routine can change the flag as well as read it. |
+| `r.Vulkan.DefragSizeFactor` | float (`ref`) | `1.3` | Help says how much free space on other pages is required before defragmenting a page. Float loads at `0x1424D1C17` and `0x1424D1D46` feed a multiplication in the local path; units and the full comparison formula are not identified. |
+| `r.Vulkan.DefragSizeFraction` | float (`ref`) | `0.7` | Help says not to defragment if free space is below this fraction. A float load at `0x1424D1D61` is multiplied into a local value, supporting a fraction/threshold input. |
+| `r.Vulkan.DelayAcquireBackBuffer` | int32 (`var`) | `1` | Help describes `0` as acquiring at frame start, `1` as acquiring just before present and rendering through an intermediate image (called the default by help), and `2` as acquiring on first use. The scan has object-address setup references only; no direct value-read candidate was found. |
+| `r.Vulkan.Depth24Bit` | int32 (`var`) | `0` | Help says `0` uses a 32-bit float depth buffer (help default) and `1` uses a 24-bit fixed-point depth buffer. No direct value-read candidate was found in the saved scan. |
+| `r.Vulkan.DepthStencilForceStorageBit` | int32 (`ref`) | `0` | Help says nonzero forces storage usage on depth images and may disable framebuffer compression. At `0x1425056C6`, the code compares the value with zero in a Vulkan path; the exact image-allocation consequence is not traced here. |
+| `r.Vulkan.DescriptorSetLayoutMode` | int32 (`var`) | `0` | Help defines `0` as preserving separate layouts, `1` as adding a set for common uniform buffers, and `2` as collapsing sets into set 0. Only object-address setup references were found, not a direct value read. |
+| `r.Vulkan.DSetCacheMaxPoolLookups` | int32 (`ref`) | `2` | Help says this caps cache-pool lookup attempts before allocating a new descriptor. The code compares a count against the CVar at `0x1424D7C4D` and `0x1424D7CF4`, and loads it at `0x1424D8081`, supporting a lookup threshold. |
+| `r.Vulkan.DSetCacheTargetSetsPerPool` | int32 (`ref`) | `4096` | Help says it is the target number of descriptor-set allocations per pool. At `0x1424CB541`, the value is loaded into an XMM register with `movd` and passed through local allocation logic; the exact policy is not further resolved. |
+| `r.Vulkan.DynamicGlobalUBs` | int32 (`var`) | `2` | Help says `2` treats all uniform buffers as dynamic (help default), `1` treats global/packed uniform buffers as dynamic, and `0` treats them as regular. The saved scan found object-address setup references only; no direct value read. |
+| `r.Vulkan.EnableDedicatedImageMemory` | int32 (`ref`) | `1` | Help says it enables dedicated image memory on devices that prefer it. At `0x1424FACD9`, code compares the value with a local device/property value; this is consistent with a device-dependent branch, but the allocator decision is not fully traced. |
+| `r.Vulkan.EnableDefrag` | int32 (`ref`) | `1` | Help says `0` disables and `1` enables defragmentation moves and evictions. The value is compared at `0x1424B07A7`, `0x1424E5A60`, and `0x1424E5B4D`; a store at `0x1424B07CC` also writes the ref address. These are local defrag gates/state updates, not a full mapping of every path. |
+| `r.Vulkan.EnablePipelineLRUCache` | int32 (`var`) | `0` | Help calls this the pipeline LRU-cache toggle: `0` disables, `1` enables. Only object-address setup references were found; no direct value-read candidate was found. |
+| `r.Vulkan.EnableTransientResourceAllocator` | int32 (`ref`) | `1` | Help says `0` disables and `1` enables the transient resource allocator, described as reducing memory use; `0` is the help default. A compare against zero appears at `0x14250E826`, supporting an enable gate. |
+| `r.Vulkan.EvictionLimitPercentage` | float (`ref`) | `80` | Help says to evict resources to host memory after local-memory use exceeds this percentage. The code loads the float at `0x1424EAA2D`. The local path's exact memory accounting and unit are not independently traced. |
+| `r.Vulkan.EvictionLimitPercentageRenableLimit` | float (`ref`) | `75` | Help says textures resume using local memory only after memory use falls below this limit, relative to the eviction percentage. A float load appears at `0x1424EAA3E`, next to the preceding threshold load, consistent with a second/hysteresis threshold. |
+| `r.Vulkan.EvictOnePageDebug` | int32 (`ref`) | `0` | Help says `1` tests eviction of one page to host memory. The code compares the value with zero at `0x1424E5BE2` and writes zero at `0x1424E5C0D`, consistent with a one-shot debug request/reset. |
+| `r.Vulkan.FlushOnMapStaging` | int32 (`ref`) | `0` | Help says `0` does not flush and `1` flushes the GPU on `MapStagingSurface` calls without a fence; `0` is the help default. A zero comparison appears at `0x14251000E`; the call-site semantics are not otherwise traced. |
+| `r.Vulkan.ForcePacingWithoutVSync` | int32 (`ref`) | `0` | Help says whether CPU pacers remain enabled when VSync is off. The value is compared with zero at `0x14250AAA2` and `0x142512E56`, consistent with two pacing gates. |
+| `r.Vulkan.ForcePSOSingleThreaded` | int32 (`ref`) | `0` | Help describes `0` as allowing asynchronous precompile PSO creation (help default), `1` forcing all PSO creation single-threaded, `2` forcing precompile PSOs only, and `3` forcing non-precompile PSOs only. At `0x1424E3D7B`, the value is loaded into `eax`; the exact downstream mode selection is not followed here. |
+| `r.Vulkan.ForceStagingBufferOnLock` | int32 (`ref`) | `0` | Help says nonzero makes non-volatile buffer locks use staging buffers, for debugging; help default is `0`. At `0x1424B697F`, code compares the CVar against a local value in a buffer-locking path. |
+
+None of the 25 names has an exact-name entry in the local generated Epic UE 5.9 reference column. Their community help is therefore the available descriptive text for this batch; it does not prove Marvel Rivals' engine revision or actual behavior.
+
+## Editability and evidence limits
+
+The 20 `ref` entries and five `var` entries are classifications from the community dump schema, not proof that all 25 are live, user-writable CVars in installed build `1.1.4042190`. The binary scan found direct `ref_rva` instruction candidates for 19 of the 20 `ref` entries. `r.Vulkan.CpuWaitForFence` had no direct value-read candidate. The five `var` entries have `ref_rva=0` and only object-address setup hits in the saved scan. Some direct instructions are stores or one-shot resets; their presence alone does not prove a requested configuration value reaches an executed branch.
+
+The loader can express these names as `name=value` under `[Overrides]`. That is syntax-level editability only; there was no controlled in-game override or behavior test. The evidence levels and the current limits of normal asset mods for reading the live registry are in [CVar override research](cvar-overrides.md#does-a-cvar-actually-change-in-marvel-rivals) and [live-dump feasibility](cvar-overrides.md#can-a-normal-packaged-mod-list-the-live-cvar-registry).
+
+## Source notes
+
+- Exact names, kinds, types, community help, and reference/object RVAs: [`console_vars.tsv`](https://discord.com/channels/1512820805615091712/1512825591529869383/1570970983353950322).
+- Captured values: [`CVarDump.txt`](https://discord.com/channels/1512820805615091712/1512825591529869383/1562934699502866452); values are not defaults unless the help separately says so.
+- Local reference candidates: [`build-4042190-cvar-address-hits.tsv`](EVIDENCE.md#evidence-artifacts-not-included). The scan uses image base `0x140000000` and records direct RIP-relative references; it can miss indirect/non-RIP-relative accesses and does not prove a path executes at runtime.
+- Local binary: Marvel Rivals Shipping build `1.1.4042190`, SHA-256 `omitted from this documentation-only project`; instruction addresses above are VAs.
+- Related pages: [Rendering Vulkan CVar batch A](cvar-rendering-vulkan-batch-a.md), [CVar community registry](cvar-community-registry.md), and [CVar research source notes](EVIDENCE.md#build-specific-static-analysis).
