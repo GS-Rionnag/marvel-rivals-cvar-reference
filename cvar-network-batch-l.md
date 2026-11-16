@@ -1,0 +1,54 @@
+# Network replication, reliability, and send-control CVar batch L
+
+This guide documents 25 registered network CVars that are not otherwise described in the current explanatory docs. The set covers property replication/package-map housekeeping, reliable bunches and replay, send-rate limits, pacing, and timing diagnostics. Community help, Epic UE 5.9 references, and the snapshot are distinguished; an Epic name match does not prove the game uses UE 5.9 behavior.
+
+Build evidence is from static address-reference scanning of Marvel Rivals Shipping build `1.1.4042190`. A direct-memory candidate may be a read, comparison, or write; object references for `var` entries may be registration/setup. Static references do not establish client/server authority or runtime match behavior. No live console query or controlled `.ini`/network test was performed.
+
+## Replication and package-map behavior
+
+| Exact CVar | Type | Snapshot | Epic 5.9 default | Description and provenance | Build address evidence and limits |
+| --- | --- | ---: | ---: | --- | --- |
+| `net.Rep.BunchIgnoreInvalidError` | int32 (`var`) | `1` | `—` | No explanatory help was supplied; exact behavior remains unresolved in the available references. *(source: not described)* | CVar-object setup/address references only; this `var` has no `ref_rva`, so runtime value consumption was not established. |
+| `net.Rep.CheckInit` | bool (`ref`) | `true` | `—` | No explanatory help was supplied; exact behavior remains unresolved in the available references. *(source: not described)* | 4 direct-memory candidate(s), 2 address-taken reference(s); reads/writes and control flow were not distinguished. |
+| `net.Rep.DebugRepNotifies` | int32 (`ref`) | `1` | `—` | No explanatory help was supplied; exact behavior remains unresolved in the available references. *(source: not described)* | 3 direct-memory candidate(s), 2 address-taken reference(s); reads/writes and control flow were not distinguished. |
+| `net.Rep.EnableMerge` | int32 (`var`) | `1` | `—` | No explanatory help was supplied; exact behavior remains unresolved in the available references. *(source: not described)* | CVar-object setup/address references only; this `var` has no `ref_rva`, so runtime value consumption was not established. |
+| `net.RepAnimMontage.ForceFullOnInitial` | int32 (`var`) | `1` | `—` | Force AbilityID, BlendTime and PlayInstanceId when replicating an AbilitySystemComponent on a new actor channel. Server only. *(source: community help)* | CVar-object setup/address references only; this `var` has no `ref_rva`, so runtime value consumption was not established. |
+| `net.RepAnimMontagePackageMapCleanupThreshold` | int32 (`ref`) | `128` | `—` | Only scan and remove stale package map weak pointers when the cached map count is greater than this threshold. *(source: community help)* | 4 direct-memory candidate(s), 2 address-taken reference(s); reads/writes and control flow were not distinguished. |
+| `net.RepFrameNumFix` | bool (`ref`) | `true` | `—` | Whether enable rpc frame num bug fix *(source: community help)* | 4 direct-memory candidate(s), 2 address-taken reference(s); reads/writes and control flow were not distinguished. |
+| `net.RepMoveStalePackageMapCleanupThreshold` | int32 (`ref`) | `128` | `—` | Only scan and remove stale package map weak pointers when the cached map count is greater than this threshold. *(source: community help)* | 3 direct-memory candidate(s), 2 address-taken reference(s); reads/writes and control flow were not distinguished. |
+| `net.ReplicateCustomDeltaPropertiesInRepIndexOrder` | bool (`ref`) | `false` | `false` | If false (default) custom delta properties will replicate in the same order as they're added to the lifetime property array during the call to GetLifetimeReplicatedProps. If true custom delta properties will be replicated in the property RepIndex order, which is typically in increasing property offset order. Note that custom delta properties are always serialized after regular properties. *(source: community help)* | 4 direct-memory candidate(s), 2 address-taken reference(s); reads/writes and control flow were not distinguished. |
+| `net.ReplicateOnlyBeginPlay` | bool (`ref`) | `false` | `false` | Only allow property replication of actors that had BeginPlay called on them. *(source: community help)* | 5 direct-memory candidate(s), 2 address-taken reference(s); reads/writes and control flow were not distinguished. |
+| `net.Replication.DebugProperty` | FString (`var`) | `—` | `—` | Debugs Replication of property by name, this should be set to the partial name of the property to debug *(source: community help)* | CVar-object setup/address references only; this `var` has no `ref_rva`, so runtime value consumption was not established. |
+
+## Reliable and replay behavior
+
+| Exact CVar | Type | Snapshot | Epic 5.9 default | Description and provenance | Build address evidence and limits |
+| --- | --- | ---: | ---: | --- | --- |
+| `net.Reliable.Debug` | int32 (`var`) | `0` | `0` | Print all reliable bunches sent over the network  0: no print.  1: Print bunches when overflow.  2: Print bunches as they are sent.  3: Print reliable bunch buffer each net update *(source: community help)* | CVar-object setup/address references only; this `var` has no `ref_rva`, so runtime value consumption was not established. |
+| `net.Reliable.UseBunchPool` | int32 (`var`) | `1` | `—` | share bunch pool *(source: community help)* | CVar-object setup/address references only; this `var` has no `ref_rva`, so runtime value consumption was not established. |
+| `net.ReliableReplicationOptFlag` | bool (`ref`) | `true` | `—` | If true, we will avoid changelist *(source: community help)* | 8 direct-memory candidate(s), 2 address-taken reference(s); reads/writes and control flow were not distinguished. |
+| `net.Replay.FixExportAckFirstWrite` | int32 (`ref`) | `0` | `—` | Defense-in-depth beyond the ProcessCheckpointActors override-lifecycle fix: when enabled, only the demo frame-stream export append (or non-main ack targets / non-replay connections) consumes the NetFieldExportGroup first-write ack. Default 0 (legacy consumption); set 1 to enforce the frame-stream-first-write invariant at the consumption point. *(source: community help)* | 4 direct-memory candidate(s), 2 address-taken reference(s); reads/writes and control flow were not distinguished. |
+| `net.Replay.RebuildMissingNetFieldExportGroup` | int32 (`ref`) | `0` | `—` | When enabled, replay playback reconstructs a missing NetFieldExportGroup from the local class layout instead of failing receive. Rescues replays recorded before the recording-side first-write fix. Default 0 (legacy ensure behavior). *(source: community help)* | 4 direct-memory candidate(s), 2 address-taken reference(s); reads/writes and control flow were not distinguished. |
+
+## Send limits, pacing, and diagnostics
+
+| Exact CVar | Type | Snapshot | Epic 5.9 default | Description and provenance | Build address evidence and limits |
+| --- | --- | ---: | ---: | --- | --- |
+| `net.SendBytesPerFrame` | int32 (`ref`) | `256000` | `—` | Token bucket: bytes replenished per frame for send rate limiting (default 256KB). Replaces packet-count approach. *(source: community help)* | 5 direct-memory candidate(s), 2 address-taken reference(s); reads/writes and control flow were not distinguished. |
+| `net.SendBytesPerSecond` | int32 (`ref`) | `7680000` | `—` | Phase-2 only: target send throughput in bytes/second. Default 7.5MB/s (≈ 30fps × 256KB). Only consulted when net.UseTimeBasedPacing=1. *(source: community help)* | 5 direct-memory candidate(s), 2 address-taken reference(s); reads/writes and control flow were not distinguished. |
+| `net.SendMaxBurstBytes` | int32 (`ref`) | `512000` | `—` | Token bucket: maximum burst size in bytes (caps the bucket). Default 512KB. *(source: community help)* | 6 direct-memory candidate(s), 2 address-taken reference(s); reads/writes and control flow were not distinguished. |
+| `net.SendMaxBytesPerTick` | int32 (`ref`) | `65536` | `—` | Phase-2 only: maximum bytes flushed to the underlying socket per frame (accumulated across all RealLowLevelSend calls within one PreTickDispatch cycle). Default 64KB. Set 0 to disable. Only consulted when net.UseTimeBasedPacing=1. *(source: community help)* | 4 direct-memory candidate(s), 2 address-taken reference(s); reads/writes and control flow were not distinguished. |
+| `net.SendMaxQueueBytes` | int32 (`ref`) | `3097152` | `—` | Maximum bytes allowed in SendPacketQueue before backpressure kicks in (IsNetReady returns false). Default 2MB. *(source: community help)* | 4 direct-memory candidate(s), 2 address-taken reference(s); reads/writes and control flow were not distinguished. |
+| `net.SendSpeedLimitFlag` | int32 (`ref`) | `0` | `—` | If enabled, send packet speed will limited *(source: community help)* | 4 direct-memory candidate(s), 2 address-taken reference(s); reads/writes and control flow were not distinguished. |
+| `net.UseArtificialLatency` | int32 (`var`) | `1` | `—` | If true, connection will use artificial latency *(source: community help)* | CVar-object setup/address references only; this `var` has no `ref_rva`, so runtime value consumption was not established. |
+| `net.UseTimeBasedPacing` | int32 (`ref`) | `0` | `—` | Phase-2 toggle. 0 = Phase-1 per-frame replenishment (default, backward-compatible). 1 = Phase-2 time-based replenishment + per-tick cap. *(source: community help)* | 9 direct-memory candidate(s), 2 address-taken reference(s); reads/writes and control flow were not distinguished. |
+| `net.TimeguardThresholdMS` | float (`ref`) | `0` | `—` | Threshold in milliseconds for the rep function timeguard *(source: community help)* | 4 direct-memory candidate(s), 2 address-taken reference(s); reads/writes and control flow were not distinguished. |
+
+## Reading these entries
+
+- Snapshot values are captured values, not defaults, recommendations, or evidence of a server setting.
+- Descriptions labeled community help are registry text. Epic 5.9 descriptions are used only where that source has a description and community help is blank. Rows without either are explicitly unresolved.
+- Send limits describe byte-based thresholds and pacing controls from the supplied help; the listed snapshots do not prove those controls are active. The `Phase-2 only` help is retained as stated by the source and is not independently validated against this game build.
+- Network CVars may gate server-owned behavior. Registry presence and static local references do not establish that a client-side override controls authoritative replication.
+
+For related coverage, see [Network CVar batches A–K](cvar-network-batch-a.md), [Fast Array networking notes](cvar-fast-array-sharing.md), and [the community registry](cvar-community-registry.md). The build scan method is summarized in [registration evidence](cvar-registration-evidence-4042190.md).

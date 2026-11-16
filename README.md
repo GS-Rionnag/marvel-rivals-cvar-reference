@@ -126,7 +126,8 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Game-specific visual ability CVar batch A](cvar-game-ability-batch-a.md) — Fifteen ability-specific visual-mesh and afterimage settings, with tentative translations, incomplete numeric-ID mappings, and startup-override limits identified.
 - [Niagara CVar batch C](cvar-fx-niagara-batch-c.md) — Twenty-five Niagara controls covering GPU traces, simulation, budgets, compilation, and combined FX paths, with static read evidence and help uncertainties separated.
 - [SharedRep CVar batch B](cvar-network-shared-rep-batch-b.md) — Twenty-five SharedRep settings for scheduling, logging, RPC/reconnect, and payload behavior, with authority and read-path limits recorded.
-- [Network CVar batch K](cvar-network-batch-k.md) — Six final `Net.*` entries spanning traffic control, shared-replication tools, statistics, and packed shadow buffers; no uncovered `Net.*` names remain in the current registry audit.
+- [Network CVar batch L](cvar-network-batch-l.md) — Twenty-five lower-case `net.*` replication, package-map, replay, and pacing controls; four lack explanatory help.
+- [Network CVar batch K](cvar-network-batch-k.md) — Six `Net.*` entries spanning traffic control, shared-replication tools, statistics, and packed shadow buffers. Lower-case `net.*` variables are tracked separately.
 - [Animation system CVar batch D](cvar-animation-system-batch-d.md) — Twenty-five animation, notify, curve, camera, and character-system controls with code-read evidence and config-override limitations.
 - [Niagara CVar batch D](cvar-fx-niagara-batch-d.md) — Twenty-five Niagara controls spanning compile diagnostics, data channels, component pools, GPU emitters, and visibility/culling.
 - [Animation system CVar batch E](cvar-animation-system-batch-e.md) — Twenty-five animation, IK, FABRIK, and ground-motion controls with translated help and static-read limits marked.
@@ -155,6 +156,8 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Ray-tracing geometry CVar batch D](cvar-rendering-raytracing-batch-d.md) — Twenty-five ray-tracing finalization, material/RHI, and WPO controls; 21 have direct value-access candidates, with inactive-path limits.
 - [Rendering shadow CVar batch H](cvar-rendering-shadow-batch-h.md) — Twenty-five final VSM page-marking and non-Nanite controls, with source-placeholder help and limited direct-read evidence called out.
 - [Lumen Translucency Volume and reflections CVar batch A](cvar-rendering-lumen-translucency-batch-a.md) — Twenty-four remaining volume/reflection controls with source-separated descriptions, captured values, upstream context, and static-scan limits.
+- [Lumen miscellaneous and visualization CVar batch A](cvar-rendering-lumen-misc-batch-a.md) — The last 19 Lumen controls, with differing upstream/community visualization modes and static evidence limits called out.
+- [Temporal Super Resolution CVar batch A](cvar-rendering-tsr-batch-a.md) — Twenty-five TSR controls; four captured values differ from Epic 5.9 defaults, and static refs are setup-only.
 - [Lumen visualization CVar batch A](cvar-rendering-lumen-visualize-batch-a.md) — Twenty-five card/surface and hardware-ray-tracing visualization controls, with source-separated descriptions and limits on static references.
 - [Lumen Screen Probe tail and Translucency Volume CVar batch H](cvar-rendering-lumen-batch-h.md) — The final Screen Probe Gather controls and the first Translucency Volume settings, with source-separated descriptions, captured values, upstream defaults, and scan limits.
 - [Lumen Screen Probe filtering and AO CVar batch G](cvar-rendering-lumen-batch-g.md) — Twenty-five additional short-range AO, hair-tracing, spatial-filtering, interpolation, and temporal-history controls, with upstream/snapshot differences and limits on build evidence.
@@ -162,3 +165,5 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Ray-tracing CVar batch E](cvar-rendering-raytracing-batch-e.md) — Twenty-five ray-tracing setup and reflection controls, with limited UE matches, one snapshot/help mismatch, and active-path caveats.
 
 - [Rigid Body Node and Chaos Cloth CVars](cvar-physics-rigidbody-chaoscloth.md) — Twenty-five simulation, solver, collision, timing, and debug controls with source distinctions and static-reference limits.
+
+- [Game-specific CVar descriptions from embedded text](cvar-game-specific-embedded-help.md) — Eighty-seven registered game-specific controls with clearly qualified nearby-text interpretations and static-reference limits.
