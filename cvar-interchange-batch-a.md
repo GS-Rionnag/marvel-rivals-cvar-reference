@@ -29,4 +29,4 @@ Snapshot values are observations, not defaults. Static reference counts are cand
 - Epic UE 5.9 references provide upstream context; they do not prove that the game fork enables the same importer or config behavior.
 - Static reference candidates are not runtime proof.
 
-Sources: [community CVar registry](cvar-community-registry.md), [build 1.1.4042190 address-reference scan](EVIDENCE.md#build-specific-static-analysis), and [build-specific candidate inventory](EVIDENCE.md#build-specific-static-analysis).
+Sources: [community CVar registry](cvar-community-registry.md), [build 1.1.4042190 address-reference scan](sources/cvar-research/build-4042190-cvar-address-hits.tsv), and [build-specific candidate inventory](cvar-game-build-4042190.md).
