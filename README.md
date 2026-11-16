@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [MarvelGameplayCue CVar batch A](cvar-marvelgameplaycue-batch-a.md) — Eight remaining cue refs; translated help is marked as unreviewed.
 - [AMF CVar batch A](cvar-amf-batch-a.md) — The remaining AMF.KeyframeInterval setting, with encoder-scope uncertainty noted.
 - [LiveLink CVar batch A](cvar-livelink-batch-a.md) — Seven LiveLink refs with help, snapshot, and scan limits.
 - [Miscellaneous engine/runtime CVar batch A](cvar-misc-engine-runtime-batch-a.md) — Eight uncovered low-frequency names spanning allocator, memory, media, UI, and I/O settings.
