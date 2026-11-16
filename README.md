@@ -117,3 +117,6 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [cvar-ability-system-batch-c](cvar-ability-system-batch-c.md) — Twenty-three scope, prediction, selection, RPC, and GameplayEffect controls, with translation limits, snapshot gaps, and server authority caveats marked.
 - [cvar-rendering-cache-camera-capsule-batch-a](cvar-rendering-cache-camera-capsule-batch-a.md) — Twenty-five cache, camera, capsule-shadow, and LOD controls with upstream help and local read evidence separated.
 - [cvar-network-batch-i](cvar-network-batch-i.md) — Twenty-five Net.CharMove, client-frame, FastArray, and Push Model controls, with unresolved client-frame help and authority scope marked.
+- [Network RepGraph CVar batch J](cvar-network-repgraph-batch-j.md) — Twenty-five RepGraph controls covering dormancy, frequency, spatialization, prioritization, and diagnostics, with build scan and editability limits marked.
+- [Animation-node CVar batch A](cvar-animation-nodes-batch-a.md) — Eighteen animation-node and Leg IK controls, separating registry help and snapshot values from local object-address evidence.
+- [FX budget and Cascade CVars](cvar-fx-budget-batch-a.md) — Ten FX budget tracker controls and seven Cascade renderer/update controls, with unverified runtime and override behavior called out.
