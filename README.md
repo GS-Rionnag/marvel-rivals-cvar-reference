@@ -123,3 +123,6 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Animation budget CVar batch A](cvar-animation-budget-batch-a.md) — Twenty-two skeletal-mesh scheduler controls, including per-CVar value-access candidates and two snapshot/help mismatches.
 - [FX CVar batch B](cvar-fx-batch-b.md) — Twenty-five Niagara and particle-system controls, with direct-reference evidence separated from registration-only matches.
 - [Network CVar batch J2](cvar-network-batch-j2.md) — Twenty-five networking controls covering RPCs, RepGraph, replay, and shared bunches, with translated-help, authority, and editability limits noted.
+- [Game-specific visual ability CVar batch A](cvar-game-ability-batch-a.md) — Fifteen ability-specific visual-mesh and afterimage settings, with tentative translations, incomplete numeric-ID mappings, and startup-override limits identified.
+- [Niagara CVar batch C](cvar-fx-niagara-batch-c.md) — Twenty-five Niagara controls covering GPU traces, simulation, budgets, compilation, and combined FX paths, with static read evidence and help uncertainties separated.
+- [SharedRep CVar batch B](cvar-network-shared-rep-batch-b.md) — Twenty-five SharedRep settings for scheduling, logging, RPC/reconnect, and payload behavior, with authority and read-path limits recorded.

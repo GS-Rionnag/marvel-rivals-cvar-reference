@@ -36,7 +36,7 @@ The `ClientStateDriven` wording and the detailed networking/physics descriptions
 
 ## Local build evidence
 
-The local build inventory lists all 25 names as printable strings in both `Marvel Rivals Shipping executable` and `Marvel-Win64-Shippingarm64ec.exe`. String presence proves only that the names are in those binaries.
+The local build inventory lists all 25 names as printable strings in both `Marvel Rivals Shipping executable` and a second platform-specific Shipping executable. String presence proves only that the names are in those binaries.
 
 For the three `ref` entries, the saved x64 address scan found direct reads of the reference addresses in the local Shipping executable:
 

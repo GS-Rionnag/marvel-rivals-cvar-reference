@@ -36,7 +36,7 @@ These lines express the registry type and intended toggle operation; they are no
 
 ## Evidence and scope
 
-- Community registry attachment and provenance: [`sources/cvar-research/README.md`](EVIDENCE.md#build-specific-static-analysis), [`console_vars.tsv`](https://discord.com/channels/1512820805615091712/1512825591529869383/1570970983353950322), [`console_objects.tsv`](https://discord.com/channels/1512820805615091712/1512825591529869383/1570970983353950322).
+- Community registry attachment and provenance: [community research-source notes](EVIDENCE.md#community-sources), [`console_vars.tsv`](https://discord.com/channels/1512820805615091712/1512825591529869383/1570970983353950322), [`console_objects.tsv`](https://discord.com/channels/1512820805615091712/1512825591529869383/1570970983353950322).
 - Captured values: [`CVarDump.txt`](https://discord.com/channels/1512820805615091712/1512825591529869383/1562934699502866452). Snapshot values are not defaults unless the help explicitly says so.
 - Local direct-reference rows: [`build-4042190-cvar-address-hits.tsv`](EVIDENCE.md#evidence-artifacts-not-included). Scanner limits and build identity are documented in the source README.
 - Local build inventory: [`cvar-game-build-4042190.md`](EVIDENCE.md#build-specific-static-analysis).
