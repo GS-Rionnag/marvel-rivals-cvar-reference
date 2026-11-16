@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Character CVar batch A](cvar-character-batch-a.md) — Seven character settings, with sparse help and name-based inferences qualified.
 - [SkinWeightProfileManager CVar batch A](cvar-skinweightprofilemanager-batch-a.md) — AllowCPU with static-reference versus string-inventory evidence distinguished.
 - [opt CVar batch A](cvar-opt-batch-a.md) — Seven low-frequency controls with translated help marked clearly.
 - [ComputeKernel CVar batch A](cvar-computekernel-batch-a.md) — Compiler-warning display behavior from supplied help.
