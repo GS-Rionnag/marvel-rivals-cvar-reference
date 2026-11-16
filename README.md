@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Rendering `r.*` CVar batch S](cvar-rendering-r-batch-s.md) — Next 25 registered render variables with source meanings and build-scan limits.
 - [Voice CVar batch A](cvar-voice-batch-a.md) — All 16 currently uncovered `voice.*` entries with community help, snapshot/Epic context, and static-scan limits.
 - [Rendering `r.*` CVar batch R](cvar-rendering-r-batch-r.md) — Next 25 registered render variables with supplied help and build-scan evidence separated.
 - [Uppercase Demo CVar batch A](cvar-demo-uppercase-batch-a.md) — All 15 exact-case `Demo.*` names, distinct from lower-case `demo.*`.
