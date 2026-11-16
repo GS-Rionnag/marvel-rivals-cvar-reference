@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Niagara CVar batch A](cvar-niagara-batch-a.md) — All 20 currently uncovered `Niagara.*` entries, with supplied help and build-evidence limits.
 - [Rendering `r.*` CVar batch W](cvar-rendering-r-batch-w.md) — 25 more sequential `r.*` controls, with source text, snapshots, and build-scan limits.
 - [Rollback debug CVar batch A](cvar-rollback-debug.md) — All 12 currently uncovered `rollback.*` controls, with help, snapshots, and static evidence limits.
 - [Rendering `r.*` CVar batch V](cvar-rendering-r-batch-v.md) — 25 more sequential rendering controls with metadata and build-scan evidence.
