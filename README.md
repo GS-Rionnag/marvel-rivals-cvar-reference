@@ -9,6 +9,19 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Streaming system CVar batch B](cvar-streaming-system-batch-b.md) — Twenty-five additional streaming-system controls with source provenance and limits.
+- [Streaming system CVar batch A](cvar-streaming-system-batch-a.md) — First 25 streaming-system settings with upstream meaning and game-build evidence limits.
+- [Slate CVar batch D](cvar-slate-batch-d.md) — Final nine currently uncovered Slate variables, completing the documented family.
+- [Slate CVar batch C](cvar-slate-batch-c.md) — Twenty-five additional UI framework variables with help, value, and static scan evidence separated.
+- [HairStrands CVar batch H](cvar-rendering-hairstrands-batch-h.md) — Final 31 `r.HairStrands.*` entries, completing all 206 registered names in this family.
+- [D3D12 CVar batch B](cvar-rendering-d3d12-batch-b.md) — Final five currently uncovered D3D12 entries in this registry pass.
+- [D3D12 CVar batch A](cvar-rendering-d3d12-batch-a.md) — First 25 currently uncovered D3D12 resource, allocator, and device controls.
+- [Physics general and movement CVar batch D](cvar-physics-general-batch-d.md) — Twenty-five additional physics and movement controls with evidence limits recorded.
+- [Physics general and movement CVar batch C](cvar-physics-general-batch-c.md) — Twenty-five more actor, movement, animation-physics, and related controls.
+- [NP2 CVar batch B](cvar-np2-batch-b.md) — Final 23 `np2.*` entries, completing current registry coverage for this namespace.
+- [NP2 CVar batch A](cvar-np2-batch-a.md) — First 25 `np2.*` variables with community help, defaults, and static-reference caveats.
+- [Mass CVar batch B](cvar-mass-batch-b.md) — Twenty-five additional `mass.*` variables with source help, values, and runtime evidence limits.
+- [AI CVar batch B](cvar-ai-batch-b.md) — First 25 currently uncovered `ai.*` entries, with help translations, snapshot/Epic differences, and scan limits separated.
 
 - [Ability 106361 trace and explosion CVars](cvar-ability-106361-traces.md) — Community descriptions and build-specific reads for 18 ability-specific cue, box-trace, step-filtering, and explosion settings.
 - [Ability cost and regeneration CVars](cvar-ability-cost-paths.md) — Cost-config selection, regen/shared-cache gates, and the documented all-ability cost bypass controls.
