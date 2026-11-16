@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Rendering `r.*` CVar batch BO](cvar-rendering-r-batch-bo.md) — 25 more unique render controls; duplicate registry rows are documented once.
 - [MarvelUserSettings CVar batch A](cvar-marvelusersettings-batch-a.md) — All 10 remaining exact-case entries with source and build-evidence caveats.
 - [Pakcache CVar batch A](cvar-pakcache-batch-a.md) — All 10 currently uncovered `pakcache.*` entries, with the limits on unit interpretation.
 - [WidgetComponent CVar batch A](cvar-widgetcomponent-batch-a.md) — All 10 currently uncovered exact-case `WidgetComponent.*` entries.
