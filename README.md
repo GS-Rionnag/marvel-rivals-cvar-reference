@@ -9,6 +9,8 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [AMF CVar batch A](cvar-amf-batch-a.md) — The remaining AMF.KeyframeInterval setting, with encoder-scope uncertainty noted.
+- [LiveLink CVar batch A](cvar-livelink-batch-a.md) — Seven LiveLink refs with help, snapshot, and scan limits.
 - [Miscellaneous engine/runtime CVar batch A](cvar-misc-engine-runtime-batch-a.md) — Eight uncovered low-frequency names spanning allocator, memory, media, UI, and I/O settings.
 - [Crosshair CVar: MakeRandomStream](cvar-crosshair-batch-a.md) — The sole uncovered Crosshair.* ref, with its name-based interpretation clearly marked as inference.
 - [Rendering `r.*` CVar batch BW](cvar-rendering-r-batch-bw.md) — 25 unique `r.VolumetricCloud.*` controls with help and scan evidence.
