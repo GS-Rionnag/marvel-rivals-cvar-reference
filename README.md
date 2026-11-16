@@ -9,6 +9,8 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Uppercase Rollback CVar batch A](cvar-rollback-uppercase-batch-a.md) — All 12 currently uncovered exact-case `Rollback.*` entries, distinct from `rollback.*`.
+- [Rendering `r.*` CVar batch AY](cvar-rendering-r-batch-ay.md) — 25 more sequential rendering variables with source and static evidence.
 - [Lowercase `audio.*` CVar batch A](cvar-audio-lowercase-batch-a.md) — All 13 remaining lower-case `audio.*` rows, separate from `Audio.*` and `au.*`.
 - [Rendering `r.*` CVar batch AX](cvar-rendering-r-batch-ax.md) — 25 more sequential controls with supplied meanings and build scan limits.
 - [VM CVar batch A](cvar-vm-batch-a.md) — All 14 currently uncovered `vm.*` settings with snapshots and build-scan caveats.
