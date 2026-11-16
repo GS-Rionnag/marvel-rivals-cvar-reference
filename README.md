@@ -153,3 +153,6 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Rendering shadow CVar batch G](cvar-rendering-shadow-batch-g.md) — Twenty-five VSM cache, clipmap, and filtering controls, all with direct value-access candidates but unverified runtime effects.
 - [Lumen rendering CVar batch E](cvar-rendering-lumen-batch-e.md) — Twenty-five ScreenProbeGather filters, lighting, and allocation controls with 18 direct value-access candidates.
 - [Ray-tracing geometry CVar batch D](cvar-rendering-raytracing-batch-d.md) — Twenty-five ray-tracing finalization, material/RHI, and WPO controls; 21 have direct value-access candidates, with inactive-path limits.
+- [Rendering shadow CVar batch H](cvar-rendering-shadow-batch-h.md) — Twenty-five final VSM page-marking and non-Nanite controls, with source-placeholder help and limited direct-read evidence called out.
+- [Lumen rendering CVar batch F](cvar-rendering-lumen-batch-f.md) — Twenty-five ScreenProbeGather radiance-cache and screen-trace settings with exact UE defaults and value-access evidence.
+- [Ray-tracing CVar batch E](cvar-rendering-raytracing-batch-e.md) — Twenty-five ray-tracing setup and reflection controls, with limited UE matches, one snapshot/help mismatch, and active-path caveats.

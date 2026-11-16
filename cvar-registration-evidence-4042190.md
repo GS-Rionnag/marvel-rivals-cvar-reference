@@ -163,7 +163,7 @@ A separate pass mapped candidate UTF-16/ASCII name literals to file offsets and 
 Run from PowerShell where `objdump` and `rg` are on `PATH`:
 
 ```powershell
-$exe = 'E:\SteamLibrary\steamapps\common\MarvelRivals\MarvelGame\Marvel\Binaries\Win64\Marvel Rivals Shipping executable'
+$exe = 'Marvel Rivals Shipping executable (local installation path omitted)'
 objdump -d -Mintel -j .text $exe | rg -i '14f9ed15c|1500c22a2|14f81ce2e|15001293c|14f9eb7c5|1500b3310|1500b3314|1500c22b0|150105a58'
 objdump -d -Mintel -j .text $exe | rg -i '14f9ec3e5|14f9ee011|1500b0b58|1500b0b59|14f9edfe4'
 objdump -d -Mintel -j .text $exe | rg -i '14aa064b0|14aa1ffb8|14aa73900|14ab55360|14c3d75e8|14c476c98'
