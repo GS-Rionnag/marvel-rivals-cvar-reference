@@ -9,6 +9,11 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [M2207 CVar batch A](cvar-m2207-batch-a.md) — All 19 currently uncovered exact-case `M2207.*` entries with metadata and scan limits.
+- [Profile CVar batch A](cvar-profile-batch-a.md) — All 19 registered exact-case `Profile.*` entries with source and scan evidence.
+- [Rendering `r.*` CVar batch N](cvar-rendering-r-batch-n.md) — Next 25 `r.*` entries with source metadata and build-scan evidence.
+- [Rendering `r.*` CVar batch M](cvar-rendering-r-batch-m.md) — Next 25 registered render CVars with snapshots, Epic context, and scan limits.
+- [Rendering `r.*` CVar batch L](cvar-rendering-r-batch-l.md) — Twenty-five more rendering settings with exact source data and scan-class distinctions.
 - [Scalability Group CVar batch A](cvar-sg-batch-a.md) — All 21 registered exact-case `sg.*` scalability group names with source evidence and limits.
 - [Marvel CVar batch E](cvar-marvel-batch-e.md) — Final two currently uncovered `marvel.*` names, completing the 32-name family.
 - [Marvel CVar batch D](cvar-marvel-batch-d.md) — Twenty-five additional registered `marvel.*` controls with metadata and scan evidence.
