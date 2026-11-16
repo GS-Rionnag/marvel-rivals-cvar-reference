@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [InputRecord CVar batch A](cvar-inputrecord-batch-a.md) — Seven recording/playback UI settings; timing interpretations are labeled as hypotheses.
 - [ActionBar CVar batch A](cvar-actionbar-batch-a.md) — Bound Action Bar opt-out behavior from supplied help, with UI scope caveats.
 - [Rendering .* CVar batch BX](cvar-rendering-r-batch-bx.md) — 25 additional cloud and volumetric-fog controls with scan caveats.
 - [MarvelSpringArmComponent CVar batch A](cvar-marvelspringarmcomponent-batch-a.md) — Eight camera/portal variables with terse help and runtime caveats.
