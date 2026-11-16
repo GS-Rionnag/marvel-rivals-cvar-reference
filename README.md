@@ -194,3 +194,9 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Rendering HairStrands CVar batch B](cvar-rendering-hairstrands-batch-b.md) — Twenty-five additional `r.HairStrands.*` controls with community help and static use evidence separated from effective runtime behavior.
 - [Physics debug CVar batch B](cvar-physics-debug-batch-b.md) — Forty remaining `p.debug.*` controls with registration help, snapshot values, and distinct object/reference address-scan evidence.
 - [Audio stream-cache and priming CVars](cvar-audio-streaming-batch-a.md) — Twenty-seven `au.streamcache.*` and `au.streamcaching.*` settings for chunk loading, priming, cache sizing, trimming, and diagnostics, with upstream and build-evidence limits.
+- [Lumen Scene CVar batch A](cvar-rendering-lumenscene-batch-a.md) — Twenty-five direct-lighting and surface-cache controls with upstream and build-reference evidence separated from active-path claims.
+- [Lumen Scene CVar batch B](cvar-rendering-lumenscene-batch-b.md) — Twenty-five far-field, camera-update, and global-lighting propagation controls with exact source values and static-use limits.
+- [Lumen Scene CVar batch C](cvar-rendering-lumenscene-batch-c.md) — The remaining eighteen `r.LumenScene.*` entries, including surface-cache updates and card visualization, with override/runtime limits stated.
+- [Nanite CVar batch A](cvar-rendering-nanite-batch-a.md) — Twenty-five compute-material, streaming, rasterization, culling, and tessellation controls with corrected source columns and static evidence.
+- [Audio CVar batch A](cvar-audio-batch-a.md) — Twenty-five alphabetically selected audio variables with help, snapshot/upstream provenance, and address-scan limitations.
+- [GAS projectile CVar batch A](cvar-gas-projectile-batch-a.md) — Twenty-five distinct projectile and ability-system variables, with repeated registration rows deduplicated and translations marked unreviewed.
