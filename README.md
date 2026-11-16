@@ -9,6 +9,9 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [OSSNull CVar batch A](cvar-ossnull-batch-a.md) — Eight exact-case online-subsystem refs with help text and runtime/editability caveats.
+- [CommonUI CVar batch A](cvar-commonui-batch-a.md) — Eight exact-case UI/input refs with snapshots and build-scan caveats.
+- [Rendering `r.*` CVar batch BV](cvar-rendering-r-batch-bv.md) — 25 additional unique rendering controls with source and static-analysis evidence.
 - [LevelStreaming CVar batch A](cvar-levelstreaming-batch-a.md) — All eight remaining exact-case refs with snapshot/Epic differences and editability limits.
 - [Engine CVar batch A](cvar-engine-batch-a.md) — All eight uncovered exact-case `Engine.*` settings with static scan evidence.
 - [Rendering `r.*` CVar batch BU](cvar-rendering-r-batch-bu.md) — 25 more unique sequential rendering controls with source and static-analysis evidence.
