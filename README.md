@@ -9,6 +9,9 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Pakcache CVar batch A](cvar-pakcache-batch-a.md) — All 10 currently uncovered `pakcache.*` entries, with the limits on unit interpretation.
+- [WidgetComponent CVar batch A](cvar-widgetcomponent-batch-a.md) — All 10 currently uncovered exact-case `WidgetComponent.*` entries.
+- [Rendering `r.*` CVar batch BN](cvar-rendering-r-batch-bn.md) — 25 more sequential rendering controls with source and static-analysis evidence.
 - [Rendering `r.*` CVar batch BM](cvar-rendering-r-batch-bm.md) — 25 additional sequential controls with source meanings and static scan evidence.
 - [Rendering `r.*` CVar batch BL](cvar-rendering-r-batch-bl.md) — 25 more sequential render controls with source and scan evidence.
 - [CSV CVar batch A](cvar-csv-batch-a.md) — All 11 remaining lower-case `csv.*` variables, with typo and runtime caveats.
