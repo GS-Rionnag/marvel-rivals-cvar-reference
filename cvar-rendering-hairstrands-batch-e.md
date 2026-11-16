@@ -41,4 +41,4 @@ Static scan evidence is from Marvel Rivals Shipping build `1.1.4042190`. `direct
 - Simulation and strand-rendering variables marked `var` have object-address scan evidence but no registered `ref_rva` value-consumption evidence in this scan. Their descriptions do not prove an in-game change.
 - Snapshot values are not recommendations. Even where a CVar is referenced by code, this evidence does not prove startup `.ini` acceptance or a visual/runtime result.
 
-Sources: [community CVar registry](cvar-community-registry.md), [preserved community registry and snapshot](sources/cvar-research/README.md), and [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis).
+Sources: [community CVar registry](cvar-community-registry.md), [community source notes](EVIDENCE.md#community-sources), and [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis).

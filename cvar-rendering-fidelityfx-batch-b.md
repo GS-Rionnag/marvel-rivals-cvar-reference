@@ -39,4 +39,4 @@ Build evidence comes from static address-reference scanning of Marvel Rivals Shi
 - Address-reference candidates are not a runtime trace. They do not establish that `.ini` overrides are accepted, that any path executes, or what visual or performance change a value causes.
 - Duplicate-row audit: 0 selected names have conflicting type/kind/help records. Snapshot cross-check against the attached dump: 0 mismatches.
 
-Sources: [community CVar registry](cvar-community-registry.md), [preserved community registry and snapshot attachments](sources/cvar-research/README.md), and [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis).
+Sources: [community CVar registry](cvar-community-registry.md), [community source notes](EVIDENCE.md#community-sources), and [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis).
