@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Rendering `r.*` CVar batch AN](cvar-rendering-r-batch-an.md) — 25 additional rendering controls with source meanings and build-scan evidence.
 - [Lowercase `fx.*` CVar batch D](cvar-fx-batch-d.md) — The 18 remaining lower-case effects controls after batch C.
 - [Rendering `r.*` CVar batch AM](cvar-rendering-r-batch-am.md) — 25 more sequential `r.*` settings with source and build-scan context.
 - [ChaosGC CVar batch A](cvar-chaosgc-batch-a.md) — All 15 remaining `ChaosGC.*` controls, with help/snapshot differences and scan evidence.
