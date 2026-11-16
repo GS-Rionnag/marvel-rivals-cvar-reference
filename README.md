@@ -9,6 +9,8 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Hit-impact suppression CVar batch A](cvar-hit-impact-suppression-batch-a.md) — All 11 remaining exact-case `HitImpactSuppression.*` entries, with help and snapshot caveats.
+- [Rendering `r.*` CVar batch BF](cvar-rendering-r-batch-bf.md) — 25 more sequential rendering controls with source and scan evidence.
 - [Trace CVar batch A](cvar-trace-batch-a.md) — All 11 remaining exact-case `Trace.*` registry entries, distinct from `trace.*` and `TraceMgr.*`.
 - [StuckDetector CVar batch A](cvar-stuck-detector-batch-a.md) — All 11 currently uncovered exact-case `StuckDetector.*` entries, with reporting and runtime limits.
 - [Rendering `r.*` CVar batch BE](cvar-rendering-r-batch-be.md) — 25 more sequential render controls with source meanings and scan limits.
