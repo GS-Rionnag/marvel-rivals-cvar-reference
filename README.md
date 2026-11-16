@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [opt CVar batch A](cvar-opt-batch-a.md) — Seven low-frequency controls with translated help marked clearly.
 - [ComputeKernel CVar batch A](cvar-computekernel-batch-a.md) — Compiler-warning display behavior from supplied help.
 - [ClientMassSwarm CVar batch A](cvar-clientmassswarm-batch-a.md) — Seven swarm hit-feedback, knockback, and route entries with unvalidated ranges noted.
 - [localReplay CVar batch A](cvar-localreplay-batch-a.md) — Seven replay variables; unsupported meanings and units are left uncertain.
