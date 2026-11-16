@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Physics general and movement CVar batch N](cvar-physics-general-batch-n.md) — Final eighteen registered `p.*` entries, closing the currently uncovered 1,043-name family.
 - [D3D12 CVar batch A: uppercase namespace](cvar-d3d12-engine-batch-a.md) — First 25 uppercase `D3D12.*` entries, kept distinct from lower-case `d3d12.*` variables.
 - [HitRepFrame CVar batch B](cvar-hitrepframe-batch-b.md) — Final ten `HitRepFrame.*` entries, completing this 35-name family.
 - [HitRepFrame CVar batch A](cvar-hitrepframe-batch-a.md) — First 25 of 35 registered `HitRepFrame.*` controls, with identifier hints marked as unverified.
