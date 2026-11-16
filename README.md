@@ -9,6 +9,10 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Interchange CVar batch A](cvar-interchange-batch-a.md) — All 16 currently uncovered `Interchange.*` entries with source evidence and limits.
+- [World Partition CVar batch B](cvar-worldpartition-batch-b.md) — Final 16 `wp.*` entries, completing the 41-name family.
+- [Rendering `r.*` CVar batch Q](cvar-rendering-r-batch-q.md) — Next 25 `r.*` names with metadata and static access classifications.
+- [Rendering `r.*` CVar batch P](cvar-rendering-r-batch-p.md) — Twenty-five additional rendering entries with source/default/scan provenance.
 - [Wall Run CVar batch A](cvar-wallrun-batch-a.md) — All 16 currently uncovered `WallRun.*` entries with metadata, snapshots, and scan limits.
 - [Asset Pool CVar batch A](cvar-assetpool-batch-a.md) — All 16 registered exact-case `AssetPool.*` entries with source and scan evidence.
 - [Cache CVar batch A](cvar-cache-batch-a.md) — All 17 exact-case `Cache.*` names with source help, snapshots, and static evidence limits.
