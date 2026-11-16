@@ -9,6 +9,9 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [LevelStreaming CVar batch A](cvar-levelstreaming-batch-a.md) — All eight remaining exact-case refs with snapshot/Epic differences and editability limits.
+- [Engine CVar batch A](cvar-engine-batch-a.md) — All eight uncovered exact-case `Engine.*` settings with static scan evidence.
+- [Rendering `r.*` CVar batch BU](cvar-rendering-r-batch-bu.md) — 25 more unique sequential rendering controls with source and static-analysis evidence.
 - [Input CVar batch A](cvar-input-batch-a.md) — All nine exact-case `Input.*` controls with snapshot and loader caveats.
 - [FlyingComponent CVar batch A](cvar-flyingcomponent-batch-a.md) — All nine currently uncovered `FlyingComponent.*` refs, with scan limits.
 - [Rendering `r.*` CVar batch BT](cvar-rendering-r-batch-bt.md) — 25 unique `r.VRS.*` settings with source and static-analysis evidence.
