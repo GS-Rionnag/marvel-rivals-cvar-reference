@@ -9,6 +9,8 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [XInput CVar batch A](cvar-xinput-batch-a.md) — Controller-state update forcing, with platform and runtime caveats.
+- [scene CVar batch A](cvar-scene-batch-a.md) — Seven scene refs with vague help and static evidence scoped carefully.
 - [Level CVar batch A](cvar-level-batch-a.md) — Eight level-management refs with partial snapshots and semantic caveats.
 - [Character CVar batch A](cvar-character-batch-a.md) — Seven character settings, with sparse help and name-based inferences qualified.
 - [SkinWeightProfileManager CVar batch A](cvar-skinweightprofilemanager-batch-a.md) — AllowCPU with static-reference versus string-inventory evidence distinguished.
