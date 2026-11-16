@@ -235,3 +235,11 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Replay CVar batch A](cvar-replay-batch-a.md) — Twenty-five replay settings with source help, captured values, and static evidence separated.
 - [Ability CVar batch B](cvar-ability-general-batch-b.md) — Twenty-five additional ability-system variables with unreviewed translations and override limits.
 - [UI CVar batch B](cvar-ui-batch-b.md) — Twenty-five further interface controls with help, upstream defaults, and build evidence kept distinct.
+- [Replay CVar batch B](cvar-replay-batch-b.md) — Twenty-five replay settings with separate source/default evidence and runtime limits.
+- [Replay CVar batch C](cvar-replay-batch-c.md) — The final `replay.http.ServerRegion` entry; the current registered `replay.*` set is complete.
+- [UI CVar batch C](cvar-ui-batch-c.md) — The final sixteen UI entries, completing current `UI.*` registry coverage.
+- [Ability CVar batch C](cvar-ability-general-batch-c.md) — The final seventeen Ability entries, completing the current `Ability.*` registry set.
+- [HTTP replay CVar batch C](cvar-httpreplay-batch-c.md) — The final two HTTP replay controls, closing current `httpreplay.*` coverage.
+- [Physics general and movement CVar batch B](cvar-physics-general-batch-b.md) — Twenty-five additional actor, movement, and animation-physics variables.
+- [Slate CVar batch B](cvar-slate-batch-b.md) — Twenty-five UI framework variables with help/default mismatches and missing descriptions noted.
+- [Mass CVar batch A](cvar-mass-batch-a.md) — Twenty-five Mass entity, animation, movement, and representation controls with source-backed descriptions.
