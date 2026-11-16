@@ -9,6 +9,12 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Rendering `r.*` CVar batch F](cvar-rendering-r-batch-f.md) — Twenty-five additional registered render variables with source metadata and scan limits.
+- [Audio CVar batch B: uppercase namespace](cvar-audio-upper-batch-b.md) — Final five registered `Audio.*` entries, completing the 30-name uppercase family.
+- [Audio CVar batch A: uppercase namespace](cvar-audio-upper-batch-a.md) — First 25 exact-case `Audio.*` entries; lower-case `au.*` is tracked independently.
+- [AI CVar batch D](cvar-ai-batch-d.md) — Final two registered `ai.*` names, completing the 75-name community-registry family.
+- [AI CVar batch C](cvar-ai-batch-c.md) — Twenty-five additional exact-case `ai.*` entries with help, snapshots, and scan evidence separated.
+- [D3D12 CVar batch B: uppercase namespace](cvar-d3d12-engine-batch-b.md) — Final three uppercase `D3D12.*` names, completing the currently registered 28-name family.
 - [Physics general and movement CVar batch N](cvar-physics-general-batch-n.md) — Final eighteen registered `p.*` entries, closing the currently uncovered 1,043-name family.
 - [D3D12 CVar batch A: uppercase namespace](cvar-d3d12-engine-batch-a.md) — First 25 uppercase `D3D12.*` entries, kept distinct from lower-case `d3d12.*` variables.
 - [HitRepFrame CVar batch B](cvar-hitrepframe-batch-b.md) — Final ten `HitRepFrame.*` entries, completing this 35-name family.
