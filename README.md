@@ -9,6 +9,12 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [D3D12 CVar batch A: uppercase namespace](cvar-d3d12-engine-batch-a.md) — First 25 uppercase `D3D12.*` entries, kept distinct from lower-case `d3d12.*` variables.
+- [HitRepFrame CVar batch B](cvar-hitrepframe-batch-b.md) — Final ten `HitRepFrame.*` entries, completing this 35-name family.
+- [HitRepFrame CVar batch A](cvar-hitrepframe-batch-a.md) — First 25 of 35 registered `HitRepFrame.*` controls, with identifier hints marked as unverified.
+- [Rendering `r.*` CVar batch E](cvar-rendering-r-batch-e.md) — Twenty-five additional `r.*` entries with source defaults, help, and scan evidence.
+- [Physics general and movement CVar batch M](cvar-physics-general-batch-m.md) — Twenty-five more registered `p.*` controls with metadata, snapshot, and access-scan limits.
+- [Physics general and movement CVar batch L](cvar-physics-general-batch-l.md) — Twenty-five additional `p.*` variables with source and scan evidence separated.
 - [Monster CVar batch B](cvar-monster-batch-b.md) — Final ten `monster.*` entries, completing all 35 registered names in this family.
 - [GAS CVar batch B](cvar-gas-batch-b.md) — Final sixteen `GAS.*` entries, completing all 81 registered names in this family.
 - [Physics general and movement CVar batch K](cvar-physics-general-batch-k.md) — Twenty-five further `p.*` entries with source metadata, snapshot values, and access-scan classifications.
