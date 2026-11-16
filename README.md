@@ -9,6 +9,8 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [OpenGL CVar batch A](cvar-opengl-batch-a.md) — All 12 currently uncovered exact-case `OpenGL.*` settings, with backend-selection limits.
+- [Rendering `r.*` CVar batch BB](cvar-rendering-r-batch-bb.md) — 25 more sequential rendering controls with source meanings and scan evidence.
 - [Landscape CVar batch A](cvar-landscape-batch-a.md) — All 12 currently uncovered lower-case `landscape.*` entries, with culling and runtime caveats.
 - [Rendering `r.*` CVar batch BA](cvar-rendering-r-batch-ba.md) — 25 more sequential rendering settings with source and build-scan evidence.
 - [Lowercase `s.*` CVar batch C](cvar-streaming-system-batch-c.md) — Final 13 entries in the 75-name `s.*` family, with snapshots and scan uncertainties.
