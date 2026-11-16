@@ -39,4 +39,4 @@ Build evidence is from static address-reference scanning of Marvel Rivals Shippi
 - Community `var`/`ref` rows and static address references do not establish that a startup `.ini` override is accepted or changes player-visible behavior.
 - Duplicate-row audit: 0 of these 25 names had differing metadata across repeated registry rows; repeated records were not counted as separate CVars.
 
-Sources: [community CVar registry](cvar-community-registry.md), [build-specific CVar inventory](cvar-game-build-4042190.md).
+Sources: [community CVar registry](cvar-community-registry.md), [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis).
