@@ -39,4 +39,3 @@ Community help is source text, not proof of implementation in the installed buil
 - Static address matches can reflect initialization, writes, address passing, or other code. This batch does not establish function-level behavior or runtime execution.
 
 Sources: [community CVar registry](cvar-community-registry.md), [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis), and [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis).
-
