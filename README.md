@@ -9,6 +9,9 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Monster CVar batch B](cvar-monster-batch-b.md) — Final ten `monster.*` entries, completing all 35 registered names in this family.
+- [GAS CVar batch B](cvar-gas-batch-b.md) — Final sixteen `GAS.*` entries, completing all 81 registered names in this family.
+- [Physics general and movement CVar batch K](cvar-physics-general-batch-k.md) — Twenty-five further `p.*` entries with source metadata, snapshot values, and access-scan classifications.
 - [Monster CVar batch A](cvar-monster-batch-a.md) — First 25 uncovered `monster.*` entries with source help, unreviewed translations, and build scan limits.
 - [Rendering `r.*` CVar batch D](cvar-rendering-r-batch-d.md) — Twenty-five additional render settings with type, snapshot, Epic context, and reference-scan evidence separated.
 - [Physics general and movement CVar batch J](cvar-physics-general-batch-j.md) — Twenty-five more `p.*` entries; current remaining names and scan limitations are recorded.
