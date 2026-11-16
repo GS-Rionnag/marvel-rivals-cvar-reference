@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Rendering `r.*` CVar batch AV](cvar-rendering-r-batch-av.md) — 25 more sequential rendering controls with source meanings and static-analysis evidence.
 - [Rendering `r.*` CVar batch AU](cvar-rendering-r-batch-au.md) — 25 more sequential rendering controls with source and scan evidence.
 - [No-dot CVar batch B](cvar-no-dot-batch-b.md) — Final 15 uncovered CVar registry names without a dot, completing that set.
 - [Jarvis CVar batch A](cvar-jarvis-batch-a.md) — All 14 registered `jarvis.*` entries with build-context limits.
