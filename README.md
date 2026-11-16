@@ -9,6 +9,8 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Scalability Group CVar batch A](cvar-sg-batch-a.md) — All 21 registered exact-case `sg.*` scalability group names with source evidence and limits.
+- [Marvel CVar batch E](cvar-marvel-batch-e.md) — Final two currently uncovered `marvel.*` names, completing the 32-name family.
 - [Marvel CVar batch D](cvar-marvel-batch-d.md) — Twenty-five additional registered `marvel.*` controls with metadata and scan evidence.
 - [Grass CVar batch A](cvar-grass-batch-a.md) — All currently uncovered 22 `grass.*` registry names with source meanings and evidence limits.
 - [FX CVar batch B: uppercase namespace](cvar-fx-uppercase-batch-b.md) — Final two `FX.*` entries, completing the 27-name uppercase family.
