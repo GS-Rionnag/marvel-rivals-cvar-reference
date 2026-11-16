@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Rendering `r.*` CVar batch AI](cvar-rendering-r-batch-ai.md) — 25 more sequential rendering controls with source meanings and static-analysis limits.
 - [Rendering `r.*` CVar batch AH](cvar-rendering-r-batch-ah.md) — 25 more sequential rendering controls with source meanings and static-analysis limits.
 - [Rendering `r.*` CVar batch AG](cvar-rendering-r-batch-ag.md) — 25 more sequential controls with source meanings and static scan limits.
 - [RHI CVar batch A](cvar-rhi-batch-a.md) — All 13 currently uncovered `RHI.*` entries; `RHI.MaximumFrameLatency` is covered in the CVar override guide.
