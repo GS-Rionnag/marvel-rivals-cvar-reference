@@ -63,6 +63,7 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Fast Array networking CVars](cvar-fast-array-sharing.md) — Build-specific comparison/hash-path evidence for `net.ShareFastArrayCompare` and per-entry ID-field filtering evidence for `net.FastArrayIgnoreLocalID`; exact source field semantics remain open.
 - [Foliage CVars in build 4042190](cvar-foliage-family.md) — Definitions for all 22 `foliage.*` variables and six related commands, with local object-address references, UE 5.9 matches, captured values, and the limits on removal claims.
 - [Portal renderer CVars in build 4042190](cvar-game-build-4042190-portal-family.md) — Per-candidate notes for all 74 `m.Portal.*` strings, including portal Lumen quality controls, scene-capture budgets, occlusion, screen percentage, and behavior-sensitive settings.
+- [Client Mass CVar batch B](cvar-clientmass-batch-b.md) — The remaining 38 registered `clientmass.*` variables; all have help text but no captured snapshot or Epic default.
 - [Client Mass CVar batch A](cvar-clientmass-batch-a.md) — Twenty-five Mass framework variables, all registrations with community help but no snapshot or Epic default.
 - [Mass post-rep movement CVars](cvar-mass-post-rep-movement.md) — Two undocumented general/Zombie switches with matching guarded list-processing paths; parallel scheduling semantics remain open.
 - [Network replicated-array update limits](cvar-network-array-update-limits.md) — Two int32 settings with blank help compared with array change/deletion counts in a property-stream path; exceeding either limit reaches a false-return error path.
@@ -169,6 +170,7 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Physics debug CVar batch A](cvar-physics-debug-batch-a.md) — Twenty-five Chaos/Geometry Collection diagnostics and workarounds, with sparse help and no-runtime-proof caveats.
 - [Rigid Body Node and Chaos Cloth CVars](cvar-physics-rigidbody-chaoscloth.md) — Twenty-five simulation, solver, collision, timing, and debug controls with source distinctions and static-reference limits.
 
+- [Marvel residual CVar batch C](cvar-marvel-residual-batch-c.md) — The final ten registered `Marvel.*` controls, with unreviewed translation and behavior limits called out.
 - [Marvel gameplay CVar batch B](cvar-marvel-gameplay-batch-b.md) — Twenty-five additional game-specific controls with Chinese help translations marked unreviewed and static evidence qualified.
 - [Marvel ability/event CVar batch A](cvar-marvel-ability-events-batch-a.md) — Twenty-three ability, component-cache, attribute-event, and GameState controls with unreviewed translation provenance noted.
 - [Game-specific CVar descriptions from embedded text](cvar-game-specific-embedded-help.md) — Eighty-seven registered game-specific controls with clearly qualified nearby-text interpretations and static-reference limits.
@@ -184,3 +186,7 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Slate CVar batch A](cvar-slate-batch-a.md) — Twenty-five widget rendering, accessibility, text, and input controls with snapshot/upstream context and static-reference limits.
 
 - [Networked physics predictive-interpolation CVars](cvar-networked-physics-predictive-interpolation.md) — Twenty-five correction, extrapolation, and diagnostic controls, with the community/Epic angle-unit discrepancy preserved.
+
+- [Demo replay and hologram CVar batch D](cvar-demo-batch-d.md) — Twenty-five fast-forward, checkpoint, replay-networking, and hologram controls with source/translation provenance and static-evidence caveats.
+
+- [AI navigation CVar batch A](cvar-ai-navigation-batch-a.md) — Twenty-three navigation mesh, dirty-area, navlink, and AI-pathing controls with community/upstream provenance and static-evidence limits.
