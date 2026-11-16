@@ -46,5 +46,5 @@ Build evidence comes from static address-reference scanning of Marvel Rivals Shi
 - Snapshot values are captured values, not recommendations. A dash in the Epic column means no exact UE 5.9 default was recorded.
 - Static address references establish neither runtime execution nor that an override affects the match. Network settings may affect client/server behavior and require controlled testing before recommendation.
 
-Related guides include [Network batch A](cvar-network-batch-a.md), [Network batch L](cvar-network-batch-l.md), [Fast Array sharing](cvar-fast-array-sharing.md), and the [community CVar registry](cvar-community-registry.md). Build scan scope is summarized in [the address-reference scan](sources/cvar-research/build-4042190-cvar-address-hits.tsv).
+Related guides include [Network batch A](cvar-network-batch-a.md), [Network batch L](cvar-network-batch-l.md), [Fast Array sharing](cvar-fast-array-sharing.md), and the [community CVar registry](cvar-community-registry.md). Build scan scope is summarized in [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis).
 
