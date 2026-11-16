@@ -63,6 +63,7 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Fast Array networking CVars](cvar-fast-array-sharing.md) — Build-specific comparison/hash-path evidence for `net.ShareFastArrayCompare` and per-entry ID-field filtering evidence for `net.FastArrayIgnoreLocalID`; exact source field semantics remain open.
 - [Foliage CVars in build 4042190](cvar-foliage-family.md) — Definitions for all 22 `foliage.*` variables and six related commands, with local object-address references, UE 5.9 matches, captured values, and the limits on removal claims.
 - [Portal renderer CVars in build 4042190](cvar-game-build-4042190-portal-family.md) — Per-candidate notes for all 74 `m.Portal.*` strings, including portal Lumen quality controls, scene-capture budgets, occlusion, screen percentage, and behavior-sensitive settings.
+- [Client Mass CVar batch A](cvar-clientmass-batch-a.md) — Twenty-five Mass framework variables, all registrations with community help but no snapshot or Epic default.
 - [Mass post-rep movement CVars](cvar-mass-post-rep-movement.md) — Two undocumented general/Zombie switches with matching guarded list-processing paths; parallel scheduling semantics remain open.
 - [Network replicated-array update limits](cvar-network-array-update-limits.md) — Two int32 settings with blank help compared with array change/deletion counts in a property-stream path; exceeding either limit reaches a false-return error path.
 - [Network CVar batch A](cvar-network-batch-a.md) — Twenty-five networking variables with community help/snapshot values, local reference evidence, and limits on what static references establish.
@@ -168,8 +169,12 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Physics debug CVar batch A](cvar-physics-debug-batch-a.md) — Twenty-five Chaos/Geometry Collection diagnostics and workarounds, with sparse help and no-runtime-proof caveats.
 - [Rigid Body Node and Chaos Cloth CVars](cvar-physics-rigidbody-chaoscloth.md) — Twenty-five simulation, solver, collision, timing, and debug controls with source distinctions and static-reference limits.
 
+- [Marvel gameplay CVar batch B](cvar-marvel-gameplay-batch-b.md) — Twenty-five additional game-specific controls with Chinese help translations marked unreviewed and static evidence qualified.
+- [Marvel ability/event CVar batch A](cvar-marvel-ability-events-batch-a.md) — Twenty-three ability, component-cache, attribute-event, and GameState controls with unreviewed translation provenance noted.
 - [Game-specific CVar descriptions from embedded text](cvar-game-specific-embedded-help.md) — Eighty-seven registered game-specific controls with clearly qualified nearby-text interpretations and static-reference limits.
 
+- [Demo CVar batch C](cvar-demo-batch-c.md) — Twenty-five additional replay, recording, and related demo variables; missing help and Chinese translations are clearly marked.
+- [Replay recording and checkpoint CVar batch A](cvar-demo-recording-checkpoint-batch-a.md) — Twenty-five demo recording/checkpoint controls with source-separated defaults, snapshots, and static-reference limits.
 - [Replay memory and playback CVars](cvar-demo-replay-memory-playback-batch-a.md) — Twenty-eight replay memory and playback controls, with source-separated descriptions and unknown behavior left unresolved.
 
 - [Geometry Collection, Cloth, and Modular Vehicle physics CVars](cvar-physics-geometrycloth-vehicles.md) — Twenty-two destructible-geometry, cloth, and modular-vehicle controls with snapshot/upstream provenance and static-reference limits.
@@ -177,3 +182,5 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [AbilitySystem CVar batch D](cvar-ability-system-batch-d.md) — Three gameplay-cue, damage-processing, and asset-table lookup controls with registry-help provenance and limited static references.
 
 - [Slate CVar batch A](cvar-slate-batch-a.md) — Twenty-five widget rendering, accessibility, text, and input controls with snapshot/upstream context and static-reference limits.
+
+- [Networked physics predictive-interpolation CVars](cvar-networked-physics-predictive-interpolation.md) — Twenty-five correction, extrapolation, and diagnostic controls, with the community/Epic angle-unit discrepancy preserved.
