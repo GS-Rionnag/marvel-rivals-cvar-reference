@@ -144,3 +144,6 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Lumen rendering CVar batch C](cvar-rendering-lumen-batch-c.md) — Twenty-five ReSTIR gather continuation and adjacent Lumen controls, with exact UE 5.9 matches and activation/editability limits noted.
 - [Rendering shadow CVar batch D](cvar-rendering-shadow-batch-d.md) — Twenty-five additional shadow and distance-field settings, with five direct value-access candidates separated from setup evidence.
 - [Scene-capture and color CVar batch A](cvar-rendering-scene-color-batch-a.md) — Eighteen scene-capture, color-grade, debug, and tonemapper controls with two direct reads and exact upstream matches distinguished.
+- [Rendering shadow CVar batch E](cvar-rendering-shadow-batch-e.md) — Twenty-five additional shadow/pre-shadow, local-light scalability, and scene controls, with six direct value-access entries.
+- [Lumen reflections CVar batch A](cvar-rendering-lumen-reflections-batch-a.md) — Twenty-five reflection controls with UE 5.9 help/defaults, one help gap, and twenty direct value-access candidates.
+- [Ray-tracing geometry CVar batch C](cvar-rendering-raytracing-batch-c.md) — Twenty-five geometry inclusion, LOD, landscape, and build-budget controls, including two documented source/default mismatches.
