@@ -1,0 +1,41 @@
+# Demo and replay CVar batch E
+
+This guide covers the next 25 alphabetically sorted currently undocumented registered `demo.*` variables. The help strings are registry descriptions, snapshots are captured values, and exact-name Epic UE 5.9 data is an upstream reference. None alone proves that the corresponding game path is active.
+
+The static address evidence comes from Marvel Rivals Shipping build `1.1.4042190`; direct-memory candidates are not classified as reads versus writes and object-address matches do not demonstrate value consumption. This batch has not been tested through a controlled startup override or replay session.
+
+| Exact CVar | Type / kind | Snapshot | Epic 5.9 default | Supplied help / translation | Build address evidence and limits |
+| --- | --- | ---: | ---: | --- | --- |
+| `demo.HologramReplay.OpenAudio` | int32 (`ref`) | `1` | `—` | No explanatory help supplied; exact behavior unresolved. | `ref_rva`: 1 direct-memory candidate(s), 1 address-taking reference(s); `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.HologramReplay.PlaybackCompleteStop` | int32 (`ref`) | `1` | `—` | No explanatory help supplied; exact behavior unresolved. | `ref_rva`: 5 direct-memory candidate(s), 1 address-taking reference(s); `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.HologramReplay.SelfManagedDriver` | int32 (`ref`) | `1` | `—` | 0=legacy MGI->PlayReplay single driver. 1=self-managed per-session named DemoNetDriver (Phase2 dir A). Only effective when demo.HologramReplay.MultiSessionPath=1. *(community registry help)* | `ref_rva`: 5 direct-memory candidate(s), 1 address-taking reference(s); `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.HologramReplay.StartLive` | int32 (`var`) | `1` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.HologramReplay.UpdateLocalPlayerState` | bool (`ref`) | `true` | `—` | No explanatory help supplied; exact behavior unresolved. | `ref_rva`: 1 direct-memory candidate(s), 1 address-taking reference(s); `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.IncreaseRepPrioritizeThreshold` | float (`var`) | `0.9` | `0.9` | The % of Replicated to Prioritized actors at which prioritize time will be decreased. *(community registry help)* | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.InstantReplayTaskTimeout` | float (`var`) | `15` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.InternalPauseChannels` | int32 (`var`) | `1` | `1` | If true, run standard logic for PauseChannels rather than letting the game handle it via FOnPauseChannelsDelegate. *(community registry help)* | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.JumpToEndOfLiveReplay` | int32 (`var`) | `0` | `1` | If true, fast forward to a few seconds before the end when starting playback, if the replay is still being recorded. *(community registry help)* | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.LateActorDormancyCheck` | int32 (`var`) | `1` | `1` | If true, check if an actor should become dormant as late as possible- when serializing it to the demo archive. *(community registry help)* | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.LateDestructionInfoPrioritize` | int32 (`var`) | `0` | `0` | If true, process destruction infos at the end of the prioritization phase. *(community registry help)* | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.LevelConsiderTimeOut` | int32 (`var`) | `90` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.LimitProcessPacket` | bool (`var`) | `true` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.LoadCheckpointGarbageCollect` | int32 (`var`) | `0` | `1` | If nonzero, CollectGarbage will be called during LoadCheckpoint after the old actors and connection are cleaned up. *(community registry help)* | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.LogHttpRequest` | int32 (`var`) | `0` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.Loop` | int32 (`var`) | `0` | `0` | <1> : play replay from beginning once it reaches the end / <0> : stop replay at the end *(community registry help)* | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.LoopCount` | int32 (`ref`) | `0` | `0` | If > 1, will play the replay that many times before stopping. *(community registry help)* | `ref_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.LowDelayMode.UseGRPC` | int32 (`var`) | `1` | `—` | 1: GRPC, 0: Http *(community registry help)* | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.MaxBufferTime` | float (`var`) | `1` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.MaxReplayTaskTimeout` | float (`var`) | `30` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.MaximumRecDestructionInfoTime` | float (`var`) | `0.2` | `0.2` | Maximum percentage of frame to use replicating destruction infos, if per frame limit is enabled. *(community registry help)* | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.MaximumRepPrioritizePercent` | float (`var`) | `0.7` | `0.7` | Maximum percent of time that may be spent prioritizing actors, regardless of throttling. *(community registry help)* | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.MinRecordHz` | float (`var`) | `0` | `0` | Minimum number of demo frames recorded per second (use with care) *(community registry help)* | `obj_rva`: 2 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.MinimumRepPrioritizePercent` | float (`var`) | `0.3` | `0.3` | Minimum percent of time that must be spent prioritizing actors, regardless of throttling. *(community registry help)* | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+| `demo.NetSummary` | int32 (`var`) | `1` | `—` | whether enable net summary *(community registry help)* | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); execution path not traced. |
+
+## Interpretation limits
+
+- Recording, checkpoint, fast-forward, network replay, and storage labels are not assumed to share one runtime implementation; the table preserves per-name evidence.
+- Missing help remains unresolved; names are not substituted for behavior descriptions.
+- Registry presence and local static references do not establish `.ini` acceptance, editability, or effect on saved/replayed games.
+
+Sources: [community CVar registry](cvar-community-registry.md), [Chinese help translations](cvar-chinese-help-translations.md), and [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis).

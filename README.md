@@ -205,3 +205,8 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Path Tracing CVar batch A](cvar-rendering-pathtracing-batch-a.md) — Twenty-five path-tracing controls with supplied help, upstream matches, and build scan limits.
 - [GAS projectile CVar batch B](cvar-gas-projectile-batch-b.md) — The final seven registered projectile entries, including virtual-projectile controls and unreviewed help translations.
 - [Audio CVar batch B](cvar-audio-batch-b.md) — Twenty-five additional audio variables with source-separated help, snapshot values, Epic references, and static scan caveats.
+- [HairStrands CVar batch D](cvar-rendering-hairstrands-batch-d.md) — Twenty-five more hair projection, LOD, path tracing, rasterization, ray tracing, lighting, and shadow controls.
+- [Nanite CVar batch C](cvar-rendering-nanite-batch-c.md) — Twenty-five additional Nanite streaming, visualization, debug, and rasterization controls, with missing snapshot values marked.
+- [FidelityFX and FSR CVar batch A](cvar-rendering-fidelityfx-batch-a.md) — Twenty-five upscaling, frame-interpolation, denoising, and FidelityFX controls with upstream/static evidence limits.
+- [Virtual Texturing CVar batch A](cvar-rendering-vt-batch-a.md) — Twenty-five virtual texture allocation, streaming, transcoding, and upload controls with source provenance and build-reference limits.
+- [Demo and replay CVar batch E](cvar-demo-batch-e.md) — Twenty-five additional recording, checkpoint, replay, and related demo controls, with source provenance and runtime limits.
