@@ -9,6 +9,8 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Lowercase `rhi.*` CVar batch A](cvar-rhi-lowercase-batch-a.md) — All 11 remaining lower-case entries, distinct from uppercase `RHI.*`.
+- [Rendering `r.*` CVar batch BI](cvar-rendering-r-batch-bi.md) — 25 more sequential render controls with source meanings and static evidence.
 - [Bink CVar batch A](cvar-bink-batch-a.md) — All 11 currently uncovered lower-case `bink.*` entries, with static-analysis limits.
 - [Rendering `r.*` CVar batch BH](cvar-rendering-r-batch-bh.md) — 25 more sequential rendering controls with source and scan evidence.
 - [Uppercase `httpReplay.*` CVar batch A](cvar-httpreplay-uppercase-batch-a.md) — All 11 exact-case entries, distinct from lower-case `httpreplay.*`.
