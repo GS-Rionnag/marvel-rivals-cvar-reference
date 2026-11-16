@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [VM CVar batch A](cvar-vm-batch-a.md) — All 14 currently uncovered `vm.*` settings with snapshots and build-scan caveats.
 - [Rendering `r.*` CVar batch AW](cvar-rendering-r-batch-aw.md) — 25 additional sequential rendering controls with source and scan evidence.
 - [Rendering `r.*` CVar batch AV](cvar-rendering-r-batch-av.md) — 25 more sequential rendering controls with source meanings and static-analysis evidence.
 - [Rendering `r.*` CVar batch AU](cvar-rendering-r-batch-au.md) — 25 more sequential rendering controls with source and scan evidence.

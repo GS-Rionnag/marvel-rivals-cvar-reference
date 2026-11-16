@@ -1,0 +1,31 @@
+# Vector VM CVar batch A
+
+This guide documents the 14 currently uncovered lower-case `vm.*` `var`/`ref` entries. Their help describes vector-VM bytecode optimization and execution, input/output batching, memory chunking, threading, and diagnostic statistics. All 14 have exact-name Epic UE 5.9 reference entries. The registry and captured snapshot do not establish that the installed game uses the same engine implementation or values.
+
+The scan counts below match the registry's address fields against local build 1.1.4042190. Direct-memory candidates do not establish access direction or executed behavior; address-taking candidates alone do not establish a value read. No runtime or mod-loader override test was performed.
+
+| Exact CVar | Type / kind | Snapshot | Epic 5.9 default | Supplied meaning and provenance | Build scan evidence and limits |
+| --- | --- | --- | --- | --- | --- |
+| `vm.BatchPackedVMOutput` | `int32` (`ref`) | `1` | `1` | Community/Epic help: values above `0` pack output elements and batch them in a branch-free form. | `ref_rva`: 1 direct-memory candidate and 1 address-taking reference; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `vm.BatchVMInput` | `int32` (`ref`) | `0` | `0` | Community/Epic help: values above `0` batch input elements. | `ref_rva`: no direct-memory candidate; 1 address-taking reference. `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `vm.BatchVMOutput` | `int32` (`ref`) | `0` | `0` | Community/Epic help: values above `0` batch output elements. | `ref_rva`: no direct-memory candidate; 1 address-taking reference. `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `vm.ChunkSizeInBytes` | `int32` (`ref`) | `32768` | `32768` | Community/Epic help: bytes per VM chunk, ideally no larger than L1 cache size. | `ref_rva`: no direct-memory candidate; 1 address-taking reference. `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `vm.DetailedVMScriptStats` | `int32` (`ref`) | `0` | `0` | Community/Epic help: values above `0` emit statistics for the vector VM's internal module calls. | `ref_rva`: no direct-memory candidate; 1 address-taking reference. `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `vm.FreeUnoptimizedByteCode` | `int32` (`ref`) | `1` | `1` | Community/Epic help asks whether to free the original unoptimized bytecode after VM bytecode optimization. | `ref_rva`: no direct-memory candidate; 1 address-taking reference. `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `vm.InstancesPerChunk` | `int32` (`ref`) | `128` | `128` | Community/Epic help: number of instances in each VM chunk. | `ref_rva`: 3 direct-memory candidates and 1 address-taking reference; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `vm.MaxThreadsPerScript` | `int32` (`ref`) | `8` | `8` | Community/Epic help: maximum number of threads per script; `0` means “as many as necessary.” Resource limits and scheduling behavior are not described. | `ref_rva`: 1 direct-memory candidate and 1 address-taking reference; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `vm.OptimizeVMByteCode` | `int32` (`ref`) | `1` | `1` | Community/Epic help: values above `0` enable vector-VM bytecode optimization at runtime. | `ref_rva`: 1 direct-memory candidate and 1 address-taking reference; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `vm.PageSizeInKB` | `int32` (`ref`) | `64` | `64` | Community/Epic help: minimum allocation per VM instance. It says there are 64 pages and gives a total-memory formula using `GVVMPageSizeInKB × 64 × 1024`; the help's `GVVM` name is not reconciled with this CVar name. | `ref_rva`: 2 direct-memory candidates and 1 address-taking reference; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `vm.Parallel` | `int32` (`ref`) | `1` | `1` | Community/Epic help: values above `0` enable vector-VM chunk-level parallelism. | `ref_rva`: 2 direct-memory candidates and 1 address-taking reference; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `vm.ParallelChunksPerBatch` | `int32` (`ref`) | `4` | `4` | Community/Epic help: number of chunks processed per task when running in parallel. | `ref_rva`: 1 direct-memory candidate and 1 address-taking reference; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `vm.SafeOptimizedKernels` | `int32` (`ref`) | `1` | `1` | Community/Epic help: values above `0` make optimized vector-VM bytecode use the “safe” kernel variants. The implementation and safety/performance tradeoff are not described. | `ref_rva`: 1 direct-memory candidate and 1 address-taking reference; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+| `vm.UseOptimizedVMByteCode` | `int32` (`ref`) | `1` | `1` | Community/Epic help: values above `0` execute optimized vector-VM bytecode at runtime. | `ref_rva`: 1 direct-memory candidate and 1 address-taking reference; `obj_rva`: 3 direct-memory candidates and 1 address-taking reference. |
+
+## Interpretation limits
+
+- The help separates generating optimized bytecode (`OptimizeVMByteCode`) from executing it (`UseOptimizedVMByteCode`) and from releasing the original (`FreeUnoptimizedByteCode`). It does not document their exact order, runtime fallback, or compatibility constraints.
+- Batching and chunk/thread settings describe data organization and scheduling at a high level; the supplied descriptions do not state valid ranges, clamping, memory ceilings, or effects on determinism.
+- Epic UE 5.9 defaults and descriptions are upstream reference context, not proof that Marvel Rivals uses the same version or implementation. Matching snapshot values likewise do not prove active defaults.
+- The static address scan is not a function-level analysis and does not confirm reads, writes, or execution in a match. Whether the loader accepts these variables in startup `.ini` overrides remains unverified.
+
+Sources: [community registry](cvar-community-registry.md), [build-specific CVar inventory](EVIDENCE.md#build-specific-static-analysis), and [snapshot and address-reference scan provenance](EVIDENCE.md#community-sources).
