@@ -25,4 +25,4 @@ The supplied registry help labels these as debug, filtering, and drawing control
 
 The build 1.1.4042190 address scan reports candidate references to both registry address fields. An address-taking (`lea`) match only obtains an address; a direct-memory instruction can be a read, write, or initialization. These counts do not identify the exact runtime branch or prove the claimed behavior. In particular, most entries have only one `ref_rva` direct-memory candidate in the scan, and the common `obj_rva` matches do not independently establish per-variable use.
 
-Sources: [community CVar registry](cvar-community-registry.md), [snapshot and scan provenance](sources/cvar-research/README.md#local-build-address-reference-scan), and [build-specific registration/static-analysis notes](cvar-registration-evidence-4042190.md).
+Sources: [community CVar registry](cvar-community-registry.md), [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis), and [build-specific registration/static-analysis notes](cvar-registration-evidence-4042190.md).
