@@ -34,8 +34,6 @@ Build evidence is from static address-reference scanning of Marvel Rivals Shippi
 
 | Exact CVar | Type | Snapshot | Epic 5.9 default | Supplied help | Build address evidence and limits |
 | --- | --- | ---: | ---: | --- | --- |
-| `r.Lumen.ScreenProbeGather.ShortRangeAO.Temporal` | int32 (`var`) | `1` | `—` | Whether to run temporal accumulation on Short Range AO | The scan found CVar-object setup/address references only; this `var` has no `ref_rva`, so runtime value reads were not established. |
-| `r.Lumen.ScreenProbeGather.ShortRangeAO.Temporal.NeighborhoodClampScale` | float (`var`) | `1` | `—` | Scales how permissive is neighborhood clamp. Higher values increase ghosting, but reduce noise and instability. Values <= 0 will disable neighborhood clamp. | The scan found CVar-object setup/address references only; this `var` has no `ref_rva`, so runtime value reads were not established. |
 | `r.Lumen.ScreenProbeGather.Temporal` | int32 (`ref`) | `1` | `1` | Whether to use a temporal filter | 4 direct-memory candidate(s) and 2 address-taken reference(s); instruction context and runtime use were not traced. |
 | `r.Lumen.ScreenProbeGather.Temporal.ClearHistoryEveryFrame` | int32 (`ref`) | `0` | `0` | Whether to clear the history every frame for debugging | 3 direct-memory candidate(s) and 2 address-taken reference(s); instruction context and runtime use were not traced. |
 | `r.Lumen.ScreenProbeGather.Temporal.DebugForceTracesMoving` | int32 (`ref`) | `0` | `0` | No help text was supplied. | 3 direct-memory candidate(s) and 2 address-taken reference(s); instruction context and runtime use were not traced. |
