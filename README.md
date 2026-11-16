@@ -9,6 +9,8 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [AssetValidation CVar batch A](cvar-assetvalidation-batch-a.md) — All nine remaining `AssetValidation.*` entries, with per-name build presence and editability limits.
+- [Rendering `r.*` CVar batch BR](cvar-rendering-r-batch-br.md) — 25 more unique sequential rendering controls with source and static evidence.
 - [ProfileLibrary CVar batch A](cvar-profilelibrary-batch-a.md) — All 10 currently uncovered `ProfileLibrary.*` entries with help and scan caveats.
 - [Rendering `r.*` CVar batch BQ](cvar-rendering-r-batch-bq.md) — 25 more unique sequential rendering CVars with source and build scan evidence.
 - [UMG CVar batch A](cvar-umg-batch-a.md) — All 10 currently uncovered exact-case `UMG.*` entries with static-analysis and runtime caveats.
