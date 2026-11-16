@@ -210,3 +210,8 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [FidelityFX and FSR CVar batch A](cvar-rendering-fidelityfx-batch-a.md) — Twenty-five upscaling, frame-interpolation, denoising, and FidelityFX controls with upstream/static evidence limits.
 - [Virtual Texturing CVar batch A](cvar-rendering-vt-batch-a.md) — Twenty-five virtual texture allocation, streaming, transcoding, and upload controls with source provenance and build-reference limits.
 - [Demo and replay CVar batch E](cvar-demo-batch-e.md) — Twenty-five additional recording, checkpoint, replay, and related demo controls, with source provenance and runtime limits.
+- [HairStrands CVar batch E](cvar-rendering-hairstrands-batch-e.md) — Twenty-five additional hair shading, geometry, AO, and sky-light controls with source mismatches and incomplete help called out.
+- [FidelityFX and FSR CVar batch B](cvar-rendering-fidelityfx-batch-b.md) — Twenty-five more upscaling, denoising, and frame-generation controls with upstream and static evidence limits.
+- [Physics general and movement CVar batch A](cvar-physics-general-batch-a.md) — Twenty-five actor movement, overlap, collision, animation-dynamics, and projectile-related controls with help and scan limitations.
+- [Audio CVar batch C](cvar-audio-batch-c.md) — Twenty-five additional audio controls with source help, snapshot/upstream values, and build-scan limits separated.
+- [Nanite CVar batch D](cvar-rendering-nanite-batch-d.md) — The last twenty-four registered Nanite controls, completing this family’s current registry coverage.
