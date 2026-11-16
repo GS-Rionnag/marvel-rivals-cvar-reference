@@ -150,3 +150,6 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Rendering shadow CVar batch F](cvar-rendering-shadow-batch-f.md) — Twenty-five shadow scalability, VSM, spot-light, and stencil controls, with nine direct reads and override uncertainty.
 - [Lumen rendering CVar batch D](cvar-rendering-lumen-batch-d.md) — Twenty-five ScreenProbe/reflection controls; twenty have exact UE 5.9 matches, while renderer selection and game-specific semantics remain qualified.
 - [Ray-traced global illumination CVar batch A](cvar-rendering-raytracing-gi-batch-a.md) — Twenty-five ray-tracing GI and final-gather controls with four direct reads and a snapshot/help mismatch recorded.
+- [Rendering shadow CVar batch G](cvar-rendering-shadow-batch-g.md) — Twenty-five VSM cache, clipmap, and filtering controls, all with direct value-access candidates but unverified runtime effects.
+- [Lumen rendering CVar batch E](cvar-rendering-lumen-batch-e.md) — Twenty-five ScreenProbeGather filters, lighting, and allocation controls with 18 direct value-access candidates.
+- [Ray-tracing geometry CVar batch D](cvar-rendering-raytracing-batch-d.md) — Twenty-five ray-tracing finalization, material/RHI, and WPO controls; 21 have direct value-access candidates, with inactive-path limits.
