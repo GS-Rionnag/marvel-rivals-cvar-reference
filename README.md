@@ -227,3 +227,11 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Path Tracing CVar batch C](cvar-rendering-pathtracing-batch-c.md) — The last nineteen registered Path Tracing controls, closing the current `r.PathTracing.*` group.
 - [Ability CVar batch A](cvar-ability-general-batch-a.md) — Twenty-five game ability controls with unreviewed help translations and runtime/override limits noted.
 - [UI CVar batch A](cvar-ui-batch-a.md) — Twenty-five interface and player-facing UI variables with supplied help and static evidence caveats.
+- [HairStrands CVar batch G](cvar-rendering-hairstrands-batch-g.md) — Twenty-five additional hair-strand controls, with source inconsistencies and runtime limits noted.
+- [Lumen Scene CVar batch E](cvar-rendering-lumenscene-batch-e.md) — The final 25 registered LumenScene controls, completing the current family.
+- [Audio CVar batch E](cvar-audio-batch-e.md) — The final twelve currently uncovered audio variables, closing the `au.*` group.
+- [Demo and replay CVar batch G](cvar-demo-batch-g.md) — The final 23 currently uncovered demo controls, completing the registered `demo.*` group.
+- [HTTP replay CVar batch B](cvar-httpreplay-batch-b.md) — Twenty-five further HTTP replay retry, storage, caching, and timing controls.
+- [Replay CVar batch A](cvar-replay-batch-a.md) — Twenty-five replay settings with source help, captured values, and static evidence separated.
+- [Ability CVar batch B](cvar-ability-general-batch-b.md) — Twenty-five additional ability-system variables with unreviewed translations and override limits.
+- [UI CVar batch B](cvar-ui-batch-b.md) — Twenty-five further interface controls with help, upstream defaults, and build evidence kept distinct.
