@@ -9,6 +9,13 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Rewind CVar batch A](cvar-rewind-batch-a.md) — Twenty-five of 38 registered `Rewind.*` entries, with source help, snapshots, upstream context, and scan limitations.
+- [Rendering `r.*` CVar batch B](cvar-rendering-r-batch-b.md) — Twenty-five additional registered rendering controls with source values, Epic context, and static evidence limits separated.
+- [Physics general and movement CVar batch E](cvar-physics-general-batch-e.md) — Twenty-five additional `p.*` controls with metadata, captured values, and static scan evidence limits.
+- [Swift CVar batch A](cvar-swift-batch-a.md) — Twenty-five of 39 registered `Swift.*` names, separating supplied help, snapshot observations, and Epic reference context.
+- [World Partition `wp.*` CVar batch A](cvar-worldpartition-batch-a.md) — Twenty-five streaming, content-bundle, spatial-hash, HLOD, and warmup controls with source and static-evidence limits.
+- [GAS CVar batch A](cvar-gas-batch-a.md) — Twenty-five currently uncovered `GAS.*` entries with source help, snapshot and UE reference provenance, and scan limits.
+- [Rendering `r.*` CVar batch A](cvar-rendering-r-batch-a.md) — Twenty-five currently uncovered controls spanning global-distance-field/sky lighting, materials, textures, translucency, shaders, and Composure.
 - [Streaming system CVar batch B](cvar-streaming-system-batch-b.md) — Twenty-five additional streaming-system controls with source provenance and limits.
 - [Streaming system CVar batch A](cvar-streaming-system-batch-a.md) — First 25 streaming-system settings with upstream meaning and game-build evidence limits.
 - [Slate CVar batch D](cvar-slate-batch-d.md) — Final nine currently uncovered Slate variables, completing the documented family.
