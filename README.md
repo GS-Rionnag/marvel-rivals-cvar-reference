@@ -167,3 +167,9 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Rigid Body Node and Chaos Cloth CVars](cvar-physics-rigidbody-chaoscloth.md) — Twenty-five simulation, solver, collision, timing, and debug controls with source distinctions and static-reference limits.
 
 - [Game-specific CVar descriptions from embedded text](cvar-game-specific-embedded-help.md) — Eighty-seven registered game-specific controls with clearly qualified nearby-text interpretations and static-reference limits.
+
+- [Replay memory and playback CVars](cvar-demo-replay-memory-playback-batch-a.md) — Twenty-eight replay memory and playback controls, with source-separated descriptions and unknown behavior left unresolved.
+
+- [Geometry Collection, Cloth, and Modular Vehicle physics CVars](cvar-physics-geometrycloth-vehicles.md) — Twenty-two destructible-geometry, cloth, and modular-vehicle controls with snapshot/upstream provenance and static-reference limits.
+
+- [AbilitySystem CVar batch D](cvar-ability-system-batch-d.md) — Three gameplay-cue, damage-processing, and asset-table lookup controls with registry-help provenance and limited static references.
