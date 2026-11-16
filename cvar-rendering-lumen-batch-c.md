@@ -1,0 +1,60 @@
+# Lumen reflections and ReSTIR CVars: batch C
+
+This page documents the next 25 uncovered registered `r.Lumen.*` variables. Five finish the ReSTIR temporal-history and upsample group; the other twenty cover Lumen reflections, bilateral filtering, distant screen traces, hair traces, and hardware ray tracing. Each name has an exact Unreal Engine 5.9 reference match in the community registry cross-reference. That is upstream context: Marvel Rivals' exact Unreal revision and renderer configuration are not established.
+
+The `Snapshot` column records values from the community `CVarDump.txt` attachment. The attachment's game build and capture method are unknown, so these are observations rather than confirmed Rivals defaults. The local scan targets Marvel Rivals Shipping build `1.1.4042190`; direct value-address candidates show instructions accessing a registered `ref` value, not a complete rendering path or proof that an `.ini` override reaches it.
+
+## ReSTIR temporal validation and upsampling
+
+The first five settings belong to the prototype ReSTIR Final Gather path. Its upstream help says that this path is experimental, disabled by default, and lower quality than Lumen Screen Probe Gather. These settings do not establish that the game enables ReSTIR.
+
+| Exact CVar | Type | Snapshot | UE 5.9 default | What the supplied help says | Build 1.1.4042190 evidence and limits |
+| --- | --- | ---: | ---: | --- | --- |
+| `r.Lumen.ReSTIRGather.TemporalResampling.ResetHistory` | int32 (`ref`) | `0` | `0` | No help is supplied. The name suggests a temporal-reservoir history reset control, but the trigger, accepted values, and whether it is a persistent switch or one-shot request are unknown. | Two direct-memory candidates access the registered value address. The read sites and reset behavior were not traced. |
+| `r.Lumen.ReSTIRGather.TemporalResampling.ValidateEveryNFrames` | int32 (`ref`) | `0` | `0` | Every N frames, re-traces reservoir rays and compares hit positions and radiance to validate temporal reservoirs. The help says this can reduce lag in lighting changes while introducing noise. | One direct-memory candidate accesses the value. The validation branch and noise/performance tradeoff were not measured in the game. |
+| `r.Lumen.ReSTIRGather.Upsample.KernelSize` | float (`ref`) | `3` | `3` | Sets the upsample-kernel size in reservoir texels. | One direct-memory candidate accesses the value. The kernel shape and resulting image are not established by the scan. |
+| `r.Lumen.ReSTIRGather.Upsample.Method` | int32 (`ref`) | `1` | `1` | Selects how full-resolution irradiance is reconstructed from downsampled reservoir radiance: `0` uses jittered bilinear sampling with same-plane checks and an unjittered fallback; `1` uses a spiral sample pattern; `2` is a debugging passthrough that also effectively disables bilateral filtering because variance is not computed. Other values are unspecified. | Two direct-memory candidates access the value. The method branches and visible differences were not traced or compared. |
+| `r.Lumen.ReSTIRGather.Upsample.NumSamples` | int32 (`ref`) | `16` | `16` | Number of reservoir samples used for upsampling; the help says this is used only when `Upsample.Method` is set to the spiral pattern (`1`). | One direct-memory candidate accesses the value. Its effect outside method `1` is not described or tested. |
+
+## Reflection denoising and tracing
+
+The next fifteen entries describe whether Lumen reflections are allowed or run on async compute, final bilateral-filter controls, contrast, distant screen traces, and hair tracing. Help describes the intended UE control; the scan does not show that the corresponding renderer feature is active in a particular match.
+
+| Exact CVar | Type | Snapshot | UE 5.9 default | What the supplied help says | Build 1.1.4042190 evidence and limits |
+| --- | --- | ---: | ---: | --- | --- |
+| `r.Lumen.Reflections.Allow` | int32 (`var`) | `0` | `1` | Can disable Lumen Reflections when project settings have enabled them; the CVar can only disable the project-enabled feature. | No direct value-read candidate was found. The registry has no `ref_rva`; object/setup evidence does not show that the renderer reads the current value. |
+| `r.Lumen.Reflections.AsyncCompute` | int32 (`var`) | `0` | `0` | Whether Lumen reflection passes run on the compute pipe when possible. | No direct value-read candidate was found. This does not establish which passes could use async compute in the game. |
+| `r.Lumen.Reflections.BilateralFilter` | int32 (`ref`) | `1` | `1` | Whether to apply a bilateral filter as the final step in denoising Lumen Reflections. | One direct-memory candidate accesses the value. The filter path and image impact were not traced or tested. |
+| `r.Lumen.Reflections.BilateralFilter.DepthWeightScale` | float (`ref`) | `10000` | `10000` | Scales the bilateral filter's depth weight. | One direct-memory candidate accesses the value. The weighting equation and sensitivity are not documented. |
+| `r.Lumen.Reflections.BilateralFilter.NormalAngleThresholdScale` | float (`ref`) | `1` | `1` | Scales the bilateral filter's normal-angle threshold. | One direct-memory candidate accesses the value. The base threshold and resulting edge behavior are not established. |
+| `r.Lumen.Reflections.BilateralFilter.NumSamples` | int32 (`ref`) | `4` | `4` | Number of bilateral-filter samples. | One direct-memory candidate accesses the value. The sampling pattern and cost/quality tradeoff were not measured. |
+| `r.Lumen.Reflections.BilateralFilter.SpatialKernelRadius` | float (`ref`) | `0.002` | `0.002` | Spatial kernel radius as a fraction of the viewport size. | One direct-memory candidate accesses the value. The exact kernel footprint and image effect were not reconstructed. |
+| `r.Lumen.Reflections.BilateralFilter.StrongBlurVarianceThreshold` | float (`ref`) | `0.5` | `0.5` | Pixels with variance above this value from the spatial resolve filter receive a stronger bilateral blur. | One direct-memory candidate accesses the value. The variance computation and stronger-blur branch were not traced. |
+| `r.Lumen.Reflections.Contrast` | float (`ref`) | `1` | `1` | Sets non-physically-correct reflection contrast; the help recommends keeping it at `1`. | One direct-memory candidate accesses the value. No in-game comparison was run; the recommendation is supplied help, not a validated Rivals preset. |
+| `r.Lumen.Reflections.DistantScreenTraces` | int32 (`ref`) | `1` | `1` | Whether to run a linear screen trace starting where the Lumen Scene ends, to handle distant reflections. | One direct-memory candidate accesses the value. The screen-trace path and coverage transition were not traced. |
+| `r.Lumen.Reflections.DistantScreenTraces.DepthThreshold` | float (`ref`) | `2` | `2` | Depth threshold for those linear screen traces when other traces missed. | One direct-memory candidate accesses the value. The depth units and comparison are unspecified. |
+| `r.Lumen.Reflections.DistantScreenTraces.MaxTraceDistance` | float (`ref`) | `200000` | `200000` | Maximum trace distance for distant screen traces. | One direct-memory candidate accesses the value. The coordinate space and practical maximum in this game are not established. |
+| `r.Lumen.Reflections.DownsampleFactor` | int32 (`ref`) | `2` | `1` | No help is supplied. The name implies a reflection downsampling factor, but the registry does not define its direction, sampling stage, or whether larger values reduce resolution. | One direct-memory candidate accesses the value. The snapshot differs from UE 5.9's default; neither supplies the game's live setting or mode semantics. |
+| `r.Lumen.Reflections.GGXSamplingBias` | float (`ref`) | `0.1` | `0.1` | No help is supplied. The name connects it to GGX sampling bias, but the bias formula, range, and affected reflection rays are not specified. | One direct-memory candidate accesses the value. The sampling calculation and visual consequence were not reconstructed. |
+| `r.Lumen.Reflections.HairStrands.ScreenTrace` | int32 (`ref`) | `1` | `1` | Whether to trace against hair depth for hair casting shadow onto opaque surfaces. | One direct-memory candidate accesses the value. The exact relation to reflection composition and the hair-depth path was not traced. |
+| `r.Lumen.Reflections.HairStrands.VoxelTrace` | int32 (`ref`) | `1` | `1` | Whether to trace against the hair voxel structure for hair casting shadow onto opaque surfaces. | Three direct-memory candidates access the value. The voxel-trace path and interaction with screen tracing remain unverified. |
+
+## Hardware ray tracing for reflections
+
+The last four entries describe hardware-ray-tracing controls in the reflections namespace. Their community help indicates defaults and the role of secondary retraces, but this build scan found only object/setup references for these `var` registrations, not direct value reads.
+
+| Exact CVar | Type | Snapshot | UE 5.9 default | What the supplied help says | Build 1.1.4042190 evidence and limits |
+| --- | --- | ---: | ---: | --- | --- |
+| `r.Lumen.Reflections.HardwareRayTracing` | int32 (`var`) | `1` | `1` | Enables hardware ray tracing for Lumen Reflections; help states a default of `1`. | No direct value-read candidate was found. The registry has no `ref_rva`; setup references do not confirm the hardware-ray-tracing selection path. |
+| `r.Lumen.Reflections.HardwareRayTracing.BucketMaterials` | int32 (`var`) | `1` | `1` | Determines whether secondary traces are bucketed for coherent material access; help states a default of `1`. | No direct value-read candidate was found. The material-bucketing path and its performance effect are not established. |
+| `r.Lumen.Reflections.HardwareRayTracing.Retrace.FarField` | int32 (`var`) | `1` | `1` | Determines whether a second trace is fired for far-field contribution; help states a default of `1`. | No direct value-read candidate was found. The far-field retrace branch and its availability in this build were not confirmed. |
+| `r.Lumen.Reflections.HardwareRayTracing.Retrace.HitLighting` | int32 (`var`) | `0` | `0` | Determines whether a second trace is fired for hit lighting when surface-cache hits are invalid; help states a default of `0`. | No direct value-read candidate was found. The invalid-hit condition and second-trace behavior were not traced. |
+
+## What the scan does and does not establish
+
+- All 25 entries have exact-name matches in the UE 5.9 reference. Snapshot values match those upstream defaults except `r.Lumen.Reflections.DownsampleFactor` (`2` in the snapshot versus `1` upstream). The attachment's game version and capture method are unknown, and Epic's reference does not prove Marvel Rivals uses that engine version.
+- Nineteen `ref` entries have at least one direct-memory candidate at the registered `ref_rva`. Six `var` entries have no direct value-read candidate in this scan. Direct access is static build evidence, not proof of a live match path, accepted configuration override, or visible effect.
+- No controlled `.ini` override, live console query, renderer capability check, or in-game image comparison was performed for this batch. In particular, the `HardwareRayTracing` rows do not prove that the game uses the hardware path on a specific system.
+- Snapshot values are not recommendations or verified game defaults. Treat the ReSTIR controls as conditional on the experimental ReSTIR path being active.
+
+For the preceding ReSTIR settings, see [Lumen ReSTIR Final Gather batch A](cvar-rendering-lumen-restir-batch-a.md). Related guides cover [global illumination](cvar-rendering-lumen-batch-a.md), [hardware ray tracing and irradiance fields](cvar-rendering-lumen-batch-b.md), and the [radiance cache](cvar-rendering-lumen-radiance-cache-batch-a.md). The [community registry](cvar-community-registry.md) explains the source help, snapshot, and upstream-match fields; the [CVar override notes](cvar-overrides.md) explain why registration and a syntactically valid `.ini` line do not prove runtime editability.

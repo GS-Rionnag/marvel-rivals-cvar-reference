@@ -141,3 +141,6 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Niagara CVar batch H](cvar-fx-niagara-batch-h.md) — Forty-five final Niagara entries covering scalability culling, deny lists, GPU/system simulation, scheduling, and pooling; this closes the uncovered Niagara family.
 - [Lumen ReSTIR Final Gather CVar batch A](cvar-rendering-lumen-restir-batch-a.md) — Twenty-five ReSTIR gather controls with exact UE 5.9 matches and local value-access evidence, while marking renderer-path and override uncertainty.
 - [Rendering shadow CVar batch C](cvar-rendering-shadow-batch-c.md) — Twenty-five shadow-distance, fade, cache-update, and scalability controls with UE matches and direct-read evidence separated.
+- [Lumen rendering CVar batch C](cvar-rendering-lumen-batch-c.md) — Twenty-five ReSTIR gather continuation and adjacent Lumen controls, with exact UE 5.9 matches and activation/editability limits noted.
+- [Rendering shadow CVar batch D](cvar-rendering-shadow-batch-d.md) — Twenty-five additional shadow and distance-field settings, with five direct value-access candidates separated from setup evidence.
+- [Scene-capture and color CVar batch A](cvar-rendering-scene-color-batch-a.md) — Eighteen scene-capture, color-grade, debug, and tonemapper controls with two direct reads and exact upstream matches distinguished.
