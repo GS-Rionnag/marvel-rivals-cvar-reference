@@ -129,6 +129,7 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Niagara CVar batch C](cvar-fx-niagara-batch-c.md) — Twenty-five Niagara controls covering GPU traces, simulation, budgets, compilation, and combined FX paths, with static read evidence and help uncertainties separated.
 - [SharedRep CVar batch B](cvar-network-shared-rep-batch-b.md) — Twenty-five SharedRep settings for scheduling, logging, RPC/reconnect, and payload behavior, with authority and read-path limits recorded.
 - [Lower-case network CVar batch M](cvar-network-batch-m.md) — Twenty-five additional lower-case `net.*` socket, relay, NetGUID, and replication controls with source-separated evidence.
+- [Lower-case network CVar batch N](cvar-network-batch-n.md) — Twenty-five lower-case `net.*` replication, packet-validation, socket receive-path, replay, and diagnostics controls, with source provenance and Windows/build limitations marked.
 - [Network CVar batch L](cvar-network-batch-l.md) — Twenty-five lower-case `net.*` replication, package-map, replay, and pacing controls; four lack explanatory help.
 - [Network CVar batch K](cvar-network-batch-k.md) — Six `Net.*` entries spanning traffic control, shared-replication tools, statistics, and packed shadow buffers. Lower-case `net.*` variables are tracked separately.
 - [Animation system CVar batch D](cvar-animation-system-batch-d.md) — Twenty-five animation, notify, curve, camera, and character-system controls with code-read evidence and config-override limitations.
