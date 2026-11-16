@@ -9,6 +9,9 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Sequencer CVar batch B](cvar-sequencer-batch-b.md) — Final five `Sequencer.*` variables, completing the 30-name registry family.
+- [Sequencer CVar batch A](cvar-sequencer-batch-a.md) — First 25 of 30 `Sequencer.*` entries with help, snapshot, Epic, and static-reference evidence separated.
+- [Tick CVar batch A](cvar-tick-batch-a.md) — First 25 lower-case `tick.*` controls with source values and build-scan limitations.
 - [Rendering `r.*` CVar batch F](cvar-rendering-r-batch-f.md) — Twenty-five additional registered render variables with source metadata and scan limits.
 - [Audio CVar batch B: uppercase namespace](cvar-audio-upper-batch-b.md) — Final five registered `Audio.*` entries, completing the 30-name uppercase family.
 - [Audio CVar batch A: uppercase namespace](cvar-audio-upper-batch-a.md) — First 25 exact-case `Audio.*` entries; lower-case `au.*` is tracked independently.
