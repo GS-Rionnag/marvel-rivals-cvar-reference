@@ -69,4 +69,4 @@ Build evidence comes from static address-reference scanning of Marvel Rivals Shi
 - Remote attacker/projectile and spell-scope controls can change which effects interact with the client swarm. They are gameplay/simulation controls, not generic graphics performance settings.
 - The `var`/`ref` registry labels and static address candidates do not prove mod-loader editability or a live gameplay effect.
 
-For the first client swarm controls, see [Client Mass batch A](cvar-clientmass-batch-a.md). The [community CVar registry](cvar-community-registry.md) explains the snapshot and exact-name UE-reference limitations; build scan scope is described in [the CVar inventory](cvar-game-build-4042190.md).
+For the first client swarm controls, see [Client Mass batch A](cvar-clientmass-batch-a.md). The [community CVar registry](cvar-community-registry.md) explains the snapshot and exact-name UE-reference limitations; build scan scope is described in [the CVar inventory](EVIDENCE.md#build-specific-static-analysis).

@@ -36,4 +36,4 @@ Community help, captured snapshot values, and exact-name Epic UE 5.9 reference d
 - Snapshots are captured values, not recommendations. An em dash means no exact upstream default was present in the registry.
 - The single `var` registration has no separate `ref_rva` field, so its object address in the scan is not proof of runtime value reads.
 
-For related context, see the [game-specific CVar descriptions](cvar-game-specific-embedded-help.md), [Physics guides](cvar-physics-rigidbody-chaoscloth.md), and [community CVar registry](cvar-community-registry.md). Build scan scope is summarized in [the build CVar inventory](cvar-game-build-4042190.md).
+For related context, see the [game-specific CVar descriptions](cvar-game-specific-embedded-help.md), [Physics guides](cvar-physics-rigidbody-chaoscloth.md), and [community CVar registry](cvar-community-registry.md). Build scan scope is summarized in [the build CVar inventory](EVIDENCE.md#build-specific-static-analysis).
