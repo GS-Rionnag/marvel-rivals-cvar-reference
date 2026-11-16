@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Halloween CVar batch A](cvar-halloween-batch-a.md) — Seven blank-help refs; name-based hypotheses are marked clearly.
 - [NetSecure CVar batch A](cvar-netsecure-batch-a.md) — Seven entries with blank help; interpretations remain explicitly unverified.
 - [MediaIO CVar batch A](cvar-mediaio-batch-a.md) — Seven media-input variables with source and scan evidence limits.
 - [StaticScopeSuppression CVar batch A](cvar-staticscopesuppression-batch-a.md) — Seven suppression controls with uncertain scope and interactions noted.
