@@ -138,3 +138,6 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Animation system CVar batch G](cvar-animation-system-batch-g.md) — Twenty-two URO, LOD, curve, SpiderDes, and animation-evaluation controls, with six direct value-access candidates and override limits.
 - [Niagara CVar batch G](cvar-fx-niagara-batch-g.md) — Twenty-five Niagara leak, profile, logging, budget, render-target, and scalability controls with static access counts.
 - [Game rendering and movement CVar batch A](cvar-game-render-movement-batch-a.md) — Fourteen material deduplication, PinnedMotion, and lowercase portal controls with value-read evidence and cautious namespace interpretation.
+- [Niagara CVar batch H](cvar-fx-niagara-batch-h.md) — Forty-five final Niagara entries covering scalability culling, deny lists, GPU/system simulation, scheduling, and pooling; this closes the uncovered Niagara family.
+- [Lumen ReSTIR Final Gather CVar batch A](cvar-rendering-lumen-restir-batch-a.md) — Twenty-five ReSTIR gather controls with exact UE 5.9 matches and local value-access evidence, while marking renderer-path and override uncertainty.
+- [Rendering shadow CVar batch C](cvar-rendering-shadow-batch-c.md) — Twenty-five shadow-distance, fade, cache-update, and scalability controls with UE matches and direct-read evidence separated.
