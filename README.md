@@ -175,3 +175,5 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Geometry Collection, Cloth, and Modular Vehicle physics CVars](cvar-physics-geometrycloth-vehicles.md) — Twenty-two destructible-geometry, cloth, and modular-vehicle controls with snapshot/upstream provenance and static-reference limits.
 
 - [AbilitySystem CVar batch D](cvar-ability-system-batch-d.md) — Three gameplay-cue, damage-processing, and asset-table lookup controls with registry-help provenance and limited static references.
+
+- [Slate CVar batch A](cvar-slate-batch-a.md) — Twenty-five widget rendering, accessibility, text, and input controls with snapshot/upstream context and static-reference limits.
