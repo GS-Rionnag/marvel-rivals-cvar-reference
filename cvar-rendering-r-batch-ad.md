@@ -1,0 +1,41 @@
+# GPU rendering CVars: spider-web effects and material controls (batch AD)
+
+This guide documents the next 25 currently uncovered registered `r.*` names after batch AC. It preserves supplied help where available; settings without useful source help remain unresolved pending build-specific code or runtime evidence.
+
+Community help is source text, not proof of implementation in the installed build. Snapshot values are observations, not defaults or recommendations. Epic UE 5.9 defaults are upstream context only. Address-reference scanner matches are static candidates, not proof of runtime reads, writes, execution, override acceptance, or visible effect.
+
+| Exact CVar | Type / kind | Snapshot | Epic 5.9 default | What supplied help says | Build scan evidence and limits |
+| --- | --- | --- | --- | --- | --- |
+| `r.MarvelSpiderNetCull` | `int32` (`var`) | 1 | — | Community help: The code speaks itself | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSpiderNetDistanceCloseEnough` | `float` (`var`) | 5 | — | Community help: The code speaks itself | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSpiderNetFoldDistanceClipMax` | `float` (`var`) | 4 | — | Community help: The code speaks itself | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSpiderNetFoldDistanceClipMin` | `float` (`var`) | 1.5 | — | Community help: The code speaks itself | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSpiderNetFrameBudget` | `float` (`var`) | 5 | — | Community help: 计算蛛网顶点的每帧开销预算(单位毫秒). | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSpiderNetHitBackward` | `float` (`var`) | 200 | — | Community help: The code speaks itself | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSpiderNetMaxCoverSlope` | `float` (`var`) | 45 | — | Community help: The code speaks itself | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSpiderNetMaxCoverSlopeBigNet` | `float` (`var`) | 30 | — | Community help: The code speaks itself | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSpiderNetMaxFoldSlope` | `float` (`var`) | 100 | — | Community help: The code speaks itself | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSpiderNetNearAttachDistance` | `float` (`var`) | 200 | — | Community help: The code speaks itself | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSpiderNetNormalFix` | `float` (`var`) | 6 | — | Community help: The code speaks itself | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSpiderNetRing` | `int32` (`var`) | 6 | — | Community help: The code speaks itself | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSpiderNetSearchLength` | `float` (`var`) | 10000 | — | Community help: The code speaks itself | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSpiderNetSearchScale` | `float` (`var`) | 2 | — | Community help: The code speaks itself | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSpiderNetSize` | `float` (`var`) | 400 | — | Community help: The code speaks itself | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSpiderNetSpawnParameterOverwrite` | `int32` (`var`) | 0 | — | Community help: The code speaks itself | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSpiderNetStairFix` | `int32` (`var`) | 1 | — | Community help: The code speaks itself | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSpiderNetSubDivide` | `int32` (`var`) | 3 | — | Community help: The code speaks itself | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSquirrelSpiderWebCull` | `bool` (`var`) | true | — | Community help: 蛛网三角形裁剪开关 | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.MarvelSquirrelSpiderWebTriangleRate` | `float` (`var`) | 2 | — | Community help: 蛛网三角形面积变化倍率阈值：贴合后三角形面积/原面积 超过此值则剔除该三角形。与潘妮 104241 一致，默认 2.0。 | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.Material.EnergyConservation` | `int32` (`var`) | 0 | 0 | Community help: Enable energy conservation for legacy materials (project settings, read only). Please note that when Strata is enabled, energy conservation is forced to enabled. | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.Material.ExcludeNonPipelinedShaders` | `int32` (`ref`) | 1 | 1 | Community help: if != 0, standalone shaders that are also part of FShaderPipeline will not be compiled (default). | ref_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.Material.ExperimentalMaterialCachedDataAnalysisEnabled` | `bool` (`ref`) | false | false | Community help: Enables material cached data experimental graph based analysis | ref_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.Material.ForceUpdate` | `int32` (`var`) | 0 | — | Community help: .0: Disabled (default); 1: Enable hardware-specific implementation | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+| `r.Material.RoughDiffuse` | `int32` (`var`) | 0 | 0 | Community help: Enable rough diffuse material. | ref_rva: no recorded matches; obj_rva: 0 direct-memory candidate(s), 1 address-taking reference(s); runtime access and effect not established. |
+
+## Interpretation limits
+
+- The community registry does not identify its game build or prove that every entry is accepted from an `.ini` override.
+- Captured snapshot values are not documented defaults. Epic UE 5.9 defaults describe upstream context and do not establish the game’s exact engine version or active code path.
+- Static address matches can reflect initialization, writes, address passing, or other code. This batch does not establish function-level behavior or runtime execution.
+
+Sources: [community CVar registry](cvar-community-registry.md), [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis), and [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis).
