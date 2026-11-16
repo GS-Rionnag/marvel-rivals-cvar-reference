@@ -191,3 +191,6 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Demo replay and hologram CVar batch D](cvar-demo-batch-d.md) — Twenty-five fast-forward, checkpoint, replay-networking, and hologram controls with source/translation provenance and static-evidence caveats.
 
 - [AI navigation CVar batch A](cvar-ai-navigation-batch-a.md) — Twenty-three navigation mesh, dirty-area, navlink, and AI-pathing controls with community/upstream provenance and static-evidence limits.
+- [Rendering HairStrands CVar batch B](cvar-rendering-hairstrands-batch-b.md) — Twenty-five additional `r.HairStrands.*` controls with community help and static use evidence separated from effective runtime behavior.
+- [Physics debug CVar batch B](cvar-physics-debug-batch-b.md) — Forty remaining `p.debug.*` controls with registration help, snapshot values, and distinct object/reference address-scan evidence.
+- [Audio stream-cache and priming CVars](cvar-audio-streaming-batch-a.md) — Twenty-seven `au.streamcache.*` and `au.streamcaching.*` settings for chunk loading, priming, cache sizing, trimming, and diagnostics, with upstream and build-evidence limits.

@@ -1,0 +1,50 @@
+# Rendering HairStrands CVar batch B
+
+This batch documents the next 25 alphabetically sorted, previously undocumented `r.HairStrands.*` names after batch A. Each exact name was checked against the preserved `var`/`ref` registry and the existing explanatory-guide tables. These records show registration and an attached help description; they do not prove that Marvel Rivals accepts a particular startup override.
+
+## Entries and evidence
+
+| Exact name | Kind / type | Captured snapshot | Community help meaning | Installed-build static evidence and limit |
+| --- | --- | ---: | --- | --- |
+| `r.HairStrands.HairLUT.AbsorptionCount` | `ref` / int32 | `16` | Number of slices on the hair lookup table's absorption axis. | Direct `ref_rva` memory-access candidates at VAs `0x141C13B9A`, `0x141C16C23`, `0x141C3C2EF`, and `0x141C3C3A0`. This supports local reads of the setting, but the LUT dimension, allocation, and rendered effect were not traced. |
+| `r.HairStrands.HairLUT.IncidentAngleCount` | `ref` / int32 | `64` | Number of slices on the hair lookup table's incident-angle axis. | Direct `ref_rva` candidates at `0x141C13BAE`, `0x141C16C0E`, `0x141C3C2DA`, and `0x141C3C38B`. The sites establish reads, not the table-generation formula or a visual change. |
+| `r.HairStrands.HairLUT.RoughnessCount` | `ref` / int32 | `64` | Number of slices on the hair lookup table's roughness axis. | Direct `ref_rva` candidates at `0x141C13BB6`, `0x141C16C18`, `0x141C3C2E4`, and `0x141C3C395`. The values' downstream effect and valid range were not recovered. |
+| `r.HairStrands.HairLUT.SampleCountScale` | `ref` / int32 | `1` | Multiplier for the number of samples used to compute the hair LUT; help states a default of `1`. | A direct `ref_rva` candidate appears at `0x141C13D2B`. The call/path using it was not followed, and the help's default is not independently verified as the game's effective default. |
+| `r.HairStrands.Interoplation.FrustumCulling` | `ref` / int32 | `1` | Community help describes swapping a rendering buffer at frame end, calls it experimental, and states default `1`. The registry spelling is exactly `Interoplation`. | A comparison and a later load candidate occur at `0x147C45CD7` and `0x147C45D95`. This indicates a conditional/value use locally; the help's apparent connection to frustum culling is not established by these two instruction records alone. |
+| `r.HairStrands.Interpolation.Debug` | `ref` / int32 | `0` | Enables debug rendering for hair interpolation. | No direct `ref_rva` value-access candidate appears in the saved scan. The registry/setup evidence is not enough to claim the debug view is active or configurable in a match. |
+| `r.HairStrands.InterpolationMetric.Angle` | `ref` / float | `0` | Weight assigned to angle in the hair-strand interpolation metric. | No direct `ref_rva` candidate appears in the saved scan. The metric formula and whether zero disables angle influence remain unknown. |
+| `r.HairStrands.InterpolationMetric.AngleAttenuation` | `ref` / float | `5` | Hair-strand interpolation angle-attenuation input. | No direct `ref_rva` candidate appears in the saved scan. Units, curve or formula, and the meaning of the captured `5` are not specified by the supplied help. |
+| `r.HairStrands.InterpolationMetric.Distance` | `ref` / float | `1` | Weight assigned to distance in the hair-strand interpolation metric. | No direct `ref_rva` candidate appears in the saved scan. Its interaction with the angle and length metric inputs was not established. |
+| `r.HairStrands.InterpolationMetric.Length` | `ref` / float | `0` | Weight assigned to length in the hair-strand interpolation metric. | No direct `ref_rva` candidate appears in the saved scan. The registry does not define the units or the resulting interpolation behavior. |
+| `r.HairStrands.LightFunction` | `var` / int32 | `1` | Enables light functions on hair. | The scan found object-address/setup references, but no direct `ref_rva` value-access candidate. `var` registration and snapshot value do not establish a live game effect. |
+| `r.HairStrands.LightSampleFormat` | `ref` / int32 | `1` | Selects hair lighting-sample storage: `0` = RGBA 16-bit; `1` = RGB 11.11.10-bit. | A comparison candidate on `ref_rva` occurs at `0x141C0FDE6`, consistent with selecting a format branch. The exact resource layout, accepted values, and runtime path were not verified. |
+| `r.HairStrands.LoadAsset` | `ref` / int32 | `1` | Allows groom assets to load. | A comparison candidate on `ref_rva` occurs at `0x147C0EA81`, consistent with a value-dependent load gate. It does not establish which assets are affected or whether overriding this changes a live session. |
+| `r.HairStrands.Log` | `var` / int32 | `-1` | Controls groom-related asset warning logs: `0` none, `1` errors, `2` errors and warnings, other values all logs. Help says logging is enabled by default at `-1` and the value must be set at startup. | No direct `ref_rva` value-access candidate appears in the saved scan. The startup requirement and level mapping are community help, not a live override test. |
+| `r.HairStrands.Log.BindingBuilderWarning` | `ref` / int32 | `1` | Enables or disables warnings from the groom binding builder. | No direct `ref_rva` value-access candidate appears in the saved scan. No warning site or effective runtime gate was identified. |
+| `r.HairStrands.ManualSkinCache` | `ref` / int32 | `0` | If the skin cache is otherwise disabled and a groom uses skinning, enables a simple skin cache mechanism for the groom; help says disabled by default. | A comparison candidate on `ref_rva` occurs at `0x147C3E466`, consistent with a conditional branch. The full condition and cache behavior were not traced; the help's default is not a verified current-game default. |
+| `r.HairStrands.MaterialCompaction.DepthThreshold` | `ref` / float | `1` | Depth threshold for material compaction, in centimeters; help says `1 cm`. | A float-load candidate on `ref_rva` appears at `0x141C1D851`. The comparison and resulting compaction decisions were not reconstructed. |
+| `r.HairStrands.MaterialCompaction.TangentThreshold` | `ref` / float | `10` | Tangent threshold for material compaction, in degrees; help says `10 degrees`. | A float-load candidate on `ref_rva` appears at `0x141C1D86C`. The exact angle calculation and boundary behavior were not established. |
+| `r.HairStrands.MaxSimulatedLOD` | `ref` / int32 | `-1` | Maximum hair LOD to simulate. | A `ref_rva` load candidate appears at `0x147C0E4D1`. The meaning of sentinel `-1`, LOD numbering, and which simulation path reads it remain unknown. |
+| `r.HairStrands.MeshProjection.DebugInUVsSpace` | `ref` / int32 | `0` | Renders mesh-projection debug data in UV space (the source help has a spelling error). | A comparison candidate on `ref_rva` appears at `0x147C38AFF`. The selected debug drawing and its availability in the Shipping client were not confirmed. |
+| `r.HairStrands.MeshProjection.DebugSkinCache` | `ref` / int32 | `0` | Renders the skin cache used by projection. | A comparison candidate on `ref_rva` appears at `0x147C46F20`. This indicates a local gate candidate, not that the display is reachable or visible in a normal match. |
+| `r.HairStrands.MeshProjection.Render.Deformed.Frames` | `ref` / int32 | `1` | Renders deformed strand frames. | A `ref_rva` load candidate appears at `0x147C47071`. The downstream draw mode and Shipping-build availability were not examined. |
+| `r.HairStrands.MeshProjection.Render.Deformed.Samples` | `ref` / int32 | `0` | Renders deformed strand samples. | A `ref_rva` load candidate appears at `0x147C47077`. The meaning of the sample visualization and its runtime availability remain unknown. |
+| `r.HairStrands.MeshProjection.Render.Deformed.Triangles` | `ref` / int32 | `0` | Renders deformed strand triangles. | A `ref_rva` load candidate appears at `0x147C4706B`. This is a local value-read candidate only; no visual result was tested. |
+| `r.HairStrands.MeshProjection.Render.Rest.Frames` | `ref` / int32 | `0` | Renders rest-pose strand frames. | A `ref_rva` load candidate appears at `0x147C47064`. The corresponding drawing implementation and whether it is available in ordinary gameplay were not traced. |
+
+## Epic reference comparison
+
+None of these 25 exact names has a matching Epic Unreal Engine 5.9 CVar entry in the preserved community catalog. The descriptions above therefore come from the attached community registry help, not an independently matched upstream source. This absence does not prove the names are unique to Marvel Rivals; engine forks and naming changes can differ.
+
+## What the evidence says about overrides
+
+The supplied override file format can express each name using `name=value` syntax. That establishes only that the text format can carry the name. The CVar registry attachment's build and capture method are unknown, and the saved local scan is static. Direct `ref_rva` access candidates show that instructions in the scanned build reference a value field; they do not prove the config loader accepts it, the relevant code executes during a match, or the setting changes visible behavior. For entries without such candidates, the evidence is weaker still. No live override test was performed.
+
+## Evidence and limitations
+
+- Exact name, kind, type, and community help: [community registry attachments](EVIDENCE.md#community-sources). Snapshot values are from [community snapshot attachment](EVIDENCE.md#community-sources) and are not documented defaults.
+- Local instruction candidates: [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis). The executable scanned was Marvel Rivals Shipping build `1.1.4042190`.
+- The address scan matches RIP-relative references in `.text`; it can miss indirect/non-RIP-relative uses and other modules. A hit is not a complete data-flow or runtime trace. A missing hit is not proof the variable is unused.
+- No in-game override, visual comparison, performance comparison, or startup behavior was tested.
+
+Related guide: [CVar override evidence and loader syntax](EVIDENCE.md).
