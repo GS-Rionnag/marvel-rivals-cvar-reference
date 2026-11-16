@@ -9,6 +9,8 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [CSV CVar batch A](cvar-csv-batch-a.md) — All 11 remaining lower-case `csv.*` variables, with typo and runtime caveats.
+- [Rendering `r.*` CVar batch BK](cvar-rendering-r-batch-bk.md) — 25 more sequential render controls with source and static-analysis evidence.
 - [Rendering `r.*` CVar batch BJ](cvar-rendering-r-batch-bj.md) — 25 more sequential rendering controls with source meanings and static-analysis limits.
 - [Lowercase `rhi.*` CVar batch A](cvar-rhi-lowercase-batch-a.md) — All 11 remaining lower-case entries, distinct from uppercase `RHI.*`.
 - [Rendering `r.*` CVar batch BI](cvar-rendering-r-batch-bi.md) — 25 more sequential render controls with source meanings and static evidence.
