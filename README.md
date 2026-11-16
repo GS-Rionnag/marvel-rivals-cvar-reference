@@ -106,3 +106,6 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Vehicle debug CVar batch D](cvar-vehicle-debug-batch-d.md) — Twenty-three force, raycast, suspension, visual-log, and override entries, with the saved local read candidates separated from object/setup-only hits.
 
 - [cvar-rendering-general-batch-a](cvar-rendering-general-batch-a.md) — Twenty-five HDR/ACEScg, Actor Occlusion, bloom, shader-uniform, and device controls, with direct value reads separated from setup-only references.
+- [cvar-network-batch-g](cvar-network-batch-g.md) — Oodle, PacketCollect, packet ordering, ping, PackageMap, and Push Model controls, with direct-read evidence and server/client limits distinguished.
+- [cvar-chaos-game-controls-batch-d](cvar-chaos-game-controls-batch-d.md) — Twenty-five owner, particle, navigation, update, and collection controls, with snapshot gaps and direct-read evidence distinguished.
+- [cvar-rendering-general-batch-b](cvar-rendering-general-batch-b.md) — Twenty-five HDR, occlusion, ray, resource, and async controls, with platform-specific behavior and sparse direct-read evidence qualified.
