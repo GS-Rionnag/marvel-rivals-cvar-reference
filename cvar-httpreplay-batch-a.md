@@ -1,0 +1,42 @@
+# HTTP replay CVar batch A
+
+This guide covers the first 25 alphabetically sorted currently undocumented distinct `httpreplay.*` registered `var`/`ref` names. The supplied help is the only per-entry behavior description where present; empty help remains unresolved. Snapshot values and exact-name Epic UE 5.9 references are separate provenance fields, not verified Marvel Rivals defaults.
+
+Build evidence is from static address-reference scanning of Marvel Rivals Shipping build `1.1.4042190`. A `direct-memory-candidate` may be a read, comparison, write, or initialization; an `address-taken` result only establishes an address reference. No function-level trace, controlled startup override, or runtime replay test was performed.
+
+| Exact CVar | Type / kind | Snapshot | Epic 5.9 default | Supplied community help | Build address evidence and limits |
+| --- | --- | ---: | ---: | --- | --- |
+| `httpreplay.AddCache` | int32 (`var`) | `1` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.AlwaysUpdateTotalTime` | int32 (`var`) | `1` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.CancelRequestCount` | int32 (`ref`) | `0` | `—` | Real failed. To cancel http request. *(community registry help)* | `ref_rva`: 0 direct-memory candidate(s), 1 address-taking reference(s); `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); direction and execution path were not traced. |
+| `httpreplay.ClientMaxRetries` | int32 (`var`) | `3` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.ClientRetryDelay` | float (`var`) | `0.5` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.DownloadRandomTime` | int32 (`var`) | `6` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.EnableBatchDownload` | int32 (`var`) | `1` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.EnableCopyRequest` | int32 (`var`) | `0` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.EnableGateway` | int32 (`var`) | `1` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.EnableKeepAlive` | int32 (`var`) | `2` | `—` | server: >= 1, client: >= 2 *(community registry help)* | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.EnableRealTimeOb` | int32 (`var`) | `1` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.EnableServerChunkCompress` | int32 (`var`) | `1` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.FailedCount` | int32 (`ref`) | `0` | `—` | Fake http failed. *(community registry help)* | `ref_rva`: 0 direct-memory candidate(s), 1 address-taking reference(s); `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); direction and execution path were not traced. |
+| `httpreplay.FailedDataSave` | int32 (`var`) | `1` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.HighPriorityWaitimeForNextChunk` | float (`var`) | `0.001` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.InitSessionName` | int32 (`var`) | `1` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.LimitUpdateEventMetaLen` | int32 (`var`) | `2000` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.Log.Client` | int32 (`var`) | `1` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.Log.Server` | int32 (`var`) | `1` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.LowDelay.WaitimeForNextChunk` | float (`var`) | `1` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.MaxBuffChunkTime` | float (`var`) | `5` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.MaxDownloadFailedCnt` | int32 (`var`) | `10` | `—` | max download chunk or checkpoint count *(community registry help)* | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.MaxWaitimeDownloadNextChunk` | int32 (`var`) | `30` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.MaxWaitimeForNextChunk` | float (`var`) | `5` | `—` | http download next chunk max wait time *(community registry help)* | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+| `httpreplay.MinDownloadFailedCnt` | int32 (`var`) | `4` | `—` | No explanatory help supplied; exact behavior unresolved. | `obj_rva`: 3 direct-memory candidate(s), 1 address-taking reference(s); object-address references do not establish runtime value consumption. |
+
+## Reading the evidence
+
+- The `httpreplay` namespace and CVar names do not by themselves establish that these controls are used by the game’s replay path.
+- Snapshot values are captured observations. An absent Epic match means no exact-name UE 5.9 reference was present in the compared catalog.
+- Community `var`/`ref` registration and static address candidates do not establish that an `.ini` override is accepted, that the value is player-editable, or that it changes replay behavior.
+- Repeated registry metadata conflicts among these names: 0. Repeated rows are not treated as separate CVar names.
+
+Sources: [community CVar registry](cvar-community-registry.md), [community source notes](EVIDENCE.md#community-sources), and [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis).

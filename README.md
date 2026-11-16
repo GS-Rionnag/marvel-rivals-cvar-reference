@@ -215,3 +215,15 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Physics general and movement CVar batch A](cvar-physics-general-batch-a.md) — Twenty-five actor movement, overlap, collision, animation-dynamics, and projectile-related controls with help and scan limitations.
 - [Audio CVar batch C](cvar-audio-batch-c.md) — Twenty-five additional audio controls with source help, snapshot/upstream values, and build-scan limits separated.
 - [Nanite CVar batch D](cvar-rendering-nanite-batch-d.md) — The last twenty-four registered Nanite controls, completing this family’s current registry coverage.
+- [HairStrands CVar batch F](cvar-rendering-hairstrands-batch-f.md) — Twenty-five further hair-strand controls with source values, rendering descriptions, and static evidence kept distinct.
+- [Lumen Scene CVar batch D](cvar-rendering-lumenscene-batch-d.md) — Twenty-five direct-lighting and radiance-cache settings, with empty upstream descriptions suppressed and defaults preserved.
+- [FidelityFX and FSR CVar batch C](cvar-rendering-fidelityfx-batch-c.md) — The final seventeen registered FidelityFX controls, closing the current `r.FidelityFX.*` registry group.
+- [Demo and replay CVar batch F](cvar-demo-batch-f.md) — Twenty-five more recording, playback, checkpoint, and replay controls with static evidence limitations.
+- [Audio CVar batch D](cvar-audio-batch-d.md) — Twenty-five audio task, component, and logging controls with exact source provenance and runtime uncertainty.
+- [HTTP replay CVar batch A](cvar-httpreplay-batch-a.md) — Twenty-five replay transfer, retry, caching, and timing controls with help and static-evidence limitations.
+- [Virtual Texturing CVar batch B](cvar-rendering-vt-batch-b.md) — Twenty-five additional virtual-texture pool, streaming, and allocation controls.
+- [Virtual Texturing CVar batch C](cvar-rendering-vt-batch-c.md) — The final thirteen currently uncovered Virtual Texturing variables, completing the registered `r.VT.*` group.
+- [Path Tracing CVar batch B](cvar-rendering-pathtracing-batch-b.md) — Twenty-five additional path-tracing controls with upstream and build evidence separated.
+- [Path Tracing CVar batch C](cvar-rendering-pathtracing-batch-c.md) — The last nineteen registered Path Tracing controls, closing the current `r.PathTracing.*` group.
+- [Ability CVar batch A](cvar-ability-general-batch-a.md) — Twenty-five game ability controls with unreviewed help translations and runtime/override limits noted.
+- [UI CVar batch A](cvar-ui-batch-a.md) — Twenty-five interface and player-facing UI variables with supplied help and static evidence caveats.
