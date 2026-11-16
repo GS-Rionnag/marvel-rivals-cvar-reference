@@ -9,6 +9,9 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Rendering `r.*` CVar batch AM](cvar-rendering-r-batch-am.md) — 25 more sequential `r.*` settings with source and build-scan context.
+- [ChaosGC CVar batch A](cvar-chaosgc-batch-a.md) — All 15 remaining `ChaosGC.*` controls, with help/snapshot differences and scan evidence.
+- [Lowercase `fx.*` CVar batch C](cvar-fx-batch-c.md) — 25 additional lower-case effects controls, distinct from upper-case `FX.*`.
 - [Zombie CVar batch A](cvar-zombie-batch-a.md) — All 13 uncovered exact-case `zombie.*` names with help, snapshots, and build scan limits.
 - [Rendering `r.*` CVar batch AL](cvar-rendering-r-batch-al.md) — 25 more sequential rendering controls with source meanings and scan evidence.
 - [HitShape CVar batch A](cvar-hitshape-batch-a.md) — All 12 currently uncovered `HitShape.*` controls with registry meaning and build scan context.
