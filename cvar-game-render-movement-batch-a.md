@@ -1,0 +1,35 @@
+# Game rendering and movement CVars: batch A
+
+This page covers 14 remaining registered `m.*` entries from the community CVar registry: one material-parameter setting, four PinnedMotion settings, and nine lowercase `m.portal.*` settings. They are separate from the uppercase `m.Portal.*` candidate family in [the build 4042190 portal guide](cvar-game-build-4042190-portal-family.md). Similar names and nearby strings do not establish that the families share a code path.
+
+Snapshot values are observations from an attachment whose build and capture method are unknown. They are not verified game defaults or recommendations. Build evidence below refers to static references in the x64 Shipping executable for build `1.1.4042190`; direct references show code accessing stored CVar values, not that a path runs in a match or accepts a startup override.
+
+## Material and PinnedMotion settings
+
+| Exact CVar | Type | Snapshot | What the registry says | Build evidence and limits |
+| --- | --- | ---: | --- | --- |
+| `m.MIParameterDeduplication.Enable` | bool (`var`) | `true` | No help is supplied. The name suggests a material-instance parameter deduplication control, but does not specify what is deduplicated, when, or how `true`/`false` changes work. | The scan found object-address setup references, but no direct value-read candidate. Name and type alone do not prove a runtime consumer. |
+| `m.PinnedMotion.CheckOutOfRange.Enable` | bool (`ref`) | `true` | No help is supplied. The name suggests an out-of-range check in PinnedMotion; its range, trigger, and response are not defined. | Three direct byte-comparison candidates read the reference at `0x1467A3101`, `0x1467A32E0`, and `0x1467C20F9`. The conditions and behavior behind those checks were not traced. |
+| `m.PinnedMotion.HandleInitPortalSegments.Enable` | bool (`ref`) | `true` | No help is supplied. The name suggests a PinnedMotion path for initializing portal segments, but does not define which segments or what handling means. | Two direct byte-comparison candidates read the reference at `0x1467AC4C3` and `0x1467AD12B`. The initialization sequence and effects were not reconstructed. |
+| `m.PinnedMotion.PathAware.MaxStepSize` | float (`ref`) | `80` | Maximum corner-slide step per frame, in centimeters; the help states a default of `80`. | One direct float instruction reads the value at `0x1467E37A0`. The scanner also finds a `minss`/`maxss` pair for the maximum and minimum references at `0x1467E37A0`/`0x1467E37A8`, consistent with clamping a value between the two. The full caller and motion result were not traced. |
+| `m.PinnedMotion.PathAware.MinStepSize` | float (`ref`) | `8` | Minimum corner-slide step per frame, in centimeters; the help says this guarantees motion even when the source is stationary, and states a default of `8`. | One direct float instruction reads the value at `0x1467E37A8`; it appears in the same clamp pair as `MaxStepSize`. The stationary-source behavior is from registry help, not a runtime test. |
+
+## Lowercase portal settings
+
+| Exact CVar | Type | Snapshot | What the registry says | Build evidence and limits |
+| --- | --- | ---: | --- | --- |
+| `m.portal.PS4ExtraDepthCopy` | int32 (`var`) | `0` | Help says “Enable extra depth copy for PS4 only.” It does not define accepted integer values or establish whether this platform-specific path is compiled or used in the current PC build. | Only object/setup references were found, not a direct value read. The name's PS4 scope comes from community help. |
+| `m.portal.SKEnableParallel` | bool (`ref`) | `false` | No help is supplied. “SK” is not expanded by the registry; do not infer which portal work becomes parallel. | One direct byte-load candidate reads the reference at `0x1462FA851`. The parallel work and its scheduling were not traced. |
+| `m.portal.materialclip` | bool (`var`) | `true` | No help is supplied. The name alone does not establish whether it enables clipping, clips a material, or controls a portal material path. | Object-address setup references only; no direct value-read candidate was found. |
+| `m.portal.overlaymaterial` | bool (`ref`) | `true` | No help is supplied. The name suggests an overlay-material switch, but affected materials and false behavior are unknown. | Two direct byte comparisons read the reference at `0x146320F43` and `0x14632102C`. The consumer and rendered result were not traced. |
+| `m.portal.overlaymaterialSKM` | bool (`ref`) | `true` | No help is supplied. The suffix is not defined in the registry, so its scope cannot be confidently expanded from the name. | One direct byte comparison reads the reference at `0x1463186FC`. No material assignment or visual effect was reconstructed. |
+| `m.portal.phantomactormatoffset` | float (`var`) | `1` | No help is supplied. The name hints at an offset related to a phantom-actor material, but does not state the offset's units, direction, or consumer. | Object-address setup references only; no direct value-read candidate was found. |
+| `m.portal.scissor.draw` | int32 (`ref`) | `1` | Help says to use portal scissoring to reduce pixel-shader invocations. It does not define the integer mode map or quantify the cost/savings. | One direct integer comparison reads the reference at `0x1421AD463`. The scissor geometry and visual/performance effect were not tested. |
+| `m.portal.scissor.occlusion` | int32 (`ref`) | `1` | Help has the same short scissoring description as `m.portal.scissor.draw`; it does not explain how the two settings compose or define valid values. | One direct integer comparison reads the reference at `0x142164D14`. The relationship with the `draw` setting and the occlusion path were not traced. |
+| `m.portal.tex.path` | FString (`ref`) | — (not in snapshot) | No help or captured value is supplied. The name suggests a texture path, but does not identify a texture, path syntax, or fallback. | One direct string/reference load at `0x14A58C7E0` accesses the stored value. The path consumer and any asset selection were not recovered. |
+
+## What this establishes about overrides
+
+The registry classifies these names as `var` or `ref`; all ten `ref` entries have one or more direct value-access candidates, including a direct string/reference load for `m.portal.tex.path`. Those are static observations in one build. The four `var` entries have no matching direct value read in the saved scan. Neither evidence class proves that an `.ini` line is accepted, survives later configuration layers, or changes behavior in a live match. No controlled override or in-game rendering/movement comparison was performed.
+
+The more specific PinnedMotion help for path-aware step sizes is also summarized in [the CVar override research notes](cvar-overrides.md). For the distinct uppercase portal namespace, see [portal renderer candidates in build 4042190](cvar-game-build-4042190-portal-family.md). The local scan method and registration-versus-consumer distinction are described in [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis); nearby string context remains unverified pairing evidence, not a code trace.

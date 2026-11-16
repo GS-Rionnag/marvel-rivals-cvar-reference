@@ -135,3 +135,6 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Animation system CVar batch F](cvar-animation-system-batch-f.md) — Twenty-five montage, movement, sharing, simulated-proxy, and animation-optimization settings with snapshot/default mismatches and direct-read limits recorded.
 - [Niagara CVar batch F](cvar-fx-niagara-batch-f.md) — Twenty-five GPU debug, grid, LOD, and indirect-argument-pool controls with static-read evidence and override limits.
 - [Lumen radiance-cache CVar batch A](cvar-rendering-lumen-radiance-cache-batch-a.md) — Eighteen radiance-cache settings, including probe retention, filtering, trace-tile, hardware-ray-tracing, and visualization controls.
+- [Animation system CVar batch G](cvar-animation-system-batch-g.md) — Twenty-two URO, LOD, curve, SpiderDes, and animation-evaluation controls, with six direct value-access candidates and override limits.
+- [Niagara CVar batch G](cvar-fx-niagara-batch-g.md) — Twenty-five Niagara leak, profile, logging, budget, render-target, and scalability controls with static access counts.
+- [Game rendering and movement CVar batch A](cvar-game-render-movement-batch-a.md) — Fourteen material deduplication, PinnedMotion, and lowercase portal controls with value-read evidence and cautious namespace interpretation.
