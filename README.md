@@ -9,6 +9,8 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Skelot CVar batch A](cvar-skelot-batch-a.md) — All 12 currently uncovered lower-case `skelot.*` entries, with scan and editability caveats.
+- [Rendering `r.*` CVar batch BC](cvar-rendering-r-batch-bc.md) — 25 more sequential render controls with source and scan evidence.
 - [OpenGL CVar batch A](cvar-opengl-batch-a.md) — All 12 currently uncovered exact-case `OpenGL.*` settings, with backend-selection limits.
 - [Rendering `r.*` CVar batch BB](cvar-rendering-r-batch-bb.md) — 25 more sequential rendering controls with source meanings and scan evidence.
 - [Landscape CVar batch A](cvar-landscape-batch-a.md) — All 12 currently uncovered lower-case `landscape.*` entries, with culling and runtime caveats.
