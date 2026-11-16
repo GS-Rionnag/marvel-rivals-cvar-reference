@@ -129,3 +129,6 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Network CVar batch K](cvar-network-batch-k.md) — Six final `Net.*` entries spanning traffic control, shared-replication tools, statistics, and packed shadow buffers; no uncovered `Net.*` names remain in the current registry audit.
 - [Animation system CVar batch D](cvar-animation-system-batch-d.md) — Twenty-five animation, notify, curve, camera, and character-system controls with code-read evidence and config-override limitations.
 - [Niagara CVar batch D](cvar-fx-niagara-batch-d.md) — Twenty-five Niagara controls spanning compile diagnostics, data channels, component pools, GPU emitters, and visibility/culling.
+- [Animation system CVar batch E](cvar-animation-system-batch-e.md) — Twenty-five animation, IK, FABRIK, and ground-motion controls with translated help and static-read limits marked.
+- [Niagara CVar batch E](cvar-fx-niagara-batch-e.md) — Twenty-five Niagara controls with emitter-distance help inconsistencies and GPU, emitter, replay, and tick-group evidence.
+- [Rendering post-processing CVar batch A](cvar-rendering-postprocess-batch-a.md) — Twenty-five post-processing, SMAA, toon-outline, bloom, and screen-capture settings with UE reference matches and unverified game behavior.
