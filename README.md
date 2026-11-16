@@ -9,6 +9,8 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [HitShape CVar batch A](cvar-hitshape-batch-a.md) — All 12 currently uncovered `HitShape.*` controls with registry meaning and build scan context.
+- [Rendering `r.*` CVar batch AK](cvar-rendering-r-batch-ak.md) — 25 more sequential rendering controls with source meanings and static-evidence limits.
 - [Rendering `r.*` CVar batch AJ](cvar-rendering-r-batch-aj.md) — 25 more sequential controls with source meanings and build-scan limits.
 - [Rendering `r.*` CVar batch AI](cvar-rendering-r-batch-ai.md) — 25 more sequential rendering controls with source meanings and static-analysis limits.
 - [Rendering `r.*` CVar batch AH](cvar-rendering-r-batch-ah.md) — 25 more sequential rendering controls with source meanings and static-analysis limits.
