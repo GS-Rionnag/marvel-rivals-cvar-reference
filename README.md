@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [localReplay CVar batch A](cvar-localreplay-batch-a.md) — Seven replay variables; unsupported meanings and units are left uncertain.
 - [Landscape Splines CVar batch A](cvar-landscape-splines-batch-a.md) — Max spline-component iterations, with runtime use and editability caveats.
 - [AsyncReadFile CVar batch A](cvar-asyncreadfile-batch-a.md) — Pak-file async-read handle caching modes with evidence limits.
 - [Halloween CVar batch A](cvar-halloween-batch-a.md) — Seven blank-help refs; name-based hypotheses are marked clearly.
