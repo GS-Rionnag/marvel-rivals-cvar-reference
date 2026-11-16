@@ -38,4 +38,4 @@ Community help and translations are source text; assistant translations are mark
 - Snapshot values are not defaults or recommendations; Epic UE 5.9 defaults/descriptions do not establish the game’s exact engine version or active path.
 - Direct-memory and address-taking matches remain separate scanner classifications. Function-level behavior and runtime execution are unverified.
 
-Sources: [community CVar registry](cvar-community-registry.md), [Chinese help translations](cvar-chinese-help-translations.md), [build 1.1.4042190 address-reference scan](sources/cvar-research/build-4042190-cvar-address-hits.tsv), and [build-specific candidate inventory](cvar-game-build-4042190.md).
+Sources: [community CVar registry](cvar-community-registry.md), [Chinese help translations](cvar-chinese-help-translations.md), [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis), and [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis).

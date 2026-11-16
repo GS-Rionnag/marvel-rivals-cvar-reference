@@ -28,4 +28,4 @@ Static scan classes do not prove reads/writes, code execution, startup override 
 - Epic UE 5.9 matches are upstream context and do not prove that Marvel Rivals uses that exact engine version or path.
 - Registry presence and static references do not establish startup `.ini` acceptance or in-game behavior.
 
-Sources: [community CVar registry](cvar-community-registry.md), [Chinese help translations](cvar-chinese-help-translations.md), [build 1.1.4042190 address-reference scan](sources/cvar-research/build-4042190-cvar-address-hits.tsv), and [build-specific candidate inventory](cvar-game-build-4042190.md).
+Sources: [community CVar registry](cvar-community-registry.md), [Chinese help translations](cvar-chinese-help-translations.md), [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis), and [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis).

@@ -31,4 +31,4 @@ The dump snapshot is a captured value, not a verified game default. The Epic UE 
 - Registry presence and binary address matches do not prove that a player can set a CVar in the startup `.ini`, that the override wins at launch, or that changing it is safe for networked play.
 - No controlled startup override, microphone loopback, VOIP latency measurement, or audio-engine mute test was performed.
 
-Sources: [community CVar registry](cvar-community-registry.md), [preserved community attachments](sources/cvar-research/README.md), [build-specific CVar inventory](cvar-game-build-4042190.md), and the [address-reference scan notes](sources/cvar-research/README.md#local-build-address-reference-scan).
+Sources: [community CVar registry](cvar-community-registry.md), [community sources](EVIDENCE.md#community-sources), [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis), and the [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis).
