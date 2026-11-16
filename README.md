@@ -126,3 +126,6 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Game-specific visual ability CVar batch A](cvar-game-ability-batch-a.md) — Fifteen ability-specific visual-mesh and afterimage settings, with tentative translations, incomplete numeric-ID mappings, and startup-override limits identified.
 - [Niagara CVar batch C](cvar-fx-niagara-batch-c.md) — Twenty-five Niagara controls covering GPU traces, simulation, budgets, compilation, and combined FX paths, with static read evidence and help uncertainties separated.
 - [SharedRep CVar batch B](cvar-network-shared-rep-batch-b.md) — Twenty-five SharedRep settings for scheduling, logging, RPC/reconnect, and payload behavior, with authority and read-path limits recorded.
+- [Network CVar batch K](cvar-network-batch-k.md) — Six final `Net.*` entries spanning traffic control, shared-replication tools, statistics, and packed shadow buffers; no uncovered `Net.*` names remain in the current registry audit.
+- [Animation system CVar batch D](cvar-animation-system-batch-d.md) — Twenty-five animation, notify, curve, camera, and character-system controls with code-read evidence and config-override limitations.
+- [Niagara CVar batch D](cvar-fx-niagara-batch-d.md) — Twenty-five Niagara controls spanning compile diagnostics, data channels, component pools, GPU emitters, and visibility/culling.
