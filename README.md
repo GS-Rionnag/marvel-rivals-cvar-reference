@@ -126,6 +126,7 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Game-specific visual ability CVar batch A](cvar-game-ability-batch-a.md) — Fifteen ability-specific visual-mesh and afterimage settings, with tentative translations, incomplete numeric-ID mappings, and startup-override limits identified.
 - [Niagara CVar batch C](cvar-fx-niagara-batch-c.md) — Twenty-five Niagara controls covering GPU traces, simulation, budgets, compilation, and combined FX paths, with static read evidence and help uncertainties separated.
 - [SharedRep CVar batch B](cvar-network-shared-rep-batch-b.md) — Twenty-five SharedRep settings for scheduling, logging, RPC/reconnect, and payload behavior, with authority and read-path limits recorded.
+- [Lower-case network CVar batch M](cvar-network-batch-m.md) — Twenty-five additional lower-case `net.*` socket, relay, NetGUID, and replication controls with source-separated evidence.
 - [Network CVar batch L](cvar-network-batch-l.md) — Twenty-five lower-case `net.*` replication, package-map, replay, and pacing controls; four lack explanatory help.
 - [Network CVar batch K](cvar-network-batch-k.md) — Six `Net.*` entries spanning traffic control, shared-replication tools, statistics, and packed shadow buffers. Lower-case `net.*` variables are tracked separately.
 - [Animation system CVar batch D](cvar-animation-system-batch-d.md) — Twenty-five animation, notify, curve, camera, and character-system controls with code-read evidence and config-override limitations.
@@ -164,6 +165,7 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Lumen rendering CVar batch F](cvar-rendering-lumen-batch-f.md) — Twenty-five ScreenProbeGather radiance-cache and screen-trace settings with exact UE defaults and value-access evidence.
 - [Ray-tracing CVar batch E](cvar-rendering-raytracing-batch-e.md) — Twenty-five ray-tracing setup and reflection controls, with limited UE matches, one snapshot/help mismatch, and active-path caveats.
 
+- [Physics debug CVar batch A](cvar-physics-debug-batch-a.md) — Twenty-five Chaos/Geometry Collection diagnostics and workarounds, with sparse help and no-runtime-proof caveats.
 - [Rigid Body Node and Chaos Cloth CVars](cvar-physics-rigidbody-chaoscloth.md) — Twenty-five simulation, solver, collision, timing, and debug controls with source distinctions and static-reference limits.
 
 - [Game-specific CVar descriptions from embedded text](cvar-game-specific-embedded-help.md) — Eighty-seven registered game-specific controls with clearly qualified nearby-text interpretations and static-reference limits.
