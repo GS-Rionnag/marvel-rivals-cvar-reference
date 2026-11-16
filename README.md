@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Serialization CVar batch A](cvar-serialization-batch-a.md) — Five bulk-data and package settings with game-use caveats.
 - [XInput CVar batch A](cvar-xinput-batch-a.md) — Controller-state update forcing, with platform and runtime caveats.
 - [scene CVar batch A](cvar-scene-batch-a.md) — Seven scene refs with vague help and static evidence scoped carefully.
 - [Level CVar batch A](cvar-level-batch-a.md) — Eight level-management refs with partial snapshots and semantic caveats.
