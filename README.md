@@ -9,6 +9,9 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Input CVar batch A](cvar-input-batch-a.md) — All nine exact-case `Input.*` controls with snapshot and loader caveats.
+- [FlyingComponent CVar batch A](cvar-flyingcomponent-batch-a.md) — All nine currently uncovered `FlyingComponent.*` refs, with scan limits.
+- [Rendering `r.*` CVar batch BT](cvar-rendering-r-batch-bt.md) — 25 unique `r.VRS.*` settings with source and static-analysis evidence.
 - [Rendering `r.*` CVar batch BS](cvar-rendering-r-batch-bs.md) — 25 additional unique rendering settings with source and scan evidence.
 - [AssetValidation CVar batch A](cvar-assetvalidation-batch-a.md) — All nine remaining `AssetValidation.*` entries, with per-name build presence and editability limits.
 - [Rendering `r.*` CVar batch BR](cvar-rendering-r-batch-br.md) — 25 more unique sequential rendering controls with source and static evidence.
