@@ -120,3 +120,6 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Network RepGraph CVar batch J](cvar-network-repgraph-batch-j.md) — Twenty-five RepGraph controls covering dormancy, frequency, spatialization, prioritization, and diagnostics, with build scan and editability limits marked.
 - [Animation-node CVar batch A](cvar-animation-nodes-batch-a.md) — Eighteen animation-node and Leg IK controls, separating registry help and snapshot values from local object-address evidence.
 - [FX budget and Cascade CVars](cvar-fx-budget-batch-a.md) — Ten FX budget tracker controls and seven Cascade renderer/update controls, with unverified runtime and override behavior called out.
+- [Animation budget CVar batch A](cvar-animation-budget-batch-a.md) — Twenty-two skeletal-mesh scheduler controls, including per-CVar value-access candidates and two snapshot/help mismatches.
+- [FX CVar batch B](cvar-fx-batch-b.md) — Twenty-five Niagara and particle-system controls, with direct-reference evidence separated from registration-only matches.
+- [Network CVar batch J2](cvar-network-batch-j2.md) — Twenty-five networking controls covering RPCs, RepGraph, replay, and shared bunches, with translated-help, authority, and editability limits noted.
