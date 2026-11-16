@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [MarvelSpringArmComponent CVar batch A](cvar-marvelspringarmcomponent-batch-a.md) — Eight camera/portal variables with terse help and runtime caveats.
 - [Accessibility CVar batch A](cvar-accessibility-batch-a.md) — The accessible-API query switch, with scope limits noted.
 - [MarvelGameplayCue CVar batch A](cvar-marvelgameplaycue-batch-a.md) — Eight remaining cue refs; translated help is marked as unreviewed.
 - [AMF CVar batch A](cvar-amf-batch-a.md) — The remaining AMF.KeyframeInterval setting, with encoder-scope uncertainty noted.
