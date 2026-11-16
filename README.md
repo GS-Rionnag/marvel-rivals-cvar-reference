@@ -9,6 +9,9 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [No-dot CVar batch A](cvar-no-dot-batch-a.md) — First 25 of 40 uncovered registry names without a dot, with exact-case and translation caveats.
+- [Lower-case `t.*` CVar batch A](cvar-t-batch-a.md) — All 23 remaining exact-case lower-case `t.*` entries with build-evidence limits.
+- [Rendering `r.*` CVar batch AQ](cvar-rendering-r-batch-aq.md) — 25 more sequential rendering controls with source meanings and static-analysis limits.
 - [Rendering `r.*` CVar batch AP](cvar-rendering-r-batch-ap.md) — 25 more sequential rendering controls with source meanings and static scan limits.
 - [Rendering `r.*` CVar batch AO](cvar-rendering-r-batch-ao.md) — 25 more sequential rendering CVars with source metadata and scan limits.
 - [Rendering `r.*` CVar batch AN](cvar-rendering-r-batch-an.md) — 25 additional rendering controls with source meanings and build-scan evidence.
