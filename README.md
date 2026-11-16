@@ -9,6 +9,11 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Tick CVar batch B](cvar-tick-batch-b.md) — Final three lower-case `tick.*` entries, completing the family alongside batch A.
+- [Rendering `r.*` CVar batch H](cvar-rendering-r-batch-h.md) — Next 25 render controls with source metadata and static-reference classifications.
+- [Rendering `r.*` CVar batch G](cvar-rendering-r-batch-g.md) — Twenty-five more render controls; some previously listed only in a config cross-check are documented here.
+- [Joystick CVar batch A](cvar-joystick-batch-a.md) — First 25 of 28 exact-case `Joystick.*` controls with source help and static-evidence limits.
+- [GC CVar batch A](cvar-gc-batch-a.md) — First 25 currently uncovered exact-case `gc.*` entries with metadata and build-scan limits.
 - [Sequencer CVar batch B](cvar-sequencer-batch-b.md) — Final five `Sequencer.*` variables, completing the 30-name registry family.
 - [Sequencer CVar batch A](cvar-sequencer-batch-a.md) — First 25 of 30 `Sequencer.*` entries with help, snapshot, Epic, and static-reference evidence separated.
 - [Tick CVar batch A](cvar-tick-batch-a.md) — First 25 lower-case `tick.*` controls with source values and build-scan limitations.
