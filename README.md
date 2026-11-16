@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Accessibility CVar batch A](cvar-accessibility-batch-a.md) — The accessible-API query switch, with scope limits noted.
 - [MarvelGameplayCue CVar batch A](cvar-marvelgameplaycue-batch-a.md) — Eight remaining cue refs; translated help is marked as unreviewed.
 - [AMF CVar batch A](cvar-amf-batch-a.md) — The remaining AMF.KeyframeInterval setting, with encoder-scope uncertainty noted.
 - [LiveLink CVar batch A](cvar-livelink-batch-a.md) — Seven LiveLink refs with help, snapshot, and scan limits.
