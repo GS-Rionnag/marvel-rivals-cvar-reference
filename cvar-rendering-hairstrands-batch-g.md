@@ -41,4 +41,4 @@ Build findings are static address-reference matches from Marvel Rivals Shipping 
 - Several controls are described as experimental or specify particular rasterization paths. Help and address references do not establish whether those paths are selected or usable in Marvel Rivals.
 - Captured snapshot values are not recommendations. The data does not prove that any CVar accepts a startup `.ini` override or changes rendered output.
 
-Sources: [community CVar registry](cvar-community-registry.md), [preserved registry and snapshot attachments](sources/cvar-research/README.md), and [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis).
+Sources: [community CVar registry](cvar-community-registry.md), [community source notes](EVIDENCE.md#community-sources), and [build-specific static-analysis notes](EVIDENCE.md#build-specific-static-analysis).
