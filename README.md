@@ -33,6 +33,7 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Chaos evolution-mode CVars](cvar-chaos-evolution-modes.md) — Six each for Newton and PBD evolution; only `ParalleIntegrate` and `WriteCCDContacts` have help text, and no direct value reads were found.
 - [Chaos game-specific controls, batch A](cvar-chaos-game-controls-batch-a.md) — Twenty-five collision, particle lifecycle, debug drawing, and client-GC switches with metadata conflicts and direct-read evidence marked.
 - [Chaos game-specific controls, batch B](cvar-chaos-game-controls-batch-b.md) — Twenty-five additional particle, Geometry Collection, debug, and parallel-processing settings; opaque help and runtime semantics remain explicitly qualified.
+- [cvar-chaos-game-controls-batch-c](cvar-chaos-game-controls-batch-c.md) — Twenty-five additional Geometry Collection, fracture, visual-log, and rendering controls, with direct-read evidence and metadata mismatches noted.
 - [Chaos Geometry Collection CVars](cvar-chaos-geometry-collection.md) — Twelve `p.Chaos.GC.*` entries covering caching, collision particles, root-break events, renderer selection, removal timing, and async/update controls; direct reads and unresolved entries are distinguished.
 - [Chaos immediate-physics collision and inertia CVars](cvar-chaos-immphys-collision-inertia.md) — All eight immediate-physics collision settings and five inertia-conditioning inputs, including the restitution threshold formula and solver-mode-specific enable gates.
 - [Chaos Immediate Physics joint CVars](cvar-chaos-immphys-joints.md) — All 25 joint settings, their override thresholds and boolean conversion, and evidence that the local joint setup path bundles them for a helper call.
@@ -69,6 +70,7 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Network CVar batch C](cvar-network-batch-c.md) — Twenty-three dormancy, duplicate-send, congestion, GUID, and replication controls, with eight local read candidates separated from registry-only evidence.
 - [Network CVar batch D](cvar-network-batch-d.md) — Twenty-five additional `net.G*`, handshake, checksum, and IP-driver controls, with opaque duplicate-send values and unverified runtime behavior clearly marked.
 - [Network CVar batch E](cvar-network-batch-e.md) — Twenty-five Iris, custom RPC rate-limit, keepalive, and network-capacity controls, with local registry evidence separated from server-side effect claims.
+- [Network CVar batch F](cvar-network-batch-f.md) — Serialization, RPC-size, handshake, ping, Oodle, and replication controls, with client/server limits and undecodable snapshots marked.
 - [CVar overrides](cvar-overrides.md) — Research catalog for every CVar-like entry in a community thread, the supplied community loader syntax, and distinct local loader projects, including editability evidence and live-enumeration limits.
 - [`Performance.DestroyActorFrame.Enable`](cvar-performance-destroy-actor-frame.md) — Build-specific alternate object-processing path and shared helper that can append eligible objects to a list; actor-destruction timing and performance effect remain unresolved.
 - [Python GC quota variables](cvar-python-gc-quota.md) — Three undocumented Python references reset and decrement a scoped integer quota before entering a Python GC helper; the exact wrapper operation remains unknown.
@@ -102,3 +104,5 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Vehicle client-state CVar batch B](cvar-vehicle-clientstate-batch-b.md) — Twenty-five more timing, validation, sweep, and sleep thresholds; their captured values/help and the lack of direct local consumer reads are recorded separately.
 - [Vehicle client-state CVar batch](cvar-vehicle-clientstate-driven.md) — Twenty-five vehicle batching and client-state correction/fallback settings; only three have direct value-read candidates in the saved local scan.
 - [Vehicle debug CVar batch D](cvar-vehicle-debug-batch-d.md) — Twenty-three force, raycast, suspension, visual-log, and override entries, with the saved local read candidates separated from object/setup-only hits.
+
+- [cvar-rendering-general-batch-a](cvar-rendering-general-batch-a.md) — Twenty-five HDR/ACEScg, Actor Occlusion, bloom, shader-uniform, and device controls, with direct value reads separated from setup-only references.

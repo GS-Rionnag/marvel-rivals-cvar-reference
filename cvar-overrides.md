@@ -1,28 +1,10 @@
 # Marvel Rivals CVar overrides: research notes
 
-Started 2026-11-15. This guide catalogs all 89 setting lines (85 distinct keys) in the original post in [the Discord thread](https://discord.com/channels/1452445537298022637/1556428197820633269), including its 83 ordinary lines and six `!` reset lines. Four ordinary keys appear to be input config properties rather than CVars. The guide explains what can be established about each one and separates engine facts from unverified claims about Marvel Rivals.
+Started 2026-11-15. This guide catalogs the 89 setting lines (85 distinct keys) in the original [community Discord thread](https://discord.com/channels/1452445537298022637/1556428197820633269), including 83 ordinary lines and six `!` reset lines. Four ordinary keys appear to be input config properties rather than CVars. The notes separate upstream engine facts and community claims from verified game behavior.
 
 ## Evidence and scope
 
-The analyzed game build identifies itself as Marvel Rivals 1.1.4042190 Shipping. Its user settings expose game-specific scalability and frame-generation properties, but do not enumerate the engine CVar registry. Cooked game content does not provide a readable project config-source tree.
-
-The game's `GameUserSettings.ini` was rechecked. Its `[ScalabilityGroups]` section has nine `sg.*` quality-group keys, and all nine have exact `var`/`ref` entries in the community registry. The `[/Script/Marvel.MarvelGameUserSettings]` section stores game settings such as supersampling mode, screen percentage, DLSS preset, CAS sharpness, and latency options as serialized config properties.
-
-A read-only byte-string scan of the x64 Shipping executable found 65 of the thread's 83 ordinary setting keys as exact printable strings. The five distinct keys from the `!` reset block were all present. Fifteen CVar-like thread keys were not found in the main executable, and the full 126-file executable/DLL scan did not recover those same names; the three input-property names were also absent from the main executable. The expanded scan includes likely engine and game-fork namespaces such as `Marvel.*`, `marvel.*`, `ChaosGC.*`, `AbilitySystem.*`, `ABS.*`, `AOI.*`, `m.*`, and `marvelstats.*`; it lists 10,236 string candidates, including 8,816 exact names from the community `var`/`ref` registry, 8,326 names from the value snapshot, and 4,436 exact Epic 5.9 reference matches. The registry-name pass added 1,438 matches that were previously hidden in the unclassified printable-string set, and the snapshot pass surfaced two more names. A companion [nearby-text index](EVIDENCE.md#build-specific-static-analysis) records raw neighboring strings for all 10,236 candidates; 7,149 have some preceding printable text, though this often includes unrelated strings. This binary-layout evidence is not confirmed CVar help. See the [build-specific inventory](EVIDENCE.md#build-specific-static-analysis) and [repeatable scanner](EVIDENCE.md#method-and-reproducibility).
-
-For a wider namespace audit, the scan found 46,547 distinct dotted printable identifiers across 126 executable/DLL files. The separate [unclassified index](EVIDENCE.md#build-specific-static-analysis) lists the 36,311 identifiers not selected by the prefix, Epic-reference, or exact community-registry-name filters.
-
-## Community registry attachments
-
-Two later community attachments provide a much broader static registry than the original override thread. The [registry message](https://discord.com/channels/1512820805615091712/1512825591529869383/1570970983353950322) supplied `console_vars.tsv` and `console_objects.tsv`; the [earlier dump message](https://discord.com/channels/1512820805615091712/1512825591529869383/1562934699502866452) supplied `CVarDump.txt`. That file's header calls it a “community CVar dump” and marks it re-importable. The loader method and version associated with the snapshot are unverified, as are the capture build and whether values are defaults, runtime values, or user-overridden. The original source messages are linked above.
-
-A separate [third-party `engine.ini` cross-check](cvar-third-party-config-crosscheck.md) covers 132 dotted names in a pinned community config from 2025. Ninety-six match the `var`/`ref` table; two more strings occur in the local binary scan; 34 match none of the registry, dump, Epic 5.9 reference, or local dotted-string inventory. Treat the config values as community proposals, not defaults.
-
-The registry contains **8,973 unique names with `var` or `ref` rows**, plus **395 command names**. The separate objects table has **427 additional names**. The generated catalogs include the [CVar registry](cvar-community-registry.md), [snapshot-only candidates](cvar-snapshot-only.md), [Epic-reference-only binary candidates](cvar-engine-reference-only.md), [definition gaps](cvar-unresolved-definitions.md), [commands](cvar-community-commands.md), and [additional objects](cvar-community-console-objects.md). The value snapshot has 8,445 entries matching the `var`/`ref` registry; 528 registry names are absent from that snapshot, and 67 snapshot names have no `var`/`ref` row. Those 67 are documented as [snapshot-only CVar candidates](cvar-snapshot-only.md); 40 also appear in the object table, while 27 do not. The dump header calls it re-importable, so its values are recorded as a snapshot, not as defaults.
-
-The `var`/`ref` table has help text for 7,553 names. Exact matches to the Epic 5.9 reference provide upstream defaults/descriptions for 4,387 of those registry names. A further 49 Epic-reference names appear in local binaries without a `var`/`ref` row; 21 of those also appear in the snapshot-only list, so the two supplemental lists add 95 distinct names beyond the 8,973 `var`/`ref` set (9,068 total candidate names across these sources). The [definition-gap worklist](cvar-unresolved-definitions.md) flags 1,049 registered names with no useful text in either attachment or exact Epic 5.9 match.
-
-The registry attachment does not identify the game build or executable hash. Compared with the local 1.1.4042190 binary string index, 8,816 registered names are present in the selected dotted binary candidates; 157 registry names are outside that selected set (40 are undotted and outside the scanner filter, while 117 dotted names were absent from all scanned binaries). Another 1,420 selected binary candidates have no `var`/`ref` registry row. These are static-source differences, not proof that either side is exhaustive at runtime. An exact-name cross-check against the CVar-like keys in the original post finds 66 of 81 keys in the registry; their types and help are tabulated under [Registry definitions for the posted CVar keys](#registry-definitions-for-the-posted-cvar-keys). The remaining 15 have no exact entry in this attachment. Custom behavior still needs source-code or runtime evidence.
+The community thread is a list of proposed settings, not a controlled benchmark of each variable. A name in an Unreal reference or community registry does not prove that the game build registers it or accepts a startup override. See [Evidence and scope](EVIDENCE.md) for how the documentation treats community metadata, snapshots, and build-specific static analysis.
 
 ## Epic reference and community benchmark
 
@@ -30,18 +12,18 @@ For standard Unreal variables, this guide uses Epic's public [Unreal Engine 5.9 
 
 The thread's author says the list was assembled from things other people used and that they had **not individually benchmarked** each entry. Three screenshots attached to the original post show different Practice Range views with FPS counters, but no matched scene/config pair. A later chart in the thread compares “1600x1200 w/ CMDS @ 100% AA” with “1600x1200 Mid No CMDS 100% AA”: it reports 253.3 average / 111.6 1st-percentile / 86.4 0.1-percentile FPS for the first row and 199.6 / 103.7 / 81 for the second. The chart does not identify the exact override set, test hardware, benchmark method, or repetitions; these figures are a community-reported comparison, not causal proof that the posted CVars produced the average-FPS difference.
 
-## How to read these in the example loader
+## How to read an example `[Overrides]` loader format
 
-According to the loader instructions supplied for this task:
+According to the example loader instructions:
 
 - Lines beginning with `;` are comments and do nothing. The example block must be copied below the actual `[Overrides]` marker and uncommented before it takes effect.
 - An ordinary `name=value` line under `[Overrides]` is a CVar override. The loader says these merge above existing configuration and take precedence, including switches.
 - In this loader, `!name=` removes the configured value so the game's own value applies. Keep the `=`. This is the loader's behavior; it is not a general Unreal CVar reset syntax.
 - The loader's own instructions say settings that can remove smoke or other effects are ignored. This is a loader policy statement; it does not identify every protected setting or promise that all visual changes are detected the same way.
 - The `[Section]` format is for non-CVar config properties. In the thread, `bDisableMouseAcceleration`, `bEnableMouseSmoothing`, `bViewAccelerationEnabled`, and `RawMouseInputEnabled` look like config properties, not console variables. They should only be used in the setting's real config section if the game defines them there; putting them under `[Overrides]` does not make them CVars.
-- The thread's `!r.SkeletalMeshLODBias=15` and `=16` are two alternative reset lines, not a way to set a range. Under the supplied loader semantics both remove the configured value; neither requests LOD 15 or 16.
+- The thread's `!r.SkeletalMeshLODBias=15` and `=16` are two alternative reset lines, not a way to set a range. Under the example loader semantics both remove the configured value; neither requests LOD 15 or 16.
 
-The example loader format has an `[Overrides]` section and per-key add, replace, and reset syntax. Those loader semantics establish how to express a value, not whether the game accepts a particular CVar.
+
 
 The six reset lines and the status of the variable each names are:
 
@@ -72,171 +54,14 @@ Unreal's public documentation says CVars may be set from config files and that d
 
 Some CVar families documented below were analyzed only from registry metadata and static executable references. For those, say “loader-configurable by syntax; game acceptance/effect unverified” unless there is specific runtime evidence. The loader also explicitly says it ignores settings that can remove smoke or other effects; this can veto an otherwise valid line, and the rule should be checked before testing any effect-removal proposal. A variable can therefore be syntactically editable without being accepted, behaviorally active, or allowed by the loader.
 
-## Can a normal packaged mod list the live CVar registry?
+## Can a packaged asset mod list the live CVar registry?
 
-The normal asset-mod workflow in this repository replaces cooked Unreal assets and packages them into an IoStore `.pak`/`.ucas`/`.utoc` set. The [evidence and scope notes](EVIDENCE.md#method-and-reproducibility) also cover PAK-based INI/config edits, while the example loader syntax describes startup config merging and per-key overrides. These workflows can carry or set predetermined values; none of the inspected instructions exposes a way for a `.pak`/INI mod to enumerate the engine's live `IConsoleManager` registry or write its current state to a file. That is a limitation of the inspected workflow, not a claim that no other Marvel Rivals mod framework can run code.
+An Unreal asset package or INI override can carry predetermined values when a compatible loader reads them. That alone does not expose the live `IConsoleManager` registry or write its state to a file. A true runtime enumerator requires a supported game command or code that queries the live registry. Epic documents `DumpCVars` and `DumpConsoleCommands`, but their availability in Marvel Rivals Shipping is unverified. Static name presence does not prove a command is available. See [Evidence and scope](EVIDENCE.md#method-and-reproducibility) for what the build-specific analysis included.
 
-Before building a custom code mod, the low-impact route is to check whether the current game exposes Unreal's built-in console commands. Epic documents `DumpCVars [Prefix] [-showhelp] [-csv=[path]]` as listing CVars and values, optionally filtered and saved as CSV, and `DumpConsoleCommands` as listing variables, commands, and discovered execs. These are UE 5.9 engine-reference capabilities, **not verified as available in Marvel Rivals Shipping build 1.1.4042190**. A printable-string search of the installed MarvelGame `.exe` and `.dll` files and the preserved community command attachment did not find these exact command names; availability through another path is still unknown. If the game accepts `DumpCVars`, its output would provide a valuable live name/value/help list, but Epic's command description does not promise to include CVar flags or `LastSetBy`. Even a live current value does not by itself prove that a loader override is accepted or that the changed value affects gameplay. See Epic's [Console Commands Reference](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-console-commands-reference) and [CVar flag reference](https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Core/EConsoleVariableFlags).
-
-If the built-in command is unavailable, a true runtime enumerator would need code that runs inside the game and queries the live console manager. That is a native plugin/hook-style task, not the cooked asset replacement workflow used by the existing mods here. The workspace has no documented mod build path for such a runtime component. Do not describe a normal `.pak`/IoStore asset mod as a live registry dumper unless it can demonstrate that code execution and output path. A practical editable-CVar check would record a baseline live dump, apply one loader override, relaunch, then dump again and compare the target value; test a resulting in-game effect separately.
-
-### Loader implementation scope
-
-This guide documents the example override syntax and research evidence. No launcher, loader binary, game executable, local config file, or raw scan artifact is included in this documentation-only project. Loader acceptance and runtime behavior remain unverified unless a guide states otherwise.
 
 ## Current Marvel Rivals policy on injected mods and config changes
 
-Marvel Rivals' official [Use of Mods and Violation Management notice (2026-10-15)](https://www.marvelrivals.com/20261015/41525_1316797.html) says that certain mods using memory-injection and modification behaviors trigger anti-cheat detection and that prohibited mods can receive disciplinary action. Its official [Prohibited Software & Hardware List](https://www.marvelrivals.com/guide/20250226/41348_1214569.html) also lists unauthorized client-config changes, graphics-rendering `.ini` modifications, third-party plugins, and unfair mod resources as prohibited while the game runs. These notices do not establish whether the loader's reported startup-time method is the same as the memory-injection methods called out in the newer notice, but they do mean we cannot verify that an injected or config-loading CVar dumper is safe or authorized for online use. This project will use the supplied dumps and static/offline analysis rather than build or run a dumper in the live client.
-
-## Additional lines in the installed override loader loader config
-
-The installed `SigeonLoader.ini` also has active entries beyond the Discord post. Its selected baseline is `low`; the file itself does not list that variant's full CVar defaults. This section records only the relevant setting lines; local loader credentials and unrelated personal data are omitted. The loader's own comment block says `[Overrides]` lines win over merged config values and that `!name=` drops the configured value. Treat `!` rows as resets, not as assignments.
-
-| Exact line | What the line means / evidence |
-| --- | --- |
-| `!r.VelocityOutputPass=2` | Reset only: the `2` does not apply. The underlying Unreal CVar chooses when to write the velocity buffer: `0` during depth pass, `1` during base pass, `2` after base pass. This setting affects motion vectors used by temporal AA and motion blur; it is not a general performance switch. |
-| `r.Streamline.DeepDVC.Intensity=1` | NVIDIA Streamline DeepDVC intensity; NVIDIA documents range 0–1, with 0 preserving the original image and larger values strengthening adaptive vibrance. `1` is the maximum documented intensity. Whether the game's Streamline integration is enabled is a separate question. |
-| `r.Streamline.DeepDVC.SaturationBoost=1.00` | NVIDIA documents this as a 0–1 color saturation boost, active when intensity is raised. `1.00` is the maximum documented boost. Exact registration through this Unreal CVar spelling is build-specific. |
-| `r.SeparateTranslucency=1` | Enables a separate translucency render target/pass, keeping translucency unaffected by depth of field. Epic's reference says this costs GPU performance and memory; `1` is also the upstream default. Effects and cost in Marvel Rivals still depend on its renderer/content. |
-| `!r.debug.ForceDefaultMtl=1` | Reset only: `1` is not applied. The underlying name is embedded in the game executable but is not in Epic's reference; its exact meaning remains unknown. |
-| `!r.MipMapLODBias=15` | Reset only: bias `15` is not applied. The underlying Epic CVar adds a global mip bias to 2D textures (documented range −15 to 15); positive bias generally selects blurrier/lower-resolution mips. |
-
-The installed file also has these **commented** motion-blur examples, so none is currently active:
-
-| Commented example | Meaning / status |
-| --- | --- |
-| `r.DefaultFeature.MotionBlur=1.5` | Epic describes this as the project default for motion blur, with `0` off and `1` on; camera/post-process settings can override it. The example is commented and its `1.5` value is outside the documented 0/1 choices. |
-| `r.MotionBlurQuality=5` | Epic's current reference describes values 0–4 (off through very high), with 3 high; the posted `5` is outside that documented range. Commented, so inactive. |
-| `r.MotionBlur.Amount=0.5` | Overrides post-process motion-blur amount when set to an override value. Commented, so inactive. |
-| `r.MotionBlur.Max=5` | Overrides maximum blur length as a percent of screen width. Commented, so inactive. |
-| `r.MotionBlur.Scale=1.5` | Scales motion-blur intensity from the post-process setting. Commented, so inactive. |
-| `r.MotionBlur.TargetFPS=162` | Target FPS used to scale motion-blur velocity length; Epic documents −1 for the post-process setting, 0 for a moving-average current frame rate, and 1–120 for an explicit target. The example `162` is outside that documented range. Commented, so inactive. |
-
-The game install contains Streamline's `sl.deepdvc.dll` (file version `2.11.1.0`) and NVIDIA's `nvngx_deepdvc.dll` (file version `310.6.0.0`) under `Engine/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/`. This confirms the plugin components are present in the inspected build, but does not prove DeepDVC is enabled in a running session or that the two CVar lines are honored. NVIDIA's linked programming guide is version 2.14.16, newer than the installed 2.11.1 plugin; use it as an upstream description of the controls, not as exact proof of this build's behavior.
-
-The full executable/DLL scan also found these related strings in both Shipping architectures. They are absent from the installed config and have no public Epic definition:
-
-| Game-build candidate | Current interpretation |
-| --- | --- |
-| `r.Streamline.DeepDVC.Enable` | Likely enable/disable switch by its name. NVIDIA's API requires the feature mode to be set on before it applies, but the string alone does not prove this CVar maps to that API mode. Default and exact game behavior are unknown. |
-| `r.Streamline.Load.DeepDVC` | Likely controls whether the DeepDVC plugin is loaded, but this is name-based inference; startup timing and effect are unverified. |
-
-The local config places the four mouse-input properties listed earlier under `[Overrides]`. They still look like config properties rather than documented Unreal CVars; the loader's sample syntax says non-CVar properties require their owning `[Section]`. Their current effective behavior is not verified.
-
-## NVIDIA plugin candidates in this build
-
-The full install scan found 27 `r.NGX.*` and 35 `r.Streamline.*` strings in the two Shipping game executables. They are listed individually, with file evidence, in the [build inventory](EVIDENCE.md#build-specific-static-analysis). NVIDIA's official DLSS documentation confirms that its Unreal plugin exposes controls under `r.NGX`; official Streamline docs describe DeepDVC and the feature/plugin APIs. Those references explain the feature families, but do not establish the Marvel build's registration, defaults, or behavior for every candidate.
-
-At a name level, `r.NGX.DLSS.*` covers DLSS enablement, exposure, denoising, presets, memory handling, and reflection options; `r.NGX.DLSSRR.Preset` appears to select a Ray Reconstruction preset. `r.NGX.Enable` / `r.NGX.Enable.AllowCommandLine` and `r.NGX.BinarySearchOrder` appear to control NGX startup/library selection; the exact game-specific flags need code evidence. `r.NGX.Automation.*` names suggest image-quality/performance automation and view selection.
-
-`r.Streamline.*` candidates include `DLSSG.*` options (frame generation, generated-frame count, dynamic resolution, status and UI detection), `DeepDVC.*` color controls, `Load.*` module switches, `InitializePlugin`, Reflex plugin registration, motion-vector handling, resource tags, swapchain proxies, and logging. NVIDIA's Streamline guide confirms that DLSS-G uses a proxy swap chain and tagged backbuffer/depth/motion-vector/UI inputs, which gives context to the `Tag*`, `MotionVector*`, and swapchain names. These group descriptions are category-level inference from the names; use the inventory's explicit uncertainty labels and do not treat an embedded string as proof that the setting is safe or accepted.
-
-## Game-specific meanings recovered from nearby binary text
-
-The x64 Shipping executable contains natural-language text close to several first-party CVar-like names. These strings look like their help text, but the pairing comes from data layout rather than confirmed Ghidra cross-references or runtime `DumpConsoleVariables` output. The [nearby-text index](EVIDENCE.md#build-specific-static-analysis) preserves the raw strings and offsets for review.
-
-| Candidate | Embedded description and practical reading |
-| --- | --- |
-| `Marvel.GameState.EnableDamageEventBudgetThrottle` | A master switch for frame-budget-based `BroadcastDamageEvent` callback throttling; the embedded text says `false` disables it. This is gameplay/event scheduling, not a rendering-quality toggle. |
-| `Marvel.GameState.DamageEventBudgetThresholdMs` | Per-frame time budget in milliseconds for `BroadcastDamageEvent` callbacks. When exceeded, the text says `CanBeMerged` targets are auto-throttled. |
-| `Marvel.GameState.DamageCallbackForceTriggerSeconds` | Maximum time a `CanBeMerged` target can go without a damage callback before a forced trigger, even while over budget. |
-| `Marvel.GameState.DamageEventLODDistance` / `TreatEventLODDistance` | Client-only event culling by distance from the local player, in centimeters. Damage or Treat events are skipped when both source and target are not self and are farther than the set distance; `0` disables the filter. |
-| `Marvel.GameState.AttributeEventCullingMinCount` | Enables Damage/Treat LOD culling only when the sorted event count exceeds this threshold; values `<=0` disable the count gate. |
-| `Marvel.GameState.CameraInfoFOVFilter` | Enables per-connection camera RPC FOV filtering, catch-up, and spectator updates; `0` restores legacy broadcasts. This changes network update behavior. |
-| `Marvel.GameState.CameraInfoQuantizedThreshold` | Minimum encoded Pitch/Yaw change since the last send to a connection; the adjacent help says default `20` matches existing camera setters and spectated targets bypass the threshold. |
-| `Marvel.GameState.CameraInfoMindControlFix` | Keeps the original player's AI-controlled character camera rotation synchronized during possession, including skill camera actors. The help says it requires `CameraInfoFOVFilter`; `0` preserves existing filtering logic. |
-| `Marvel.GameState.CameraRPCBatchCompressed` | `1` uses UID and 23-bit Pitch/Yaw in the camera batch RPC; `0` uses `SendCameraInfoRpc`. This is a network-format/update path, not image quality. |
-| `Marvel.GameState.PhysProfile` | Embedded help says true opens a physics profile; appears to be a profiling/debug switch. |
-| `AbilitySystem.GameplayCue.AudioThrottle.Enable` | Enables per-tag audio throttling and a per-frame concurrent limit for GameplayCues. Nearby text says disabling it in an emergency lets all audio play unconditionally. |
-| `AbilitySystem.GameplayCue.AsyncHandlingWorkerNum` | Number of worker threads for asynchronous GameplayCue handling. `0` selects the synchronous path; positive counts are clamped to the Task Graph worker count. |
-| `AbilitySystem.GameplayCue.DisableDynamicBudgetTimeOffset` | `0` keeps adaptive Cue queue-budget offsets enabled (default); `1` holds `BudgetTimeOffset` steady. The embedded help says to set it before gameplay. |
-| `AbilitySystem.GameplayCue.EnablePerfOptimization` | Toggles experimental GameplayCue/CueCombine optimizations; embedded default is `0` (off), `1` enables them. |
-| `AbilitySystem.GameplayCue.EnablePlaybackCache` | Toggles `CuePlaybackCache` for cue-index lookup (`0` off, `1` on). |
-| `AbilitySystem.GameplayCue.EnableCueEventQueue` | Embedded help says it enables a queue to optimize GameplayCue handling. The exact queue policy and default are not stated. |
-| `AbilitySystem.GameplayCue.MergeWhitelistReadLocks` | Merges whitelist reads under one lock; embedded text says `0` keeps legacy separate locks and `1` uses the merged path (default). |
-| `AbilitySystem.GameplayCue.EnableAggressiveWhiteListCueOptimization` | Embedded help says cues are optimized except those on the whitelist. This is a behavior/performance switch whose impact on cue delivery should be checked in a match. |
-| `AbilitySystem.GameplayCue.EnableAbilityCueTagUpdate` | When enabled, ability cues update the owning actor's tag map. This can change gameplay tag state as well as cue behavior. |
-| `AbilitySystem.GameplayCue.EnableIgnoreCueTag` | Enables ignoring cue tags that could not be found; related command-like candidate `ClearIgnoredCueTags` clears the global ignored-tag set. |
-| `AbilitySystem.GameplayCue.EnableCueAsyncForWeapon` / `EnableCueAsyncForWeaponAmmo` | The embedded help for both names says it enables async handling for `WeaponAmmoBase` and subclasses. Their separate implementation effects are not established. |
-| `AbilitySystem.GameplayCue.CustomMaxCueActorsToPreAllocate` | Maximum number of GameplayCue actors to preallocate. |
-| `AbilitySystem.GameplayCue.CustomPreAllocatedCueActorLifeSpan` | Lifetime for preallocated GameplayCue actors; unit is not stated in the adjacent text. |
-| `AbilitySystem.GameplayCue.TickPreAllocateCueActorsInterval` | How often the preallocator ticks; unit and default are not stated. |
-| `AbilitySystem.GameplayCue.TimeThresholdToRestoreBudgetOffset` | Number of seconds before attempting to restore the cue-queue budget offset; `0` disables restoration timing according to the help text. |
-| `AbilitySystem.GameplayCue.EnableClearRedundantEventsForMissingCue` | Controls whether redundant events are cleared while their cue is still missing. |
-| `AbilitySystem.GameplayCueFailLoads` | Command-like candidate: while true, it pretends all GameplayCues are unloaded and keeps requesting loads; false allows cues to play. This is unsuitable as a general performance override. |
-| `AbilitySystem.GameplayCue.RunOnDedicatedServer` | Controls whether GameplayCue events run on a dedicated server. This can affect server/gameplay behavior. |
-| `AbilitySystem.GameplayCue.EnableCueAsyncForCharacter` | Enables asynchronous cue handling for `MarvelBaseCharacter` and subclasses. |
-| `AbilitySystem.GameplayCue.EnableCueAsyncForReticle` | Enables asynchronous cue handling for `MarvelAbilityWorldReticle_CueVisualization` and subclasses. |
-| `AbilitySystem.GameplayCue.EnableCueAsyncForSummoned` | Enables asynchronous cue handling for `MarvelSummonedComponent` and subclasses. |
-| `AbilitySystem.GameplayCue.EnableCueAsyncForTargetBase` | Enables asynchronous cue handling for `MarvelAbilityTargetActor_Base` and subclasses. |
-| `AbilitySystem.EnableTaskPool` | `0` disables pooling; values above `0` pool non-simulated tasks; values above `2` use the owning actor as the outer. Simulated tasks are never pooled. |
-| `AbilitySystem.GameplayEffects.MaxScopedExecutionNestCount` | Maximum nested Gameplay Effect applications within one scope. The default and response at the limit are not stated. |
-| `AbilitySystem.GameplayEffects.MaxVersion` | Overrides the current Gameplay Effect version, disabling upgrade code paths. Treat as a compatibility/debug control. |
-| `AbilitySystem.CueUserData.EnableVisibilityOptimization` | Enables visibility optimization while `CueDataProcessor` ticks. |
-| `AbilitySystem.DisableGameplayCues` | Disables all GameplayCue events in the world. This removes gameplay effects/feedback and is not a rendering-only optimization. |
-| `AbilitySystem.DisplayGameplayCues` | Displays GameplayCue events as text in the world; a debug visualization. |
-| `ABS.EnableDamageCallbackCooldown` / `ABS.DamageCallbackCooldown` | Master switch for a damage-callback cooldown on `CanBeMerged` targets; false disables it. The cooldown is in seconds, and `0` disables it. This reduces callback frequency and can affect event timing. |
-| `ABS.RemoteAttributeChangedEvent.Coalesce` | Coalesces complete remote simulated-proxy attribute-event dispatch for ASC opt-in actors (`0` off, `1` on). |
-| `ABS.RemoteAttributeChangedEvent.IntervalMs` | Interval in milliseconds for coalesced remote attribute dispatch; `0` means next tick. |
-| `ABS.SkipMonsterDamageCallbacks` | Bit flags for skipping damage notifications on Ability System Components whose `bTriggerDamageNotify` is false: bit `1` skips `OnApplyDamage`, bit `2` skips `OnTakeDamage`, `0` disables skipping. This changes gameplay callbacks. |
-| `GAS.MaxNumActiveGameplayEffects` | Maximum number of active Gameplay Effects; `0` means unlimited. |
-| `GAS.GameplayActorOverflowThreshold` | Per-class GameplayActor count threshold for overflow warnings; `0` disables the warning. |
-| `GAS.DisableAbilitiesMT` | Embedded text says positive values disable ability multithreaded playback. Exact accepted values and whether this is a command or persistent CVar need confirmation. |
-| `GAS.Projectile.EnableMergeOptimize` | Global switch for projectile merge/culling optimizations. This can alter projectile behavior and networked results. |
-| `GAS.Projectile.MergeThreshold` | Active-actor count threshold that triggers spawn merging per `(Instigator, ProjId)`. |
-| `GAS.Projectile.MergeMaxAngle` | Maximum direction difference in degrees for projectile merging. |
-| `GAS.Projectile.MergeSpawnRadius` | Maximum spawn-location distance in centimeters for projectile merging. |
-| `GAS.Projectile.MaxClientPerChar` / `MaxServerPerChar` | Projectile-count cap per `(Instigator, ProjId)` on client/server; `0` means unlimited. These can change projectile spawning or replication. |
-| `GAS.Merge.ShouldPredict` | When projectile/scope merging is active, `0` disables client prediction (server-only, default), `1` predicts on the client. This is network/gameplay behavior. |
-| `m.VisualMeshClone.Enable` | Global switch for a shared visual mesh-clone layer. The embedded help says ability-level opt-ins must use legacy paths when the global switch is disabled. |
-| `marvelstats.HitchDetectThresholdInSeconds` | Frame time above this value is considered a hitch. |
-| `marvelstats.MaxRingBufferSizeMB` | Maximum expanded ring-buffer size while collecting hitches; embedded help says it cannot exceed 256 MB. |
-| `marvelstats.EnableOnlineHitchCounting` | Candidate for enabling online hitch counting by its name; adjacent text does not state its default or effect. |
-| `marvelstats.HitchCollectDelayInSeconds` / `HitchCountingThresholdInSeconds` | Names indicate delay/threshold inputs for hitch collection/counting, but adjacent text does not establish their exact meanings or defaults. |
-| `pve.ForceExecutionRate` | Forces the round-table execution rate in PvE damage calculation: `-1` uses normal `FMath::FRand()`; a value above `0` is used directly (help gives `0.99` for PlainHit and `0.01` for Dodge). This directly changes combat outcomes. |
-| `pve.RedirectSourceToInstigator` | `1` uses a summon's instigator as the PvE damage source for attribute lookup; `0` (default) keeps the owner of the source Ability System Component. |
-| `pve.RegenBeforeInitCost` | Reinitializes reduce/regen ability state before initializing gameplay ability cost to avoid attribute drift; default false. |
-| `m.M2212.EndMatchOccluderDither.Enable` | Client-only master switch for M2212 end-match occluder dithering (`0` off, `1` on). |
-| `m.MIParameterLock.UsePerInstance` | Selects the material-instance parameter lock scheme, effective immediately: `true` (default) uses per-instance `FRWSpinLock` to reduce cross-instance contention; `false` uses a legacy global mutex. The embedded help says to change it only at a safe point. |
-| `m.MIParameterLog.Enable` | Enables material-instance parameter information on the console. Appears to be diagnostic output. |
-| `m.MaterialTranslucencyPass.EnableOverride` | Enables the material-instance override for the material translucency pass. |
-| `m.DisableDepthTest.EnableOverride` | Enables the material-instance override for `DisableDepthTest`. |
-| `m.PinOther.Priority.Enable` | Enables priority-based admission for `UMarvelAbilityTask_PinOther`: only strictly higher-priority pins preempt, equal priority is first-come-first-served; `0` restores legacy indiscriminate preemption; default `1`. This affects ability behavior. |
-| `m.PinnedMotion.ForceServerSocketUpdate` | Forces `GetSocketLocation` instead of lazy socket-transform lookup; `0` off (default), `1` on. |
-| `m.PinnedMotion.PathAware.Enable` | Enables Path-Aware Corner Slide for PinnedMotion; `0` off (default), `1` on. |
-| `m.PinnedMotion.PathAware.MaxStepSize` / `MinStepSize` | Maximum/minimum corner-slide step per frame in centimeters; defaults `80` and `8`. The minimum keeps motion when the source is stationary. |
-| `m.PinnedTask.OutOfRangeDelay` | Sets the delay before a pinned task is considered out of range; unit and default are not stated in adjacent help. |
-| `m.Ability230.KeepItemsOnEnd` | When true, ability `230` does not clear its interactive-item list on end. The embedded help says this addresses nearby portals becoming unusable after teleporting through one. |
-| `m.Cue.SpawnByTargetName` | Controls whether to spawn a GameplayCue actor by target-actor name; default/range unknown. |
-| `m.ability.<id>.UseVisualMeshCloneLayer` | Several hero/ability-specific switches opt into the shared visual mesh-clone layer. The global switch is `m.VisualMeshClone.Enable`; per-ability defaults and effects require their own code references. |
-| `ChaosGC.ChaosCollisionNumThreshold` | Embedded description says this is a threshold for the number of fragment collisions. |
-| `ChaosGC.EnableGlobalChaosCombineEffect` | Nearby text calls this a Boolean for enabling the global Chaos combine effect. |
-| `ChaosGC.FrameISMCMaxTime` / `FrameISMCMaxNum` | Nearby default strings are `2.0` and `50` respectively. The names indicate time/count limits for frame-based ISMC work, but the time unit and handling are not stated. |
-| `ChaosGC.FrameNiagaraMaxTime` | Nearby default string is `1.5`; the name suggests a frame-time budget for Niagara work, but units and behavior are not stated. |
-| `ChaosGC.Niagara.MaxChaosEventNum` | Nearby help says this is the maximum number of break events sent to one component per frame; a nearby default string says `40`. |
-| `ChaosGC.NiagaraRenderMeshPercent` | Embedded help calls it the rendering percentage of secondary fragments. The valid range and effect on gameplay state are unknown. |
-| `ChaosGC.OnLikeMapLoaded_UpdateFrameBudget` | Frame budget, in seconds, for updating Chaos actors and client GC actors in an `OnLikeMapLoaded` callback; embedded text says `0` means no budget limit. |
-| `marvel.AOIRelevantCache.Enable` | Enables a per-frame cache for `GetRelevantCharacters`: `0` uses the legacy traversal, `1` uses cached lookup, and `2` is labeled `opt copy`. The exact mode-2 behavior is unknown. |
-| `marvel.TeamRelationCache` | Enables a per-frame TeamRelation cache (`1` on, `0` off) to avoid repeated `GetTeamComponent` lookups for actor pairs queried by cues. |
-| `marvel.AllowClientSideNavigation` | Allows a client to create NavigationSystem and load Recast NavData (`0` off by default, `1` on). The help explicitly says set it before `LoadMap`; changing it after map load does not affect the current map. This is a memory/navigation behavior setting. |
-| `marvel.Bink.AudioMode` | Chooses the Bink audio backend: `0` native Bink output, `1` routes through the Wwise bridge. Embedded help says to restart before first Bink playback after changing it. |
-| `marvel.audio.DisableFootstep` | Footstep-audio policy: `0` preserves current behavior; `1` keeps the local player and components tagged `Audio.IgnoreDisableFootstep` while disabling others; `2` disables all footsteps. It changes audio content, not graphics. |
-| `Marvel.Oodle.DisableLowCoreThreshold` | Logical-core threshold (including hyperthreads) at or below which Oodle is disabled on the client; read at `BeginPlay`. Related `Marvel.Oodle.bEnableLowCoreDisable` enables/disables this feature. This is a platform/network-compression control. |
-| `Marvel.ProjectileRoute.EnableBattleRuleOverride` | Master gate for BattleRule projectile-class replacement. Help says `0` uses authored classes for all routes; `1` uses replacement classes only for selected routes (default enabled with ability `103021` selected). Toggling affects future spawns and preserves individual route states. This is gameplay behavior, not a safe graphics tweak. |
-| `Marvel.HeroAssetLoader.ExcludeDomains.Local` / `ExcludeDomains.Remote` | Adds comma-separated asset `LoadDomain` exclusions for local/remote in-match presentation; `None` restores config and an invalid list is ignored. Help says set before a new match/PIE; existing subscriptions are not rebuilt. |
-| `Marvel.HeroAssetLoader.KeepResident.Local` / `KeepResident.Remote` | Controls local/remote in-match presentation residency: `-1` follows config, `0` loads then releases, `1` holds resident; other values follow config. It does not change selected domains or grant timing, and must be set before a new match/PIE to affect existing subscriptions. |
-| `Marvel.M2212.BoneSegment.EnableServerComponent` | Controls M2212's authoritative fracture component. `1` uses a server Dynamic component plus replicated client Kinematic presentation/hit proxies (default); `0` uses legacy client-only GameplayCue presentation while capsule and hit shapes remain authoritative. This changes replicated gameplay/physics presentation. |
-| `Marvel.M2212.BoneSegment.RecoveryFloorClearance` | Extra centimeters above the floor used when the authoritative fracture center relocates a recovering character. |
-| `Marvel.M2215.BoneSegment.FullServerSimulation` | Fracture replication policy sampled on authority at activation: `1` simulates/replicates every fragment (default); `0` makes only pelvis midline halves authoritative and other fragments local. The reduced mode requires a skill opt-in and complete pelvis halves or full simulation remains. |
-| `Marvel.MonsterAbility408111.ClientComputeGhost` | Selects who computes ghost assignment/offsets for that monster ability: `1` client computes them, `0` server sends them. This changes gameplay/network behavior. |
-| `Marvel.Scope.103811.UseRepTarget` | Uses the replicated target for ability 103811 on simulated proxies (default true). The help warns that marked-target drain is supported only when enabled; disabled falls back to primary-target-only rendering. |
-| `Marvel.UI.EnableOverrideLoadFixup` | Enables a UI asset-load fix for a silent `OnLoaded` drop (default enabled); help associates it with an invisible battle panel bug. This is a targeted compatibility fix, not a general rendering control. |
-| `Marvel.WeaponFireMerge.Enabled` | Merges weapon-fire requests by origin/direction when enabled (`1`, default); `0` fires each direction independently. This can affect weapon behavior. |
-| `Marvel.GameState.TreatEventLODDistance` | Client-only: skips Treat events when both source and target are not the local player and are farther than this distance in centimeters. `0` disables the distance filter. |
-
-These are stronger leads than names alone, but still require Ghidra references or runtime query before being treated as confirmed registered variables. The other unresolved entries remain listed in the full inventory without an asserted meaning.
-
-The expanded `m.*` namespace surfaced a full portal-renderer family; the focused [portal CVar guide](cvar-game-build-4042190-portal-family.md) documents every one of its 74 `m.Portal.*` candidates, including value ranges where adjacent binary text provides them.
+Marvel Rivals' official [Use of Mods and Violation Management notice (2026-10-15)](https://www.marvelrivals.com/20261015/41525_1316797.html) says that certain mods using memory-injection and modification behaviors trigger anti-cheat detection and that prohibited mods can receive disciplinary action. Its official [Prohibited Software & Hardware List](https://www.marvelrivals.com/guide/20250226/41348_1214569.html) also lists unauthorized client-config changes, graphics-rendering `.ini` modifications, third-party plugins, and unfair mod resources as prohibited while the game runs. These notices do not establish whether community's reported startup-time method is the same as the memory-injection methods called out in the newer notice, but they do mean we cannot verify that an injected or config-loading CVar dumper is safe or authorized for online use. This project will use the supplied dumps and static/offline analysis rather than build or run a dumper in the live client.
 
 ## Thread entries
 
@@ -482,7 +307,6 @@ The following cross-check uses exact CVar names from the posted override list, i
 
 ## Important corrections and risks in the community bundle
 
-- The 5060 Ti pool values (`12288`, `512`, `256`) are not automatically valid for a 16 GB card. They are pool budgets, with different resources and drivers potentially counted differently; VRAM also has to cover render targets, buffers, game assets, and the desktop.
 - `r.D3D12.GPUTimeout=0` removes the GPU timeout guard in Epic's documented implementation and can freeze the machine if the GPU hangs.
 - `s.IoDispatcherBufferMemoryMB=1024` and `s.IoDispatcherCacheSizeMB=2048` reserve large memory budgets. Larger buffers/caches can crowd out other game/system memory and are not proof of higher throughput.
 - Some variables are spelling-sensitive. Preserve exact names, including `gc.AssetClusteringEnabled` vs Epic's differently spelled `gc.AssetClustreringEnabled`, and the thread's `GGC`, `Chose`, and `InternalfaceFace` names, until the game's own registration confirms the intended spelling.
@@ -500,11 +324,9 @@ The following cross-check uses exact CVar names from the posted override list, i
 
 ## References
 
-- [Discord original post and discussion](https://discord.com/channels/1452445537298022637/1556428197820633269) (thread ID `1556428197820633269`; read on 2026-11-15).
+- [Original community Discord thread](https://discord.com/channels/1452445537298022637/1556428197820633269).
+- [Community CVar registry attachment](https://discord.com/channels/1512820805615091712/1512825591529869383/1570970983353950322).
+- [Community CVar snapshot attachment](https://discord.com/channels/1512820805615091712/1512825591529869383/1562934699502866452).
 - [Unreal Engine 5.9 Console Variables Reference](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-console-variables-reference).
 - [Unreal Engine 5.9 Texture Streaming Configuration](https://dev.epicgames.com/documentation/unreal-engine/texture-streaming-configuration-in-unreal-engine).
-- [NVIDIA Streamline DeepDVC programming guide](https://github.com/NVIDIA-RTX/Streamline/blob/main/docs/ProgrammingGuideDeepDVC.md), for DeepDVC intensity and saturation boost ranges/roles.
-- [NVIDIA Streamline DLSS Frame Generation programming guide](https://github.com/NVIDIA-RTX/Streamline/blob/main/docs/ProgrammingGuideDLSS_G.md), for how frame generation uses generated-frame count, tagged buffers, and a proxy swap chain.
-- [NVIDIA DLSS Unreal Engine plugin overview](https://developer.nvidia.com/blog/now-available-nvidia-dlss-3-for-unreal-engine-5/), which confirms the plugin exposes console controls under `r.ngx`.
-- [Unreal Engine 5.8 Scalability Reference: Skeletal Mesh LOD Bias](https://dev.epicgames.com/documentation/unreal-engine/scalability-reference-for-unreal-engine).
-- Local current game build metadata: `MarvelGame/version.json` (`1.1.4042190`, Shipping), and local user config `Saved/Config/Windows/GameUserSettings.ini`. Personal monitor identifiers and user-specific paths are intentionally not reproduced here.
+- [Official Marvel Rivals use-of-mods notice](https://www.marvelrivals.com/20261015/41525_1316797.html) and [prohibited software list](https://www.marvelrivals.com/guide/20250226/41348_1214569.html).
