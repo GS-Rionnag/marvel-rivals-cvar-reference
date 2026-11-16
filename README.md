@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Rendering `r.*` CVar batch Z](cvar-rendering-r-batch-z.md) — 25 more sequential `r.*` controls with source meanings, snapshots, and build-scan limits.
 - [PVE ability-system CVar batch](cvar-pve-ability-system.md) — All 13 currently uncovered `PVE.*` entries, with translated help and static-analysis caveats.
 - [Rendering `r.*` CVar batch Y](cvar-rendering-r-batch-y.md) — 25 more sequential `r.*` controls with source meanings, snapshots, and build-scan limits.
 - [Rendering `r.*` CVar batch X](cvar-rendering-r-batch-x.md) — 25 more sequential `r.*` controls with source meanings, snapshots, and build-scan limits.
