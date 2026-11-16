@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Rendering `r.*` CVar batch AE](cvar-rendering-r-batch-ae.md) — 25 additional rendering controls with source meanings and static-analysis limits.
 - [Rendering `r.*` CVar batch AD](cvar-rendering-r-batch-ad.md) — 25 more sequential render controls, with source meanings, snapshots, and static-analysis limits.
 - [Rendering `r.*` CVar batch AC](cvar-rendering-r-batch-ac.md) — 25 more sequential rendering controls with source help and static scan limits.
 - [Rendering `r.*` CVar batch AB](cvar-rendering-r-batch-ab.md) — 25 more sequential rendering controls with source meanings and build-scan limits.
