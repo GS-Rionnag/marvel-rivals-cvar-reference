@@ -18,7 +18,6 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Rendering `r.*` CVar batch R](cvar-rendering-r-batch-r.md) — Next 25 registered render variables with supplied help and build-scan evidence separated.
 - [Uppercase Demo CVar batch A](cvar-demo-uppercase-batch-a.md) — All 15 exact-case `Demo.*` names, distinct from lower-case `demo.*`.
 - [Interchange CVar batch A](cvar-interchange-batch-a.md) — All 16 currently uncovered `Interchange.*` entries with source evidence and limits.
-- [Interchange CVar batch A](cvar-interchange-batch-a.md) — All 16 currently uncovered `Interchange.*` entries with source evidence and limits.
 - [World Partition CVar batch B](cvar-worldpartition-batch-b.md) — Final 16 `wp.*` entries, completing the 41-name family.
 - [Rendering `r.*` CVar batch Q](cvar-rendering-r-batch-q.md) — Next 25 `r.*` names with metadata and static access classifications.
 - [Rendering `r.*` CVar batch P](cvar-rendering-r-batch-p.md) — Twenty-five additional rendering entries with source/default/scan provenance.
