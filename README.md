@@ -200,3 +200,8 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Nanite CVar batch A](cvar-rendering-nanite-batch-a.md) — Twenty-five compute-material, streaming, rasterization, culling, and tessellation controls with corrected source columns and static evidence.
 - [Audio CVar batch A](cvar-audio-batch-a.md) — Twenty-five alphabetically selected audio variables with help, snapshot/upstream provenance, and address-scan limitations.
 - [GAS projectile CVar batch A](cvar-gas-projectile-batch-a.md) — Twenty-five distinct projectile and ability-system variables, with repeated registration rows deduplicated and translations marked unreviewed.
+- [Rendering HairStrands CVar batch C](cvar-rendering-hairstrands-batch-c.md) — Twenty-five additional hair-strand geometry, culling, visualization, and voxelization controls with snapshot and static evidence separated.
+- [Nanite CVar batch B](cvar-rendering-nanite-batch-b.md) — Twenty-five more Nanite settings covering streaming, rasterization, visibility, and debugging with source-value and override limits.
+- [Path Tracing CVar batch A](cvar-rendering-pathtracing-batch-a.md) — Twenty-five path-tracing controls with supplied help, upstream matches, and build scan limits.
+- [GAS projectile CVar batch B](cvar-gas-projectile-batch-b.md) — The final seven registered projectile entries, including virtual-projectile controls and unreviewed help translations.
+- [Audio CVar batch B](cvar-audio-batch-b.md) — Twenty-five additional audio variables with source-separated help, snapshot values, Epic references, and static scan caveats.
