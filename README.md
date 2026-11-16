@@ -9,6 +9,9 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [FX CVar batch A: uppercase namespace](cvar-fx-uppercase-batch-a.md) — First 25 exact-case `FX.*` entries, distinct from lowercase `fx.*`.
+- [Joystick CVar batch B](cvar-joystick-batch-b.md) — Final three exact-case `Joystick.*` entries, completing the 28-name family.
+- [GC CVar batch B](cvar-gc-batch-b.md) — Final three `gc.*` entries, completing the 37-name family.
 - [Tick CVar batch B](cvar-tick-batch-b.md) — Final three lower-case `tick.*` entries, completing the family alongside batch A.
 - [Rendering `r.*` CVar batch H](cvar-rendering-r-batch-h.md) — Next 25 render controls with source metadata and static-reference classifications.
 - [Rendering `r.*` CVar batch G](cvar-rendering-r-batch-g.md) — Twenty-five more render controls; some previously listed only in a config cross-check are documented here.
