@@ -9,6 +9,8 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [AudioThread CVar batch A](cvar-audiothread-batch-a.md) — Seven CVar refs with a nearby non-CVar command distinguished clearly.
+- [MessageBus UDP CVar batch A](cvar-messagebus-batch-a.md) — Seven endpoint and segmentation settings with help and static-scan caveats.
 - [OSSNull CVar batch A](cvar-ossnull-batch-a.md) — Eight exact-case online-subsystem refs with help text and runtime/editability caveats.
 - [CommonUI CVar batch A](cvar-commonui-batch-a.md) — Eight exact-case UI/input refs with snapshots and build-scan caveats.
 - [Rendering `r.*` CVar batch BV](cvar-rendering-r-batch-bv.md) — 25 additional unique rendering controls with source and static-analysis evidence.
