@@ -1,0 +1,5 @@
+# AudioLink candidate from embedded Shipping strings
+
+The exact lowercase name `au.audiolink.enabled` appears in the x64 and ARM64EC Shipping executables for build 1.1.4042190. In the x64 nearby-text inventory, `AudioLink Factory` and `Enable AudioLink` appear between `AudioLink.InstanceCreated` and the candidate. The name and nearby text suggest an AudioLink enable control. Its type, default, and runtime registration remain unknown. The exact name is absent from the preserved community variable registry, object table, and value snapshot. [Build string inventory](EVIDENCE.md#build-specific-static-analysis) · [Nearby-text inventory](EVIDENCE.md#build-specific-static-analysis) · [Community sources](EVIDENCE.md#community-sources)
+
+Nearby text can include identifiers quoted inside another setting’s description. The full `marvel.audio.DisableFootstep` help identifies `Audio.IgnoreDisableFootstep` as an AudioComponent tag. The shorter nearby-text window ends just before that tag, so the tag can look like a separate setting when read alone. [Nearby-text inventory](EVIDENCE.md#build-specific-static-analysis) · [Community registry](EVIDENCE.md#community-sources)
