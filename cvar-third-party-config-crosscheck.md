@@ -189,7 +189,7 @@ The pinned [`MarvelRivalsFPSBooster.hta`](https://github.com/n0tmar/Marvel-Rival
 
 ### Two Pastebin configs linked by Odyi's guide
 
-The [Odyi config guide](https://github.com/Odyi/Config-settings-for-marvel-rivals/blob/main/Instructions.md) links two community config snippets ([first](https://pastebin.com/DGiLxGgp), [second](https://pastebin.com/GpwmPxpc)). Together they contain six names below without independent exact matches. `r.Distortion` is already listed in the gist section above, so the distinct-name total increases by five here.
+The [Odyi config guide](https://github.com/Odyi/Config-settings-for-marvel-rivals/blob/main/Instructions.md) links two community config snippets ([first](https://pastebin.com/DGiLxGgp), [second](https://pastebin.com/GpwmPxpc)). The six distinct names below have no independent exact matches; the first paste also repeats `r.Distortion`, which is already listed in the gist section and does not add a candidate.
 
 | Exact name | Evidence status |
 | --- | --- |
@@ -200,4 +200,4 @@ The [Odyi config guide](https://github.com/Odyi/Config-settings-for-marvel-rival
 | `r.TSR.Sharpen` | Pastebin-only candidate; no independent exact match found. |
 | `r.UseVSync` | Pastebin-only candidate; no independent exact match found. |
 
-The three sources add 19 distinct unverified names (10 gist, 4 template, and 5 new names from the Pastebins after deduplication). They do not change the registry count or establish that any of these names are editable in Marvel Rivals.
+The three sources add 20 distinct unverified names (10 gist, 4 template, and 6 Pastebin names). They do not change the registry count or establish that any of these names are editable in Marvel Rivals.

@@ -23,7 +23,7 @@ The build string column lists exact names found in the build 1.1.4042190 invento
 
 ### BigHead redirection-table flag: scan detail
 
-The saved build 1.1.4042190 address scan shows three direct references to `BigHead.GFixBigHeadRedirectionTable` as `cmp BYTE PTR [rip+...],0x0`, at instruction RVAs `0x6BDEEC2`, `0x6BDF2F2`, and `0x6BDF722`. These are byte comparisons against zero, consistent with the registry's `bool` type. The scan table does not include the following conditional branches, so it does not show which path is taken for zero versus nonzero or what “fix” changes. The registry and companion object row have no supplied help; the snapshot value `true` is not a documented default.
+The saved build 1.1.4042190 address scan shows three direct references to `BigHead.GFixBigHeadRedirectionTable` as `cmp BYTE PTR [rip+...],0x0`, at instruction RVAs `0x6BDEEC2`, `0x6BDF2F2`, and `0x6BDF722`. Direct disassembly of the matching installed executable shows that each compare is followed by a zero-conditional jump over the same thread-local guard block. When the flag is nonzero, that block checks two thread-local bytes, calls a shared helper if the first byte is zero, and can jump around subsequent pointer-field checks if the second byte is nonzero. This establishes a build-specific code-path difference, but does not identify the helper or show how the guards relate to the named redirection-table fix. The registry and companion object row have no supplied help; the snapshot value `true` is not a documented default.
 
 ## Diagnostics
 
