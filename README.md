@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [A–H engine CVars](cvar-residual-ah-b.md) — Remaining engine settings from the preserved registry.
 - [I–P engine CVars](cvar-residual-ip-b.md) — Remaining engine settings from the preserved registry.
 - [Q–Z engine CVars](cvar-residual-qz.md) — Remaining engine settings from the preserved registry.
 - [Additional I-P engine and rendering CVars](cvar-residual-ip.md)
