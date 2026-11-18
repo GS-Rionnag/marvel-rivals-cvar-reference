@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Community console-object flags](cvar-console-object-flags.md) — Exact-name bit counts and version-dependent Unreal enum interpretations.
 - [GAS trajectory recording and spray paint](cvar-gas-recording-and-spray.md) — Static evidence for the projectile recording timer and two spray paint controls in build 1.1.4042190.
 - [Object-table-only CVar-like candidates](cvar-object-only-plausible-candidates.md) — 247 plausible entries absent from the community var/ref list, with type and runtime uncertainty explicit.
 - [Additional public config name audit](cvar-community-source-name-audit.md) — New exact source spelling and case variants from public config sources, with registration limits.
