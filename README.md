@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Rendering CVar batch CA](cvar-rendering-r-batch-ca.md) — Vulkan and subsequent rendering settings.
 - [ImgMedia, NVENC, and Level Sequence CVars](cvar-imgmedia-nvenc-levelsequence-batch-a.md) — Image playback, video encoding, and sequence timing.
 - [Control Rig CVar batch A](cvar-controlrig-batch-a.md)
 - [Vulkan rendering CVars (batch BZ)](cvar-rendering-r-batch-bz.md)
