@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Q–Z engine CVars](cvar-residual-qz.md) — Remaining engine settings from the preserved registry.
 - [Additional I-P engine and rendering CVars](cvar-residual-ip.md)
 - [Graphics, UI, and audio CVars beginning A–H](cvar-residual-ah.md)
 - [StencilComponent, ChaosDestruct, AnalyticsET, and Emote CVars](cvar-stencilcomponent-chaosdestruct-analyticset-emote-batch-a.md)
