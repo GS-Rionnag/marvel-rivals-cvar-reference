@@ -161,7 +161,7 @@ The following public sources contain CVar-shaped names that did not exactly matc
 
 ### RoboMWM Scalability.ini gist
 
-The [RoboMWM gist](https://gist.github.com/RoboMWM/ae6fd0689c949322ba973322cada2888) contains these ten additional exact names:
+The [RoboMWM gist](https://gist.github.com/RoboMWM/ae6fd0689c949322ba973322cada2888/560a82b7f21340292c586a26f4cb265f4612e507) is pinned to revision `560a82b7f21340292c586a26f4cb265f4612e507` (2025-11-26). It contains 195 unique CVar-shaped dotted names. Twenty-four are absent from both the preserved `var`/`ref` registry and console-object table; fourteen of those already occur in the extracted engine-config cross-check above, while the ten distinct names below are additional gist-only candidates. They remain unverified config spellings, not confirmed variables or accepted overrides.
 
 | Exact name | Evidence status |
 | --- | --- |

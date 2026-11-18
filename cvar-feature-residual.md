@@ -21,6 +21,10 @@ The build string column lists exact names found in the build 1.1.4042190 invento
 | `Venom.ShouldForceDisableTentacleURO` | `bool` / `ref` | `true` | The name suggests suppressing URO for Venom's tentacles. The registry supplies no help on scope or value mapping. | x64, ARM64EC | 3 / 1 | 2 / 1 |
 | `skin.EnablePerSculptDefaultSkinResourceControl` | `bool` / `ref` | `false` | Controls whether the per-sculpt bAppendDefaultSkinResources setting governs default-skin resource inheritance. The help says 0 preserves legacy selected-skin and default-skin resource loading. | x64, ARM64EC | 3 / 1 | 9 / 1 |
 
+### BigHead redirection-table flag: scan detail
+
+The saved build 1.1.4042190 address scan shows three direct references to `BigHead.GFixBigHeadRedirectionTable` as `cmp BYTE PTR [rip+...],0x0`, at instruction RVAs `0x6BDEEC2`, `0x6BDF2F2`, and `0x6BDF722`. These are byte comparisons against zero, consistent with the registry's `bool` type. The scan table does not include the following conditional branches, so it does not show which path is taken for zero versus nonzero or what “fix” changes. The registry and companion object row have no supplied help; the snapshot value `true` is not a documented default.
+
 ## Diagnostics
 
 | Exact name | Type / kind | Snapshot | Meaning and evidence limits | Build strings | Object hits | Ref hits |
