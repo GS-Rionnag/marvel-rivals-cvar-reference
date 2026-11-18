@@ -9,6 +9,8 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Control Rig CVar batch A](cvar-controlrig-batch-a.md)
+- [Vulkan rendering CVars (batch BZ)](cvar-rendering-r-batch-bz.md)
 - [Geometry CVars](cvar-geometry-batch-a.md) — Dynamic meshes, grid dimensions, and mesh scene threading.
 - [AIAutoTestDemo CVar batch A](cvar-ai-autotestdemo-batch-a.md) — Six test/demo-named variables, with help-based meaning separated from name-only guesses.
 - [GeometryCache CVar batch A](cvar-geometrycache-batch-a.md) — Six geometry-cache variables with animation-data meanings and static-scan limits.
