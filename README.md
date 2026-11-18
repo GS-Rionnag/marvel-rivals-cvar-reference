@@ -9,6 +9,9 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [AIAutoTestDemo CVar batch A](cvar-ai-autotestdemo-batch-a.md) — Six test/demo-named variables, with help-based meaning separated from name-only guesses.
+- [GeometryCache CVar batch A](cvar-geometrycache-batch-a.md) — Six geometry-cache variables with animation-data meanings and static-scan limits.
+- [WindowsCursor CVar batch A](cvar-windowscursor-batch-a.md) — Windows cursor handle choice for the engine's `None` cursor type.
 - [Serialization CVar batch A](cvar-serialization-batch-a.md) — Five bulk-data and package settings with game-use caveats.
 - [XInput CVar batch A](cvar-xinput-batch-a.md) — Controller-state update forcing, with platform and runtime caveats.
 - [scene CVar batch A](cvar-scene-batch-a.md) — Seven scene refs with vague help and static evidence scoped carefully.
@@ -26,10 +29,10 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [MediaIO CVar batch A](cvar-mediaio-batch-a.md) — Seven media-input variables with source and scan evidence limits.
 - [StaticScopeSuppression CVar batch A](cvar-staticscopesuppression-batch-a.md) — Seven suppression controls with uncertain scope and interactions noted.
 - [PoseDriver CVar batch A](cvar-posedriver-batch-a.md) — PoseDriver.EnableSetMorphTarget, with its meaning labeled as an inference.
-- [Rendering .* CVar batch BY](cvar-rendering-r-batch-by.md) — 25 more sequential rendering controls, with static-candidate limits.
+- [Rendering `r.*` CVar batch BY](cvar-rendering-r-batch-by.md) — 25 more sequential rendering controls, with static-candidate limits.
 - [InputRecord CVar batch A](cvar-inputrecord-batch-a.md) — Seven recording/playback UI settings; timing interpretations are labeled as hypotheses.
 - [ActionBar CVar batch A](cvar-actionbar-batch-a.md) — Bound Action Bar opt-out behavior from supplied help, with UI scope caveats.
-- [Rendering .* CVar batch BX](cvar-rendering-r-batch-bx.md) — 25 additional cloud and volumetric-fog controls with scan caveats.
+- [Rendering `r.*` CVar batch BX](cvar-rendering-r-batch-bx.md) — 25 additional cloud and volumetric-fog controls with scan caveats.
 - [MarvelSpringArmComponent CVar batch A](cvar-marvelspringarmcomponent-batch-a.md) — Eight camera/portal variables with terse help and runtime caveats.
 - [Accessibility CVar batch A](cvar-accessibility-batch-a.md) — The accessible-API query switch, with scope limits noted.
 - [MarvelGameplayCue CVar batch A](cvar-marvelgameplaycue-batch-a.md) — Eight remaining cue refs; translated help is marked as unreviewed.
