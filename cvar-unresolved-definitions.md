@@ -7,6 +7,10 @@ This generated worklist contains registered CVar names for which the preserved c
 - Engine comparison: [Epic Unreal Engine 5.9 CVar reference](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-console-variables-reference), exact name matches only.
 - Local binary presence is shown against the build 1.1.4042190 printable-string index, which is not a runtime registration check.
 
+## Static reference triage for this worklist
+
+The separate Shipping address-reference scan matched a `ref_rva` for 601 of these 1,049 names. In that subset, 523 names have at least one non-address-taking direct-memory instruction candidate, while 78 have only address-taking candidates. The remaining 448 have no `ref_rva` match in this scan. A direct-memory candidate can be a read, comparison, write, or initialization access; it does not establish which operation occurred or what the setting means. An address-taking match is weaker evidence of a value use. No-match results are bounded by the scan method and do not show that a CVar is unused. See [the build-specific scan scope and limitations](EVIDENCE.md#build-specific-static-analysis).
+
 - Unexplained CVar names in this source set: 1,049.
 
 | CVar | Type(s) | Registration rows | Distinct refs | Dump snapshot value | Local build string candidate | Raw object-table text |
