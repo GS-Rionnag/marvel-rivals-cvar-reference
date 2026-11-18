@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Hero asset snapshot candidate CVars](cvar-snapshot-candidate-details-c.md) — Nineteen HeroAssetLoader and HeroAssetManifest snapshot candidates.
 - [Presentation and diagnostics CVars](cvar-presentation-addendum.md) — Remaining engine settings from the preserved registry.
 - [Runtime performance CVars](cvar-performance-and-hitch-summary.md) — Remaining engine settings from the preserved registry.
 - [A–M registry metadata CVars](cvar-final-am.md) — Remaining engine settings from the preserved registry.
