@@ -6,6 +6,7 @@ This repository contains Markdown documentation only. It does not distribute gam
 
 - [Community CVar registry message](https://discord.com/channels/1512820805615091712/1512825591529869383/1570970983353950322) provides the registry attachments discussed in the guides.
 - [Community CVar snapshot message](https://discord.com/channels/1512820805615091712/1512825591529869383/1562934699502866452) provides the captured value snapshot. Snapshot values are not assumed to be defaults.
+- A separately shared [`userengine.ini`](https://github.com/RitzDaCat/MarvelRivalsConfig/blob/26cf358988f2d74004544ca128fd3a3ae1a3aa79/userengine.ini) is tracked only as a source of unverified CVar-shaped names; it is not treated as a tested game config.
 - Epic Unreal Engine documentation links are included next to upstream CVar descriptions where relevant.
 
 ## Build-specific static analysis
@@ -22,7 +23,7 @@ The preserved community registry contains 8,973 distinct, case-sensitive names w
 
 These counts measure exact-name coverage of the preserved registry only. They do not establish registration in a particular Shipping build, effective values, startup override support, or complete behavioral understanding. Commands and candidates found only in snapshots, console objects, or upstream and binary comparisons fall outside the registry denominator.
 
-The eleven focused candidate guides cover 88 distinct names outside the registry. Of these, 55 have snapshot values and 26 have upstream Epic reference entries without snapshot values. Two additional candidates come from a third-party config and Shipping strings. Five AudioLink and stereo emulation candidates are supported by embedded Shipping strings. Four visualization names appear in both the graphics candidate and source comparison guides and count once.
+The eleven focused candidate guides cover 95 distinct names outside the registry. Of these, 55 have snapshot values and 26 have upstream Epic reference entries without snapshot values. Two additional candidates are supported by a third-party config and Shipping strings. Seven more CVar-shaped names are found only in a separate public userengine.ini and remain unverified. Five AudioLink and stereo-emulation candidates are supported by embedded Shipping strings. Four visualization names appear in both the graphics candidate and source comparison guides and count once.
 
 The snapshot-only inventory contains 67 exact names, including the 55 with focused candidate notes. The other 12 lack exact matches in the preserved Epic reference and scanned Shipping string inventory. Their captured values remain inventory evidence, with game registration and runtime behavior unresolved. See [the snapshot-only inventory](cvar-snapshot-only.md).
 

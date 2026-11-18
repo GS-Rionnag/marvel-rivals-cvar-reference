@@ -138,3 +138,19 @@ The source file has 160 dotted assignments across sections, representing 132 uni
 | `r.VirtualHeightfieldMesh` | `0` ([SystemSettings] line 43, [ConsoleVariables] line 161) | no | no | no | No exact registry or local binary match; likely stale, unsupported, or misspelled |
 | `r.VolumetricFog` | `0` ([SystemSettings] line 97) | yes | yes | yes | Listed as var/ref; definition in registry catalog |
 | `rhi.DefaultRHI` | `D3D12` ([SystemSettings] line 10) | no | no | no | No exact registry or local binary match; likely stale, unsupported, or misspelled |
+
+## Additional public user configuration: uncorroborated names
+
+A separate public [`userengine.ini`](https://github.com/RitzDaCat/MarvelRivalsConfig/blob/26cf358988f2d74004544ca128fd3a3ae1a3aa79/userengine.ini) presents itself as a UE5 performance configuration; its header says it was last updated in December 2024. This file is a community claim, not a tested Marvel Rivals config. Seven dotted names in it have no exact match in the preserved `var`/`ref`/command registry, console-object table, value snapshot, UE 5.9 comparison, or scanned 1.1.4042190 executable inventory:
+
+| Exact name | Evidence in this project |
+| --- | --- |
+| `D3D12.MaximumFrameLatency` | Source-only key. No independent registration, upstream-reference, or local-build match was found. |
+| `r.Lumen.Enabled` | Source-only key. No independent registration, upstream-reference, or local-build match was found. |
+| `r.Nanite.Enable` | Source-only key. No independent registration, upstream-reference, or local-build match was found. |
+| `r.LightPropagationVolume` | Source-only key. No independent registration, upstream-reference, or local-build match was found. |
+| `r.SSGI.Enable` | Source-only key. No independent registration, upstream-reference, or local-build match was found. |
+| `r.SSR.Enable` | Source-only key. No independent registration, upstream-reference, or local-build match was found. |
+| `r.AmbientOcclusion.Quality` | Source-only key. No independent registration, upstream-reference, or local-build match was found. |
+
+These are retained as unverified CVar-shaped config candidates, not counted as confirmed variables. The source's performance and latency claims are not repeated here because this pass found no corroborating game or engine definition for these exact names.
