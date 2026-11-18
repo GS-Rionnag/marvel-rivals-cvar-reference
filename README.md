@@ -9,6 +9,8 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Additional I-P engine and rendering CVars](cvar-residual-ip.md)
+- [Graphics, UI, and audio CVars beginning A–H](cvar-residual-ah.md)
 - [StencilComponent, ChaosDestruct, AnalyticsET, and Emote CVars](cvar-stencilcomponent-chaosdestruct-analyticset-emote-batch-a.md)
 - [VR, Modeling, and InteractableActor CVar batch A](cvar-vr-modeling-interactable-batch-a.md)
 - [Post-processing and pipeline state CVars (batch CC)](cvar-rendering-r-batch-cc.md)
