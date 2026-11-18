@@ -498,3 +498,5 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Mass CVar batch A](cvar-mass-batch-a.md) — Twenty-five Mass entity, animation, movement, and representation controls with source-backed descriptions.
 
 - [Upstream rendering candidates](cvar-upstream-string-candidates.md) — Five names matched in Epic documentation and both Shipping executables.
+
+- [Graphics config candidates](cvar-config-candidate-addendum.md) — Two third-party keys corroborated by Shipping strings.
