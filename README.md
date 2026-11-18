@@ -507,3 +507,4 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [MiniTrace CVar metadata](cvar-minitrace-metadata.md)
 - [Rendering cache command candidates from Shipping strings](cvar-rendering-string-addendum.md)
 - [Asset Registry package provenance](cvar-assetregistry-package-provenance.md)
+- [Ability input delay](cvar-input-delay-metadata.md)
