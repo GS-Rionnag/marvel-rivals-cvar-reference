@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Engine behavior evidence CVars](cvar-registry-evidence-addendum.md) — Remaining engine settings from the preserved registry.
 - [Engine object-table candidate CVars](cvar-object-engine-candidates.md) — Replay and task priorities with matching community and engine evidence.
 - [Graphics object-table candidate CVars](cvar-object-graphics-candidates.md) — Fourteen matches across the community object table, Epic reference, and Shipping binaries.
 - [Engine snapshot candidate CVars](cvar-snapshot-candidate-details-d.md) — Six low-confidence engine and rendering candidates.
