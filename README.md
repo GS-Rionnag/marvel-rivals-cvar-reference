@@ -9,6 +9,9 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [StencilComponent, ChaosDestruct, AnalyticsET, and Emote CVars](cvar-stencilcomponent-chaosdestruct-analyticset-emote-batch-a.md)
+- [VR, Modeling, and InteractableActor CVar batch A](cvar-vr-modeling-interactable-batch-a.md)
+- [Post-processing and pipeline state CVars (batch CC)](cvar-rendering-r-batch-cc.md)
 - [AudioPerf, Localization, CullDistance, and TimerManager CVars](cvar-audioperf-localization-culldistance-timermanager-batch-a.md)
 - [Water, display, and Intel Xe rendering CVars (batch CB)](cvar-rendering-r-batch-cb.md)
 - [Rendering CVar batch CA](cvar-rendering-r-batch-ca.md) — Vulkan and subsequent rendering settings.
