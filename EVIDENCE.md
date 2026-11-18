@@ -18,7 +18,7 @@ The guides preserve the source of each claim and distinguish community help, ups
 
 ## Coverage counts
 
-The preserved community registry contains 8,973 distinct, case-sensitive names with a variable or reference entry. The focused tables cover 8,924 of these names (99.45%). Three additional names have individual explanations in guide prose, bringing coverage across both formats to 8,927 (99.49%). The remaining 46 names lack a focused explanation.
+The preserved community registry contains 8,973 distinct, case-sensitive names with a variable or reference entry. The focused tables cover 8,925 of these names (99.47%). Three additional names have individual explanations in guide prose, bringing coverage across both formats to 8,928 (99.50%). The remaining 45 names lack a focused explanation.
 
 These counts measure reference coverage. Registration in a particular Shipping build, effective values, and startup override support require separate evidence. Commands and candidates found only in snapshots, console objects, or upstream and binary comparisons fall outside the registry denominator.
 
