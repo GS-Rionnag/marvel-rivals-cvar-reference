@@ -15,7 +15,7 @@ This repository contains Markdown documentation only. It does not distribute gam
 
 Some guides report analysis of Marvel Rivals Shipping build 1.1.4042190. The raw executable, hashes, file inventories, and disassembly/address-scan exports are intentionally omitted. Those findings are static evidence only: a name string or address reference is not by itself proof of runtime registration, startup-config acceptance, or an in-game effect. Direct value reads are distinguished from object-address setup references where the available evidence permits.
 
-Focused follow-up has added per-name instruction context for 31 entries in the unresolved-definition worklist: 16 `demo.*` names have 26 backing-value read instructions, and 15 rendering names have operand-level notes. These remain partial static findings; branch reachability, full behavior, and accepted config values are not established. See the [demo read notes](cvar-demo-unresolved-value-reads.md) and [rendering evidence notes](cvar-rendering-definition-evidence.md).
+This checkpoint adds per-name static-operation or operand notes for 65 of the 1,049 unresolved names (6.2%): 16 `demo.*`, 15 rendering, 4 `GAS.*`, and 30 `Swift.*` entries. The `demo.*` subset has 26 backing-value read instructions. These are partial static findings; branch reachability, full behavior, and accepted config values are not established. See the [demo read notes](cvar-demo-unresolved-value-reads.md), [rendering evidence notes](cvar-rendering-definition-evidence.md), [GAS call-path notes](cvar-gas-recording-and-spray.md), and [Swift operand notes](cvar-swift-reference-operands.md).
 
 ## Method and reproducibility
 

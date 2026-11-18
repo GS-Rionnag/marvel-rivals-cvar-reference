@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [GAS trajectory recording and spray paint](cvar-gas-recording-and-spray.md) — Static evidence for the projectile recording timer and two spray paint controls in build 1.1.4042190.
 - [Object-table-only CVar-like candidates](cvar-object-only-plausible-candidates.md) — 247 plausible entries absent from the community var/ref list, with type and runtime uncertainty explicit.
 - [Additional public config name audit](cvar-community-source-name-audit.md) — New exact source spelling and case variants from public config sources, with registration limits.
 - [Final registry remainder](cvar-registry-remainder.md) — exact-name coverage for the last entries with limited help; unknowns remain explicit.
@@ -253,6 +254,8 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Rendering `r.*` CVar batch B](cvar-rendering-r-batch-b.md) — Twenty-five additional registered rendering controls with source values, Epic context, and static evidence limits separated.
 - [Physics general and movement CVar batch E](cvar-physics-general-batch-e.md) — Twenty-five additional `p.*` controls with metadata, captured values, and static scan evidence limits.
 - [Swift CVar batch A](cvar-swift-batch-a.md) — Twenty-five of 39 registered `Swift.*` names, separating supplied help, snapshot observations, and Epic reference context.
+
+- [Swift CVar reference operands](cvar-swift-reference-operands.md) — Operand audit for all 30 unresolved names in Shipping build `1.1.4042190`.
 - [World Partition `wp.*` CVar batch A](cvar-worldpartition-batch-a.md) — Twenty-five streaming, content-bundle, spatial-hash, HLOD, and warmup controls with source and static-evidence limits.
 - [GAS CVar batch A](cvar-gas-batch-a.md) — Twenty-five currently uncovered `GAS.*` entries with source help, snapshot and UE reference provenance, and scan limits.
 - [Rendering `r.*` CVar batch A](cvar-rendering-r-batch-a.md) — Twenty-five currently uncovered controls spanning global-distance-field/sky lighting, materials, textures, translucency, shaders, and Composure.
