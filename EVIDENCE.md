@@ -18,10 +18,10 @@ The guides preserve the source of each claim and distinguish community help, ups
 
 ## Coverage counts
 
-The preserved community registry contains 8,973 distinct, case-sensitive names with a variable or reference entry. The focused tables cover 8,921 of these names (99.42%). Three additional names have individual explanations in guide prose, bringing coverage across both formats to 8,924 (99.45%). The remaining 49 names lack a focused explanation.
+The preserved community registry contains 8,973 distinct, case-sensitive names with a variable or reference entry. The focused tables cover 8,923 of these names (99.44%). Three additional names have individual explanations in guide prose, bringing coverage across both formats to 8,926 (99.48%). The remaining 47 names lack a focused explanation.
 
 These counts measure reference coverage. Registration in a particular Shipping build, effective values, and startup override support require separate evidence. Commands and candidates found only in snapshots, console objects, or upstream and binary comparisons fall outside the registry denominator.
 
-The ten focused candidate guides cover 84 distinct names outside the registry. Of these, 55 have snapshot values and 26 have upstream Epic reference entries without snapshot values. Two additional candidates come from a third-party config and Shipping strings. One AudioLink candidate is supported by embedded Shipping strings. Four visualization names appear in both the graphics candidate and source comparison guides and count once.
+The eleven focused candidate guides cover 88 distinct names outside the registry. Of these, 55 have snapshot values and 26 have upstream Epic reference entries without snapshot values. Two additional candidates come from a third-party config and Shipping strings. Five AudioLink and stereo emulation candidates are supported by embedded Shipping strings. Four visualization names appear in both the graphics candidate and source comparison guides and count once.
 
 The snapshot-only inventory contains 67 exact names, including the 55 with focused candidate notes. The other 12 lack exact matches in the preserved Epic reference and scanned Shipping string inventory. Their captured values remain inventory evidence, with game registration and runtime behavior unresolved. See [the snapshot-only inventory](cvar-snapshot-only.md).

@@ -502,3 +502,5 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Upstream rendering candidates](cvar-upstream-string-candidates.md) — Five names matched in Epic documentation and both Shipping executables.
 
 - [Graphics config candidates](cvar-config-candidate-addendum.md) — Two third-party keys corroborated by Shipping strings.
+- [Portal geometry CVar metadata](cvar-portal-geometry-metadata.md)
+- [Stereo emulation candidates](cvar-stereo-emulation-candidates.md)
