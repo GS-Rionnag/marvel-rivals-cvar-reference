@@ -496,3 +496,5 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Physics general and movement CVar batch B](cvar-physics-general-batch-b.md) — Twenty-five additional actor, movement, and animation-physics variables.
 - [Slate CVar batch B](cvar-slate-batch-b.md) — Twenty-five UI framework variables with help/default mismatches and missing descriptions noted.
 - [Mass CVar batch A](cvar-mass-batch-a.md) — Twenty-five Mass entity, animation, movement, and representation controls with source-backed descriptions.
+
+- [Upstream rendering candidates](cvar-upstream-string-candidates.md) — Five names matched in Epic documentation and both Shipping executables.
