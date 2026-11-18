@@ -15,3 +15,9 @@ Some guides report analysis of Marvel Rivals Shipping build 1.1.4042190. The raw
 ## Method and reproducibility
 
 The guides preserve the source of each claim and distinguish community help, upstream Unreal behavior, snapshots, and build-specific analysis. Raw scan exports and local analysis scripts are not included; readers should treat exact addresses as build-specific and revalidate them against the build they use.
+
+## Coverage counts
+
+The preserved community registry contains 8,973 distinct, case-sensitive names with a variable or reference entry. The focused tables cover 8,916 of these names (99.36%). Three additional names have individual explanations in guide prose, bringing coverage across both formats to 8,919 (99.40%). The remaining 54 names lack a focused explanation.
+
+These counts measure reference coverage. Registration in a particular Shipping build, effective values, and startup override support require separate evidence. Commands and candidates found only in snapshots, console objects, or upstream and binary comparisons fall outside the registry denominator.
