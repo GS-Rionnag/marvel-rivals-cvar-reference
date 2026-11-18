@@ -504,3 +504,5 @@ See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations
 - [Graphics config candidates](cvar-config-candidate-addendum.md) — Two third-party keys corroborated by Shipping strings.
 - [Portal geometry CVar metadata](cvar-portal-geometry-metadata.md)
 - [Stereo emulation candidates](cvar-stereo-emulation-candidates.md)
+- [MiniTrace CVar metadata](cvar-minitrace-metadata.md)
+- [Rendering cache command candidates from Shipping strings](cvar-rendering-string-addendum.md)
