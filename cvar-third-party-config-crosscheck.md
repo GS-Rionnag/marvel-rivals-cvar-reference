@@ -154,3 +154,50 @@ A separate public [`userengine.ini`](https://github.com/RitzDaCat/MarvelRivalsCo
 | `r.AmbientOcclusion.Quality` | Source-only key. No independent registration, upstream-reference, or local-build match was found. |
 
 These are retained as unverified CVar-shaped config candidates, not counted as confirmed variables. The source's performance and latency claims are not repeated here because this pass found no corroborating game or engine definition for these exact names.
+
+## Other public community configs: additional unverified names
+
+The following public sources contain CVar-shaped names that did not exactly match the preserved community registry, console-object table, snapshot, Epic UE 5.9 reference, the extracted third-party engine config, or the local 1.1.4042190 build inventories. They are recorded only as search leads. Appearance in a config file does not show that Marvel Rivals registers the name, accepts it at startup, or changes behavior.
+
+### RoboMWM Scalability.ini gist
+
+The [RoboMWM gist](https://gist.github.com/RoboMWM/ae6fd0689c949322ba973322cada2888) contains these ten additional exact names:
+
+| Exact name | Evidence status |
+| --- | --- |
+| `r.Distortion` | Gist-only candidate; no independent exact match found. |
+| `r.FogDensity` | Gist-only candidate; no independent exact match found. |
+| `r.GlobalIllumination` | Gist-only candidate; no independent exact match found. |
+| `r.Lumen.Reflections.EnableHWRT` | Gist-only candidate; no independent exact match found. |
+| `r.Lumen.Reflections.HighQuality` | Gist-only candidate; no independent exact match found. |
+| `r.Reflections` | Gist-only candidate; no independent exact match found. |
+| `r.TemporalAA` | Gist-only candidate; no independent exact match found. |
+| `r.TemporalAASharpness` | Gist-only candidate; no independent exact match found. |
+| `r.Tessellation` | Gist-only candidate; no independent exact match found. |
+| `r.TiledDeferredShading.MinimumCount` | Gist-only candidate; no independent exact match found. |
+
+### Marvel Rivals FPS Booster
+
+The pinned [`MarvelRivalsFPSBooster.hta`](https://github.com/n0tmar/Marvel-Rivals-FPS-Booster/blob/0eee0d36c0775fca09b8ae7fb30537c2d6e562a3/MarvelRivalsFPSBooster.hta) embeds a generated Scalability.ini template. Four names in that template had no independent exact match:
+
+| Exact name | Evidence status |
+| --- | --- |
+| `PM.CaptiveMode` | Template-only candidate; no independent exact match found. |
+| `r.ActiveProjectPackageManager` | Template-only candidate; no independent exact match found. |
+| `r.HairStrands.CamByVTPipe` | Template-only candidate; no independent exact match found. |
+| `r.Streaming.IPV` | Template-only candidate; no independent exact match found. |
+
+### Two Pastebin configs linked by Odyi's guide
+
+The [Odyi config guide](https://github.com/Odyi/Config-settings-for-marvel-rivals/blob/main/Instructions.md) links two community config snippets ([first](https://pastebin.com/DGiLxGgp), [second](https://pastebin.com/GpwmPxpc)). Together they contain six names below without independent exact matches. `r.Distortion` is already listed in the gist section above, so the distinct-name total increases by five here.
+
+| Exact name | Evidence status |
+| --- | --- |
+| `r.DefaultFeature.Fog` | Pastebin-only candidate; no independent exact match found. |
+| `r.DefaultFeature.Reflections` | Pastebin-only candidate; no independent exact match found. |
+| `r.DefaultFeature.Translucency` | Pastebin-only candidate; no independent exact match found. |
+| `r.PoolSize` | Pastebin-only candidate; no independent exact match found. |
+| `r.TSR.Sharpen` | Pastebin-only candidate; no independent exact match found. |
+| `r.UseVSync` | Pastebin-only candidate; no independent exact match found. |
+
+The three sources add 19 distinct unverified names (10 gist, 4 template, and 5 new names from the Pastebins after deduplication). They do not change the registry count or establish that any of these names are editable in Marvel Rivals.
