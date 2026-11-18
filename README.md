@@ -9,6 +9,7 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [N–Z registry metadata CVars](cvar-final-nz.md) — Remaining engine settings from the preserved registry.
 - [Snapshot-only candidate batch B CVars](cvar-snapshot-candidate-details-b.md) — Fifteen additional snapshot and console-object matches.
 - [A–M feature CVars](cvar-feature-residual-am.md) — Remaining engine settings from the preserved registry.
 - [N–Z diagnostics CVars](cvar-feature-residual-nz.md) — Remaining engine settings from the preserved registry.
