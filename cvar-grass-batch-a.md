@@ -36,3 +36,7 @@ Snapshot values are observations, not defaults. Direct-memory candidates do not 
 - Build scan matches are static reference candidates; no runtime or `.ini` override test was performed.
 
 Sources: [community CVar registry](cvar-community-registry.md), [build 1.1.4042190 address-reference scan](EVIDENCE.md#build-specific-static-analysis), and [build-specific candidate inventory](EVIDENCE.md#build-specific-static-analysis).
+
+## Community spelling and command-line claim
+
+A [Steam discussion](https://steamcommunity.com/app/2767030/discussions/0/803468669855295473/) writes the key as `grass.DensityScale` in a launch-option example. The preserved registry and local build inventory instead contain the exact spelling `grass.densityScale` (lower-case `d`). This capitalization difference is not evidence of a second variable. The same discussion has conflicting comments about whether the launch options worked, so it does not establish that a command-line assignment is accepted. The source here documents the registry spelling and its supplied meaning only.
