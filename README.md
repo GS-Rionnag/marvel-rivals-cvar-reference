@@ -9,6 +9,8 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Object-table-only CVar-like candidates](cvar-object-only-plausible-candidates.md) — 247 plausible entries absent from the community var/ref list, with type and runtime uncertainty explicit.
+- [Additional public config name audit](cvar-community-source-name-audit.md) — New exact source spelling and case variants from public config sources, with registration limits.
 - [Final registry remainder](cvar-registry-remainder.md) — exact-name coverage for the last entries with limited help; unknowns remain explicit.
 - [N–Z registry metadata CVars](cvar-registry-residual-nz.md) — remaining exact names, source-supported scope, and unresolved entries.
 - [A–M registry metadata CVars](cvar-am-registry-metadata.md) — additional names with source help and explicit evidence limits.
