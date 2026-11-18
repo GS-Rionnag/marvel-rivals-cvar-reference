@@ -9,6 +9,9 @@ A registered name, a captured value, and a documented Unreal meaning do not prov
 See [Evidence, sources, and scope](EVIDENCE.md) for source links and limitations.
 
 ## CVar documentation
+- [Final registry remainder](cvar-registry-remainder.md) — exact-name coverage for the last entries with limited help; unknowns remain explicit.
+- [N–Z registry metadata CVars](cvar-registry-residual-nz.md) — remaining exact names, source-supported scope, and unresolved entries.
+- [A–M registry metadata CVars](cvar-am-registry-metadata.md) — additional names with source help and explicit evidence limits.
 - [Combat mechanics CVar metadata](cvar-combat-mechanics-metadata.md)
 - [AudioLink candidate from embedded Shipping strings](cvar-embedded-string-candidates.md)
 - [Gameplay and engine evidence CVars](cvar-engine-evidence-b.md) — Remaining engine settings from the preserved registry.

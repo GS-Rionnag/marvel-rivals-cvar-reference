@@ -18,9 +18,9 @@ The guides preserve the source of each claim and distinguish community help, ups
 
 ## Coverage counts
 
-The preserved community registry contains 8,973 distinct, case-sensitive names with a variable or reference entry. The focused tables cover 8,926 of these names (99.48%). Three additional names have individual explanations in guide prose, bringing coverage across both formats to 8,929 (99.51%). The remaining 44 names lack a focused explanation.
+The preserved community registry contains 8,973 distinct, case-sensitive names with a variable or reference entry. The focused guide tables now account for all 8,973 names (100% exact-name coverage). This is an inventory-coverage measure, not a claim that every behavior is understood: where supplied help is absent or ambiguous, the guides say so and leave the meaning unresolved. Three names also have dedicated prose analyses linked from the final registry-remainder guide.
 
-These counts measure reference coverage. Registration in a particular Shipping build, effective values, and startup override support require separate evidence. Commands and candidates found only in snapshots, console objects, or upstream and binary comparisons fall outside the registry denominator.
+These counts measure exact-name coverage of the preserved registry only. They do not establish registration in a particular Shipping build, effective values, startup override support, or complete behavioral understanding. Commands and candidates found only in snapshots, console objects, or upstream and binary comparisons fall outside the registry denominator.
 
 The eleven focused candidate guides cover 88 distinct names outside the registry. Of these, 55 have snapshot values and 26 have upstream Epic reference entries without snapshot values. Two additional candidates come from a third-party config and Shipping strings. Five AudioLink and stereo emulation candidates are supported by embedded Shipping strings. Four visualization names appear in both the graphics candidate and source comparison guides and count once.
 
